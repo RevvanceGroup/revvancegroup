@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Summit Roofing Co. | Free Quote | Springfield, IL</title>
+<meta name="description" content="Request a free roofing quote from Summit Roofing Co. GAF Master Elite certified contractor serving Springfield, IL. Call (555) 867-5309 or fill out our online form.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --charcoal: #1a1a2e; --charcoal-light: #252542; --rust: #b91c1c; --rust-dark: #991b1b;
+  --slate: #475569; --slate-light: #64748b; --white: #ffffff; --off-white: #f8fafc;
+  --amber: #d97706; --amber-light: #f59e0b; --gray-100: #f1f5f9; --gray-200: #e2e8f0; --gray-800: #1e293b;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Source Sans 3', system-ui, sans-serif; color: #334155; line-height: 1.6; background: var(--white); -webkit-font-smoothing: antialiased; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Oswald', sans-serif; font-weight: 700; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.02em; }
+a { text-decoration: none; color: inherit; } img { max-width: 100%; display: block; } ul { list-style: none; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.top-bar { background: var(--charcoal); color: rgba(255,255,255,0.8); font-size: 0.85rem; padding: 6px 0; }
+.top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.top-bar a { color: var(--amber); } .top-bar a:hover { color: var(--amber-light); }
+.top-bar .stars { color: var(--amber); letter-spacing: 1px; }
+.header { background: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.header .container { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-icon { width: 44px; height: 44px; background: var(--rust); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.logo-icon svg { width: 28px; height: 28px; fill: white; }
+.logo-text h1 { font-size: 1.3rem; color: var(--charcoal); letter-spacing: 0.05em; line-height: 1; }
+.logo-text span { font-family: 'Source Sans 3', sans-serif; font-size: 0.65rem; color: var(--slate-light); text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; }
+.nav { display: flex; align-items: center; gap: 8px; }
+.nav a { font-family: 'Oswald', sans-serif; font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: var(--charcoal); padding: 8px 14px; border-radius: 4px; transition: all 0.2s; }
+.nav a:hover, .nav a.active { color: var(--rust); }
+.nav a.nav-cta { background: var(--rust); color: white; padding: 8px 18px; }
+.nav a.nav-cta:hover { background: var(--rust-dark); }
+.header-right { display: flex; align-items: center; gap: 16px; }
+.header-phone { display: flex; align-items: center; gap: 6px; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 600; color: var(--charcoal); }
+.header-phone svg { width: 18px; height: 18px; fill: var(--rust); }
+.header-phone:hover { color: var(--rust); }
+.gaf-badge-header { display: flex; align-items: center; gap: 6px; background: var(--gray-100); padding: 6px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; color: var(--charcoal); text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid var(--gray-200); }
+.gaf-badge-header svg { width: 20px; height: 20px; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+.hamburger span { width: 24px; height: 2.5px; background: var(--charcoal); border-radius: 2px; transition: all 0.3s; }
+
+/* Page Hero */
+.page-hero { position: relative; padding: 80px 0 60px; background: var(--charcoal); overflow: hidden; }
+.page-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(0.3); }
+.page-hero .container { position: relative; z-index: 2; }
+.page-hero h2 { font-size: 3rem; color: white; margin-bottom: 12px; }
+.page-hero p { font-size: 1.15rem; color: rgba(255,255,255,0.8); max-width: 600px; }
+.breadcrumb { display: flex; gap: 8px; align-items: center; font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
+.breadcrumb a { color: var(--amber); } .breadcrumb a:hover { color: var(--amber-light); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 14px 32px; border-radius: 4px; border: none; cursor: pointer; transition: all 0.25s; }
+.btn-primary { background: var(--rust); color: white; }
+.btn-primary:hover { background: var(--rust-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(185,28,28,0.4); }
+
+/* Contact Layout */
+.contact-section { padding: 80px 0; }
+.contact-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: start; }
+
+/* Form */
+.form-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px; padding: 40px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+.form-card h3 { font-size: 1.6rem; color: var(--charcoal); margin-bottom: 6px; }
+.form-card > p { color: var(--slate); margin-bottom: 28px; font-size: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--charcoal); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.03em; font-family: 'Oswald', sans-serif; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 12px 16px; border: 1px solid var(--gray-200); border-radius: 6px;
+  font-family: 'Source Sans 3', sans-serif; font-size: 1rem; color: var(--charcoal);
+  background: var(--off-white); transition: all 0.2s;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none; border-color: var(--rust); box-shadow: 0 0 0 3px rgba(185,28,28,0.1);
+  background: var(--white);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-submit { width: 100%; padding: 16px; font-size: 1.1rem; }
+.form-success { display: none; text-align: center; padding: 40px 20px; }
+.form-success svg { width: 60px; height: 60px; fill: #16a34a; margin-bottom: 16px; }
+.form-success h3 { color: #16a34a; font-size: 1.5rem; margin-bottom: 8px; }
+.form-success p { color: var(--slate); }
+
+/* Contact Info Sidebar */
+.contact-sidebar { display: flex; flex-direction: column; gap: 24px; }
+.info-card { background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: 12px; padding: 28px; }
+.info-card h4 { font-size: 1.1rem; color: var(--charcoal); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+.info-card h4 svg { width: 22px; height: 22px; fill: var(--rust); }
+.info-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 0.95rem; }
+.info-item:last-child { margin-bottom: 0; }
+.info-item svg { width: 18px; height: 18px; fill: var(--rust); flex-shrink: 0; margin-top: 3px; }
+.info-item a { color: var(--charcoal); font-weight: 600; }
+.info-item a:hover { color: var(--rust); }
+.info-item .label { font-size: 0.8rem; color: var(--slate-light); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; margin-bottom: 2px; }
+
+.hours-list { font-size: 0.95rem; }
+.hours-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--gray-200); }
+.hours-row:last-child { border-bottom: none; }
+.hours-row .day { font-weight: 600; color: var(--charcoal); }
+.hours-row .time { color: var(--slate); }
+.hours-row.emergency { color: var(--rust); font-weight: 600; }
+
+.license-badge { display: flex; align-items: center; gap: 10px; background: rgba(185,28,28,0.06); border: 1px solid rgba(185,28,28,0.15); border-radius: 8px; padding: 14px 18px; font-size: 0.9rem; font-weight: 600; color: var(--charcoal); }
+.license-badge svg { width: 20px; height: 20px; fill: var(--rust); flex-shrink: 0; }
+
+/* Service Areas */
+.service-areas { padding: 60px 0; background: var(--gray-100); }
+.service-areas h2 { text-align: center; font-size: 2rem; color: var(--charcoal); margin-bottom: 12px; }
+.service-areas > .container > p { text-align: center; color: var(--slate); margin-bottom: 36px; font-size: 1.05rem; }
+.areas-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.area-item { background: var(--white); border: 1px solid var(--gray-200); border-radius: 8px; padding: 14px 20px; font-weight: 600; color: var(--charcoal); font-size: 0.95rem; display: flex; align-items: center; gap: 8px; transition: all 0.2s; }
+.area-item:hover { border-color: var(--rust); color: var(--rust); }
+.area-item svg { width: 16px; height: 16px; fill: var(--rust); flex-shrink: 0; }
+
+/* Map Placeholder */
+.map-section { background: var(--charcoal); padding: 0; height: 300px; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.map-placeholder { text-align: center; color: rgba(255,255,255,0.5); z-index: 2; }
+.map-placeholder svg { width: 48px; height: 48px; fill: var(--rust); margin-bottom: 12px; }
+.map-placeholder p { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem; }
+.map-bg { position: absolute; inset: 0; background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-light) 100%); opacity: 0.9; }
+.map-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 20px 20px; }
+
+/* CTA */
+.cta-section { background: var(--charcoal); padding: 60px 0; text-align: center; color: white; }
+.cta-section h2 { font-size: 2.5rem; margin-bottom: 12px; }
+.cta-section p { font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 28px; max-width: 550px; margin-left: auto; margin-right: auto; }
+.cta-phone { display: inline-flex; align-items: center; gap: 10px; font-family: 'Oswald', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--amber); margin-top: 16px; }
+.cta-phone svg { width: 28px; height: 28px; fill: var(--amber); }
+.cta-phone:hover { color: var(--amber-light); }
+
+/* Footer */
+.footer { background: var(--gray-800); color: rgba(255,255,255,0.7); padding: 60px 0 0; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer h4 { font-size: 1rem; color: white; margin-bottom: 16px; letter-spacing: 0.08em; }
+.footer-about p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 16px; }
+.footer-contact-item { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 0.9rem; }
+.footer-contact-item svg { width: 16px; height: 16px; fill: var(--amber); flex-shrink: 0; }
+.footer ul li { margin-bottom: 8px; }
+.footer ul li a { font-size: 0.9rem; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+.footer ul li a:hover { color: var(--amber); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; }
+.footer-certs { display: flex; gap: 16px; align-items: center; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.4); }
+
+/* Mobile Bottom Bar */
+.mobile-bottom-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; background: var(--rust); padding: 12px 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); }
+.mobile-bottom-bar a { display: flex; align-items: center; justify-content: center; gap: 10px; color: white; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.mobile-bottom-bar svg { width: 22px; height: 22px; fill: white; }
+
+/* Animations */
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1024px) {
+  .nav { display: none; } .gaf-badge-header { display: none; } .hamburger { display: flex; }
+  .nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); gap: 4px; z-index: 999; }
+  .nav.open a { padding: 12px 16px; }
+}
+@media (max-width: 768px) {
+  .top-bar { display: none; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .form-row { grid-template-columns: 1fr; }
+  .areas-grid { grid-template-columns: 1fr 1fr; }
+  .page-hero h2 { font-size: 2.2rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .mobile-bottom-bar { display: block; }
+  body { padding-bottom: 60px; }
+  .header-phone { display: none; }
+  .form-card { padding: 28px 20px; }
+}
+@media (max-width: 480px) {
+  .page-hero h2 { font-size: 1.8rem; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .areas-grid { grid-template-columns: 1fr; }
+  .cta-phone { font-size: 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:6px;">
+      <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <strong>4.8</strong> out of 5 &mdash; <a href="#">312 Google Reviews</a>
+    </div>
+    <div>Serving Springfield &amp; Surrounding Areas &nbsp;|&nbsp; <a href="tel:+15558675309">(555) 867-5309</a></div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header" id="header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18v-2H3v2zm0-4h18v-2H3v2zM12 2L1 12h3v2h16v-2h3L12 2z"/></svg></div>
+      <div class="logo-text"><h1>Summit Roofing</h1><span>Certified Roofing Professionals</span></div>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="financing.html">Financing</a>
+      <a href="storm-damage.html">Storm Damage</a>
+      <a href="contact.html" class="nav-cta active">Free Quote</a>
+    </nav>
+    <div class="header-right">
+      <div class="gaf-badge-header">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" fill="#b91c1c"/></svg>
+        GAF Master Elite
+      </div>
+      <a href="tel:+15558675309" class="header-phone">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        (555) 867-5309
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');"></div>
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Contact Us</span></div>
+    <h2>Get Your Free Quote</h2>
+    <p>Tell us about your project. We'll provide a detailed, no-obligation estimate within 24 hours.</p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Quote Form -->
+      <div class="form-card fade-up" id="quoteForm">
+        <h3>Request a Free Estimate</h3>
+        <p>Fill out the form below and one of our roofing specialists will contact you within one business day.</p>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" placeholder="John" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="(555) 123-4567" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="john@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="address">Property Address</label>
+            <input type="text" id="address" placeholder="123 Main Street, Springfield, IL">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="serviceType">Service Needed</label>
+              <select id="serviceType">
+                <option value="">Select a service...</option>
+                <option value="replacement">Roof Replacement</option>
+                <option value="repair">Roof Repair</option>
+                <option value="storm">Storm Damage</option>
+                <option value="inspection">Roof Inspection</option>
+                <option value="commercial">Commercial Roofing</option>
+                <option value="gutters">Gutters &amp; Drainage</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="roofType">Current Roof Type</label>
+              <select id="roofType">
+                <option value="">Select type...</option>
+                <option value="asphalt">Asphalt Shingles</option>
+                <option value="metal">Metal</option>
+                <option value="tile">Tile</option>
+                <option value="flat">Flat/Low-Slope</option>
+                <option value="slate">Slate</option>
+                <option value="unsure">Not Sure</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Us About Your Project</label>
+            <textarea id="message" placeholder="Describe the work you need, any damage or concerns, preferred timeline, etc."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Submit Free Quote Request</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          <h3>Quote Request Received!</h3>
+          <p>Thank you for reaching out. A roofing specialist will contact you within one business day to discuss your project and schedule a free inspection.</p>
+        </div>
+      </div>
+
+      <!-- Contact Info Sidebar -->
+      <div class="contact-sidebar fade-up">
+        <div class="info-card">
+          <h4>
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            Contact Information
+          </h4>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <div>
+              <div class="label">Phone</div>
+              <a href="tel:+15558675309">(555) 867-5309</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <div>
+              <div class="label">Email</div>
+              <a href="mailto:info@summitroofingco.com">info@summitroofingco.com</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <div>
+              <div class="label">Office</div>
+              4521 Industrial Parkway<br>Springfield, IL 62704
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h4>
+            <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            Business Hours
+          </h4>
+          <div class="hours-list">
+            <div class="hours-row">
+              <span class="day">Monday - Friday</span>
+              <span class="time">7:00 AM - 6:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Saturday</span>
+              <span class="time">8:00 AM - 2:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Sunday</span>
+              <span class="time">Closed</span>
+            </div>
+            <div class="hours-row emergency">
+              <span class="day">Emergency / Storm</span>
+              <span class="time">24/7 Available</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="license-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          <div>
+            <div style="font-size:0.75rem;color:var(--slate-light);text-transform:uppercase;letter-spacing:0.05em;">License Number</div>
+            RCR-2001-4521
+          </div>
+        </div>
+
+        <div class="info-card" style="background: rgba(185,28,28,0.04); border-color: rgba(185,28,28,0.15);">
+          <h4 style="color: var(--rust);">
+            <svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+            Storm Damage?
+          </h4>
+          <p style="font-size: 0.95rem; color: var(--slate); margin-bottom: 16px;">Don't wait. Get a free emergency inspection and insurance claim assistance.</p>
+          <a href="storm-damage.html" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px;">Get Emergency Help</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map -->
+<div class="map-section">
+  <div class="map-bg"></div>
+  <div class="map-dots"></div>
+  <div class="map-placeholder">
+    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    <p>4521 Industrial Parkway, Springfield, IL 62704</p>
+  </div>
+</div>
+
+<!-- Service Areas -->
+<section class="service-areas">
+  <div class="container">
+    <h2>Areas We Serve</h2>
+    <p>Providing expert roofing services throughout Springfield and the surrounding communities.</p>
+    <div class="areas-grid fade-up">
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Springfield</div>
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Oak Park</div>
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Riverside</div>
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Meadowbrook</div>
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Chatham</div>
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Rochester</div>
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Sherman</div>
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Jerome</div>
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Leland Grove</div>
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Grandview</div>
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Auburn</div>
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Williamsville</div>
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Pleasant Plains</div>
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> New Berlin</div>
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Riverton</div>
+      <div class="area-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg> Pawnee</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container fade-up">
+    <h2>Prefer to Talk?</h2>
+    <p>Our roofing experts are standing by to answer your questions and schedule your free inspection.</p>
+    <a href="tel:+15558675309" class="cta-phone">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      (555) 867-5309
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <h4>Summit Roofing Co.</h4>
+        <p>Family-owned and operated since 2001. GAF Master Elite certified &mdash; a distinction held by only 2% of roofing contractors nationwide. We protect what matters most with industry-leading warranties and craftsmanship.</p>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <a href="tel:+15558675309">(555) 867-5309</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <a href="mailto:info@summitroofingco.com">info@summitroofingco.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          4521 Industrial Parkway, Springfield, IL 62704
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#replacement">Roof Replacement</a></li>
+          <li><a href="services.html#repair">Roof Repair</a></li>
+          <li><a href="storm-damage.html">Storm Damage</a></li>
+          <li><a href="services.html#commercial">Commercial Roofing</a></li>
+          <li><a href="services.html#gutters">Gutters &amp; Drainage</a></li>
+          <li><a href="financing.html">Financing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Project Gallery</a></li>
+          <li><a href="financing.html">Financing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service Areas</h4>
+        <ul>
+          <li><a href="#">Springfield</a></li>
+          <li><a href="#">Oak Park</a></li>
+          <li><a href="#">Riverside</a></li>
+          <li><a href="#">Meadowbrook</a></li>
+          <li><a href="#">Chatham</a></li>
+          <li><a href="#">Rochester</a></li>
+          <li><a href="#">Sherman</a></li>
+          <li><a href="#">Jerome</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Summit Roofing Co. All rights reserved. License #RCR-2001-4521</span>
+      <div class="footer-certs">
+        <span>GAF Master Elite</span>
+        <span>Owens Corning Preferred</span>
+        <span>BBB A+ Rated</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile Bottom Bar -->
+<div class="mobile-bottom-bar">
+  <a href="tel:+15558675309">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    Call Now &mdash; (555) 867-5309
+  </a>
+</div>
+
+<script>
+// Mobile menu
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('nav').classList.toggle('open');
+});
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Form handler
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  document.getElementById('contactForm').style.display = 'none';
+  document.querySelector('.form-card h3').style.display = 'none';
+  document.querySelector('.form-card > p').style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+  setTimeout(() => {
+    document.getElementById('contactForm').style.display = 'block';
+    document.getElementById('contactForm').reset();
+    document.querySelector('.form-card h3').style.display = 'block';
+    document.querySelector('.form-card > p').style.display = 'block';
+    document.getElementById('formSuccess').style.display = 'none';
+  }, 4000);
+});
+</script>
+</body>
+</html>

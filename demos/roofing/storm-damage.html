@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storm Damage Repair | 24/7 Emergency | Summit Roofing Co.</title>
+<meta name="description" content="Storm damage? Call Summit Roofing 24/7 for emergency roof repair. Free storm damage inspection, insurance claim assistance, and fast restoration. (555) 867-5309.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --charcoal: #1a1a2e; --charcoal-light: #252542; --rust: #b91c1c; --rust-dark: #991b1b;
+  --slate: #475569; --slate-light: #64748b; --white: #ffffff;
+  --amber: #d97706; --amber-light: #f59e0b; --gray-100: #f1f5f9; --gray-200: #e2e8f0; --gray-800: #1e293b;
+  --red-urgent: #dc2626;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Source Sans 3', system-ui, sans-serif; color: #334155; line-height: 1.6; background: var(--white); -webkit-font-smoothing: antialiased; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Oswald', sans-serif; font-weight: 700; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.02em; }
+a { text-decoration: none; color: inherit; } img { max-width: 100%; display: block; } ul { list-style: none; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.top-bar { background: var(--red-urgent); color: white; font-size: 0.85rem; padding: 8px 0; font-weight: 600; }
+.top-bar .container { display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; }
+.top-bar a { color: white; text-decoration: underline; }
+.header { background: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.header .container { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-icon { width: 44px; height: 44px; background: var(--rust); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.logo-icon svg { width: 28px; height: 28px; fill: white; }
+.logo-text h1 { font-size: 1.3rem; color: var(--charcoal); letter-spacing: 0.05em; line-height: 1; }
+.logo-text span { font-family: 'Source Sans 3', sans-serif; font-size: 0.65rem; color: var(--slate-light); text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; }
+.nav { display: flex; align-items: center; gap: 8px; }
+.nav a { font-family: 'Oswald', sans-serif; font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: var(--charcoal); padding: 8px 14px; border-radius: 4px; transition: all 0.2s; }
+.nav a:hover, .nav a.active { color: var(--rust); }
+.nav a.nav-cta { background: var(--rust); color: white; padding: 8px 18px; }
+.nav a.nav-cta:hover { background: var(--rust-dark); }
+.header-right { display: flex; align-items: center; gap: 16px; }
+.header-phone { display: flex; align-items: center; gap: 6px; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 600; color: var(--charcoal); }
+.header-phone svg { width: 18px; height: 18px; fill: var(--rust); } .header-phone:hover { color: var(--rust); }
+.gaf-badge-header { display: flex; align-items: center; gap: 6px; background: var(--gray-100); padding: 6px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; color: var(--charcoal); text-transform: uppercase; border: 1px solid var(--gray-200); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+.hamburger span { width: 24px; height: 2.5px; background: var(--charcoal); border-radius: 2px; }
+
+/* STORM HERO - High urgency */
+.storm-hero { position: relative; min-height: 80vh; display: flex; align-items: center; overflow: hidden; background: #0a0a1a; }
+.storm-hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1527482937786-6c94007b14b0?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; filter: brightness(0.25); }
+.storm-hero-content { position: relative; z-index: 2; max-width: 700px; padding: 40px 0; }
+.urgency-badge {
+  display: inline-flex; align-items: center; gap: 8px; background: var(--red-urgent); color: white; padding: 10px 20px;
+  border-radius: 4px; font-family: 'Oswald', sans-serif; font-size: 0.9rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.08em; margin-bottom: 20px; animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
+.storm-hero h2 { font-size: 3.5rem; color: white; line-height: 1.05; margin-bottom: 16px; }
+.storm-hero h2 span { color: var(--amber); }
+.storm-hero p { font-size: 1.25rem; color: rgba(255,255,255,0.85); margin-bottom: 32px; max-width: 550px; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 14px 32px; border-radius: 4px; border: none; cursor: pointer; transition: all 0.25s; }
+.btn-urgent { background: var(--red-urgent); color: white; font-size: 1.15rem; padding: 16px 40px; }
+.btn-urgent:hover { background: #b91c1c; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(220,38,38,0.5); }
+.btn-primary { background: var(--rust); color: white; }
+.btn-primary:hover { background: var(--rust-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(185,28,28,0.4); }
+.btn-amber { background: var(--amber); color: white; }
+.btn-amber:hover { background: var(--amber-light); }
+.btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
+.btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+.hero-phone { display: flex; align-items: center; gap: 8px; color: white; font-family: 'Oswald', sans-serif; font-size: 1.4rem; font-weight: 700; }
+.hero-phone svg { width: 22px; height: 22px; fill: var(--amber); }
+
+.section { padding: 80px 0; }
+.section-gray { background: var(--gray-100); }
+.section-dark { background: var(--charcoal); color: white; }
+.section-header { text-align: center; margin-bottom: 50px; }
+.section-header h2 { font-size: 2.5rem; color: var(--charcoal); margin-bottom: 12px; }
+.section-dark .section-header h2 { color: white; }
+.section-header .accent-line { width: 60px; height: 4px; background: var(--rust); margin: 0 auto 16px; }
+.section-header p { font-size: 1.1rem; color: var(--slate); max-width: 600px; margin: 0 auto; }
+.section-dark .section-header p { color: rgba(255,255,255,0.7); }
+
+/* Process Steps */
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; position: relative; }
+.process-grid::before { content: ''; position: absolute; top: 35px; left: 12.5%; right: 12.5%; height: 3px; background: var(--gray-200); z-index: 0; }
+.process-step { text-align: center; position: relative; z-index: 1; }
+.process-num {
+  width: 70px; height: 70px; background: var(--rust); color: white; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700;
+  margin: 0 auto 16px; border: 4px solid white; box-shadow: 0 4px 15px rgba(185,28,28,0.3);
+}
+.process-step h3 { font-size: 1.1rem; color: var(--charcoal); margin-bottom: 8px; }
+.process-step p { font-size: 0.9rem; color: var(--slate); }
+
+/* Insurance */
+.insurance-section { background: var(--charcoal); padding: 60px 0; color: white; text-align: center; }
+.insurance-section h2 { font-size: 2.5rem; margin-bottom: 16px; }
+.insurance-section p { font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.insurance-logos { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 30px; }
+.insurance-logo {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 4px;
+  font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.8); text-transform: uppercase;
+}
+
+/* Damage Types */
+.damage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.damage-card { background: white; border-radius: 8px; padding: 28px; border: 1px solid var(--gray-200); box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
+.damage-card-icon { width: 52px; height: 52px; background: rgba(220,38,38,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.damage-card-icon svg { width: 26px; height: 26px; fill: var(--red-urgent); }
+.damage-card h3 { font-size: 1.1rem; color: var(--charcoal); margin-bottom: 8px; }
+.damage-card p { font-size: 0.9rem; color: var(--slate); line-height: 1.7; }
+.damage-card .signs { margin-top: 12px; }
+.damage-card .signs li { font-size: 0.85rem; color: var(--slate); padding: 3px 0; display: flex; align-items: center; gap: 6px; }
+.damage-card .signs li svg { width: 14px; height: 14px; fill: var(--red-urgent); flex-shrink: 0; }
+
+/* Emergency Form */
+.form-section { background: var(--charcoal); padding: 80px 0; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.form-content { color: white; }
+.form-content h2 { font-size: 2.5rem; margin-bottom: 16px; }
+.form-content p { font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 24px; line-height: 1.7; }
+.form-benefits li { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.8); margin-bottom: 12px; font-size: 1rem; }
+.form-benefits li svg { width: 20px; height: 20px; fill: var(--amber); flex-shrink: 0; }
+.form-box {
+  background: white; border-radius: 8px; padding: 36px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+.form-box h3 { font-size: 1.3rem; color: var(--charcoal); margin-bottom: 4px; text-align: center; }
+.form-box .form-subtitle { font-size: 0.85rem; color: var(--slate-light); text-align: center; margin-bottom: 24px; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-family: 'Oswald', sans-serif; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--charcoal); margin-bottom: 6px; }
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%; padding: 12px 14px; border: 2px solid var(--gray-200); border-radius: 4px; font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem; color: #334155; transition: border-color 0.2s; background: white;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--rust); }
+.form-group textarea { height: 100px; resize: vertical; }
+.form-submit { width: 100%; padding: 16px; font-size: 1.1rem; }
+
+/* Financing callout */
+.deductible-callout {
+  background: linear-gradient(135deg, var(--amber), #b45309); padding: 40px; border-radius: 8px;
+  text-align: center; color: white; margin-top: 40px;
+}
+.deductible-callout h3 { font-size: 1.5rem; margin-bottom: 8px; }
+.deductible-callout p { font-size: 1rem; color: rgba(255,255,255,0.9); margin-bottom: 20px; }
+
+.footer { background: var(--gray-800); color: rgba(255,255,255,0.7); padding: 60px 0 0; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer h4 { font-size: 1rem; color: white; margin-bottom: 16px; letter-spacing: 0.08em; }
+.footer-about p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 16px; }
+.footer-contact-item { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 0.9rem; }
+.footer-contact-item svg { width: 16px; height: 16px; fill: var(--amber); flex-shrink: 0; }
+.footer ul li { margin-bottom: 8px; }
+.footer ul li a { font-size: 0.9rem; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+.footer ul li a:hover { color: var(--amber); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; }
+.footer-certs { display: flex; gap: 16px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.4); }
+.mobile-bottom-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; background: var(--red-urgent); padding: 14px 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.4); }
+.mobile-bottom-bar a { display: flex; align-items: center; justify-content: center; gap: 10px; color: white; font-family: 'Oswald', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; }
+.mobile-bottom-bar svg { width: 24px; height: 24px; fill: white; }
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1024px) {
+  .nav { display: none; } .gaf-badge-header { display: none; } .hamburger { display: flex; }
+  .nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); gap: 4px; }
+}
+@media (max-width: 768px) {
+  .storm-hero { min-height: 70vh; } .storm-hero h2 { font-size: 2.2rem; }
+  .process-grid { grid-template-columns: 1fr 1fr; } .process-grid::before { display: none; }
+  .form-row { grid-template-columns: 1fr; gap: 40px; }
+  .section { padding: 50px 0; } .footer-grid { grid-template-columns: 1fr 1fr; }
+  .mobile-bottom-bar { display: block; } body { padding-bottom: 60px; } .header-phone { display: none; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) { .storm-hero h2 { font-size: 1.8rem; } .footer-grid { grid-template-columns: 1fr; } .process-grid { grid-template-columns: 1fr; } .section-header h2 { font-size: 2rem; } }
+</style>
+</head>
+<body>
+
+<!-- Urgent Top Bar -->
+<div class="top-bar">
+  <div class="container">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+    STORM DAMAGE? 24/7 Emergency Line: <a href="tel:+15558675309">(555) 867-5309</a> &mdash; Free Inspections Available Now
+  </div>
+</div>
+
+<header class="header" id="header"><div class="container">
+  <a href="index.html" class="logo"><div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18v-2H3v2zm0-4h18v-2H3v2zM12 2L1 12h3v2h16v-2h3L12 2z"/></svg></div><div class="logo-text"><h1>Summit Roofing</h1><span>Certified Roofing Professionals</span></div></a>
+  <nav class="nav" id="nav"><a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="financing.html">Financing</a><a href="storm-damage.html" class="active">Storm Damage</a><a href="contact.html" class="nav-cta">Free Quote</a></nav>
+  <div class="header-right">
+    <div class="gaf-badge-header"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" fill="#b91c1c"/></svg>GAF Master Elite</div>
+    <a href="tel:+15558675309" class="header-phone"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>(555) 867-5309</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+<!-- Storm Hero -->
+<section class="storm-hero">
+  <div class="storm-hero-bg"></div>
+  <div class="container">
+    <div class="storm-hero-content fade-up">
+      <div class="urgency-badge">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+        24/7 Emergency Response
+      </div>
+      <h2>Storm Damage?<br><span>We're Here to Help.</span></h2>
+      <p>Don't wait for further damage. Our emergency response team provides free inspections, handles your insurance claim, and restores your roof fast. Available around the clock.</p>
+      <div class="hero-actions">
+        <a href="tel:+15558675309" class="btn btn-urgent">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Call Now &mdash; (555) 867-5309
+        </a>
+        <a href="#form" class="btn btn-outline">Request Free Inspection</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="accent-line"></div>
+      <h2>Our 4-Step Storm Recovery Process</h2>
+      <p>We handle everything from emergency response to final insurance payment so you can focus on your family.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step fade-up">
+        <div class="process-num">1</div>
+        <h3>Call Us 24/7</h3>
+        <p>Call our emergency line day or night. We'll dispatch a crew for same-day emergency tarping if needed.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">2</div>
+        <h3>Free Inspection</h3>
+        <p>Our certified inspector documents all damage with photos, measurements, and a detailed written report.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">3</div>
+        <h3>Insurance Claim Filed</h3>
+        <p>We prepare and submit the claim, meet with your adjuster, and negotiate to ensure full coverage.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">4</div>
+        <h3>Roof Restored</h3>
+        <p>Once approved, our certified crews install your new roof with a GAF Golden Pledge lifetime warranty.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Insurance Companies -->
+<section class="insurance-section">
+  <div class="container fade-up">
+    <h2>We Work With All Insurance Companies</h2>
+    <p>Our claims specialists have processed thousands of roofing insurance claims. We speak their language and fight for your coverage.</p>
+    <div class="insurance-logos">
+      <span class="insurance-logo">State Farm</span>
+      <span class="insurance-logo">Allstate</span>
+      <span class="insurance-logo">USAA</span>
+      <span class="insurance-logo">Liberty Mutual</span>
+      <span class="insurance-logo">Farmers</span>
+      <span class="insurance-logo">Nationwide</span>
+      <span class="insurance-logo">Progressive</span>
+      <span class="insurance-logo">American Family</span>
+      <span class="insurance-logo">Travelers</span>
+      <span class="insurance-logo">Erie Insurance</span>
+      <span class="insurance-logo">Auto-Owners</span>
+      <span class="insurance-logo">Country Financial</span>
+    </div>
+    <a href="#form" class="btn btn-amber">Start Your Claim Today</a>
+  </div>
+</section>
+
+<!-- Damage Types -->
+<section class="section section-gray">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="accent-line"></div>
+      <h2>Common Storm Damage Types</h2>
+      <p>Know the signs. Even minor damage can lead to major problems if left unrepaired.</p>
+    </div>
+    <div class="damage-grid">
+      <div class="damage-card fade-up">
+        <div class="damage-card-icon"><svg viewBox="0 0 24 24"><path d="M17.66 8L12 2.35 6.34 8A8.02 8.02 0 004 13.64c0 2 .78 4.11 2.34 5.67a7.99 7.99 0 0011.32 0c1.56-1.56 2.34-3.67 2.34-5.67S19.22 9.56 17.66 8z"/></svg></div>
+        <h3>Hail Damage</h3>
+        <p>Hail can crack, dent, and dislodge shingles, exposing your roof deck to water infiltration. Damage may not be visible from the ground.</p>
+        <ul class="signs">
+          <li><svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg> Dents in shingles or metal</li>
+          <li><svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg> Granule loss on shingles</li>
+          <li><svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg> Cracked or split shingles</li>
+          <li><svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg> Dented gutters and downspouts</li>
+        </ul>
+      </div>
+      <div class="damage-card fade-up">
+        <div class="damage-card-icon"><svg viewBox="0 0 24 24"><path d="M14.5 17c0 1.65-1.35 3-3 3s-3-1.35-3-3h2c0 .55.45 1 1 1s1-.45 1-1-.45-1-1-1H2v-2h9.5c1.65 0 3 1.35 3 3zM19 6.5C19 4.57 17.43 3 15.5 3S12 4.57 12 6.5h2c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5S16.33 8 15.5 8H2v2h13.5c1.93 0 3.5-1.57 3.5-3.5zm-2.5 6c-1.93 0-3.5 1.57-3.5 3.5h2c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5H2v2h14.5c1.93 0 3.5-1.57 3.5-3.5s-1.57-3.5-3.5-3.5z"/></svg></div>
+        <h3>Wind Damage</h3>
+        <p>High winds can lift, tear, and blow off shingles, especially at edges, ridges, and transitions. Even 50 mph gusts can cause significant damage.</p>
+        <ul class="signs">
+          <li><svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg> Missing or lifted shingles</li>
+          <li><svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg> Exposed underlayment or deck</li>
+          <li><svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg> Damaged ridge caps</li>
+          <li><svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg> Debris on roof surface</li>
+        </ul>
+      </div>
+      <div class="damage-card fade-up">
+        <div class="damage-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg></div>
+        <h3>Fallen Trees &amp; Debris</h3>
+        <p>Falling branches and trees can cause catastrophic roof damage requiring immediate structural assessment and emergency repairs.</p>
+        <ul class="signs">
+          <li><svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg> Visible structural damage</li>
+          <li><svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg> Punctured or collapsed areas</li>
+          <li><svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg> Interior water intrusion</li>
+          <li><svg viewBox="0 0 24 24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg> Sagging roofline</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Emergency Form -->
+<section class="form-section" id="form">
+  <div class="container">
+    <div class="form-row">
+      <div class="form-content fade-up">
+        <h2>Free Storm Damage Assessment</h2>
+        <p>Request your free inspection and we'll have a certified inspector at your property within 24 hours. We document all damage for your insurance claim at no cost to you.</p>
+        <ul class="form-benefits">
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> 100% free inspection &mdash; no obligation</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Response within 24 hours</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Detailed photo documentation</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Full insurance claim assistance</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Deductible financing available</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> GAF Golden Pledge lifetime warranty</li>
+        </ul>
+        <div class="deductible-callout">
+          <h3>Can't Afford Your Deductible?</h3>
+          <p>We offer 0% financing on insurance deductibles so you pay nothing out of pocket today.</p>
+          <a href="financing.html" class="btn btn-outline">Learn About Financing</a>
+        </div>
+      </div>
+      <div class="form-box fade-up">
+        <h3>Request Emergency Inspection</h3>
+        <p class="form-subtitle">We'll respond within 24 hours &mdash; usually same day</p>
+        <form onsubmit="event.preventDefault(); alert('Thank you! Our emergency team will contact you shortly.');">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" placeholder="Full name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" placeholder="(555) 000-0000" required>
+          </div>
+          <div class="form-group">
+            <label>Property Address *</label>
+            <input type="text" placeholder="Street address, city" required>
+          </div>
+          <div class="form-group">
+            <label>Describe the Damage</label>
+            <textarea placeholder="What type of damage have you noticed? (leaks, missing shingles, fallen tree, etc.)"></textarea>
+          </div>
+          <button type="submit" class="btn btn-urgent form-submit">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+            Request Free Inspection
+          </button>
+        </form>
+        <p style="font-size: 0.75rem; color: var(--slate-light); margin-top: 12px; text-align: center;">Or call directly: <a href="tel:+15558675309" style="color: var(--rust); font-weight: 600;">(555) 867-5309</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-about"><h4>Summit Roofing Co.</h4><p>Family-owned and operated since 2001. GAF Master Elite certified &mdash; a distinction held by only 2% of roofing contractors nationwide.</p>
+      <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+15558675309">(555) 867-5309</a></div>
+      <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:info@summitroofingco.com">info@summitroofingco.com</a></div>
+    </div>
+    <div><h4>Services</h4><ul><li><a href="services.html#replacement">Roof Replacement</a></li><li><a href="services.html#repair">Roof Repair</a></li><li><a href="storm-damage.html">Storm Damage</a></li><li><a href="services.html#commercial">Commercial</a></li><li><a href="services.html#gutters">Gutters</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="financing.html">Financing</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Service Areas</h4><ul><li><a href="#">Springfield</a></li><li><a href="#">Oak Park</a></li><li><a href="#">Riverside</a></li><li><a href="#">Meadowbrook</a></li><li><a href="#">Chatham</a></li><li><a href="#">Rochester</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; 2026 Summit Roofing Co. All rights reserved. License #RCR-2001-4521</span><div class="footer-certs"><span>GAF Master Elite</span><span>Owens Corning Preferred</span><span>BBB A+ Rated</span></div></div>
+</div></footer>
+
+<div class="mobile-bottom-bar"><a href="tel:+15558675309"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Emergency: (555) 867-5309</a></div>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function() { document.getElementById('nav').classList.toggle('open'); });
+const fadeEls = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+fadeEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

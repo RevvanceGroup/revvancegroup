@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revvance Group | Websites That Make Your Phone Ring</title>
+    <meta name="description" content="Revvance Group builds high-converting websites for local businesses. We handle everything — you just answer the phone when it rings. See live demos of our work.">
+    <meta property="og:title" content="Revvance Group | Websites That Make Your Phone Ring">
+    <meta property="og:description" content="Done-for-you websites that generate leads. Built for plumbers, roofers, landscapers, restaurants, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://revvancegroup.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-elevated: #1a1a26;
+            --border: #2a2a3a;
+            --accent: #4f6ef7;
+            --accent-hover: #3b5bdb;
+            --accent-glow: rgba(79, 110, 247, 0.15);
+            --green: #22c55e;
+            --orange: #f59e0b;
+            --text: #f0f0f5;
+            --text-muted: #8888a0;
+            --text-dim: #55556a;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+        /* ===== NAV ===== */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 16px 0;
+            transition: all 0.3s;
+        }
+        nav.scrolled {
+            background: rgba(10, 10, 15, 0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 10px 0;
+        }
+        .nav-inner {
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+            font-size: 1.3rem; font-weight: 800; letter-spacing: -0.5px;
+        }
+        .nav-logo span { color: var(--accent); }
+        .nav-links {
+            display: flex; align-items: center; gap: 32px; list-style: none;
+        }
+        .nav-links a {
+            font-size: 0.9rem; font-weight: 500; color: var(--text-muted);
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text); }
+        .nav-cta-btn {
+            background: var(--accent); color: white !important; padding: 10px 22px;
+            border-radius: 8px; font-weight: 600; font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        .nav-cta-btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
+        .nav-email {
+            font-size: 0.85rem; color: var(--text-muted);
+        }
+        .hamburger {
+            display: none; background: none; border: none; cursor: pointer; padding: 8px;
+            flex-direction: column; gap: 5px;
+        }
+        .hamburger span {
+            width: 22px; height: 2px; background: var(--text); border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            padding: 120px 0 80px; position: relative;
+        }
+        .hero-glow {
+            position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+            width: 800px; height: 600px;
+            background: radial-gradient(ellipse, rgba(79,110,247,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-content { position: relative; z-index: 2; max-width: 720px; }
+        .hero-label {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--accent-glow); border: 1px solid rgba(79,110,247,0.2);
+            color: var(--accent); padding: 6px 16px; border-radius: 50px;
+            font-size: 0.82rem; font-weight: 600; margin-bottom: 28px;
+        }
+        .hero-label .dot {
+            width: 6px; height: 6px; background: var(--green); border-radius: 50%;
+            animation: pulse 2s ease infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
+        }
+        .hero h1 {
+            font-size: clamp(2.8rem, 5.5vw, 4.2rem); font-weight: 900;
+            line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 24px;
+        }
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--accent), #818cf8);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-sub {
+            font-size: 1.2rem; color: var(--text-muted); line-height: 1.7;
+            margin-bottom: 40px; max-width: 560px;
+        }
+        .hero-ctas { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--accent); color: white; padding: 16px 32px;
+            border-radius: 10px; font-weight: 700; font-size: 1rem;
+            transition: all 0.25s; border: none; cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: var(--accent-hover); transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(79,110,247,0.3);
+        }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--text); padding: 16px 28px; border-radius: 10px;
+            font-weight: 600; font-size: 1rem; border: 1px solid var(--border);
+            transition: all 0.25s;
+        }
+        .btn-secondary:hover { border-color: var(--accent); background: var(--accent-glow); }
+        .btn-arrow { transition: transform 0.2s; }
+        .btn-primary:hover .btn-arrow, .btn-secondary:hover .btn-arrow { transform: translateX(4px); }
+
+        .hero-proof {
+            margin-top: 56px; display: flex; align-items: center; gap: 32px;
+            padding-top: 32px; border-top: 1px solid var(--border);
+        }
+        .proof-item { display: flex; flex-direction: column; }
+        .proof-number { font-size: 1.8rem; font-weight: 800; color: var(--text); letter-spacing: -1px; }
+        .proof-label { font-size: 0.8rem; color: var(--text-dim); font-weight: 500; }
+
+        /* ===== PROBLEM SECTION (PAS) ===== */
+        .problem {
+            padding: 100px 0; border-top: 1px solid var(--border);
+        }
+        .problem-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+        .section-label {
+            font-size: 0.78rem; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+        }
+        .problem-header h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
+            letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.15;
+        }
+        .problem-header p { font-size: 1.1rem; color: var(--text-muted); }
+        .pain-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+        }
+        .pain-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 14px; padding: 32px 28px;
+            transition: all 0.3s;
+        }
+        .pain-card:hover { border-color: rgba(245,158,11,0.3); transform: translateY(-4px); }
+        .pain-card h3 {
+            font-size: 1.1rem; font-weight: 700; margin-bottom: 10px;
+        }
+        .pain-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.65; }
+
+        /* ===== SOLUTION (What We Do) ===== */
+        .solution {
+            padding: 100px 0; background: var(--bg-card);
+            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+        }
+        .solution-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+        .solution-header h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
+            letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.15;
+        }
+        .solution-header p { font-size: 1.1rem; color: var(--text-muted); }
+        .solution-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+        }
+        .sol-card {
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: 14px; padding: 36px 32px;
+            transition: all 0.3s; position: relative; overflow: hidden;
+        }
+        .sol-card:hover { border-color: rgba(79,110,247,0.3); }
+        .sol-card::after {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: var(--accent); transform: scaleX(0); transition: transform 0.3s;
+            transform-origin: left;
+        }
+        .sol-card:hover::after { transform: scaleX(1); }
+        .sol-badge {
+            display: inline-block; font-size: 0.7rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1.5px; padding: 4px 10px;
+            border-radius: 4px; margin-bottom: 16px;
+        }
+        .sol-badge.core { background: rgba(79,110,247,0.12); color: var(--accent); }
+        .sol-badge.coming { background: rgba(245,158,11,0.12); color: var(--orange); }
+        .sol-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; }
+        .sol-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 16px; }
+        .sol-features {
+            list-style: none; display: flex; flex-direction: column; gap: 8px;
+        }
+        .sol-features li {
+            font-size: 0.88rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px;
+        }
+        .sol-features li .check { color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+        /* ===== PORTFOLIO ===== */
+        .portfolio { padding: 100px 0; }
+        .portfolio-header { text-align: center; max-width: 650px; margin: 0 auto 60px; }
+        .portfolio-header h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
+            letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.15;
+        }
+        .portfolio-header p { font-size: 1.1rem; color: var(--text-muted); }
+        .portfolio-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+        }
+        .port-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; overflow: hidden; transition: all 0.35s;
+            display: block;
+        }
+        .port-card:hover { transform: translateY(-6px); border-color: rgba(79,110,247,0.3); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        .port-preview {
+            height: 220px; position: relative; overflow: hidden;
+        }
+        .port-img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .port-card:hover .port-img { transform: scale(1.05); }
+        .port-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(10,10,15,0.95) 0%, rgba(10,10,15,0.2) 60%);
+            display: flex; align-items: flex-end; padding: 20px;
+        }
+        .port-industry {
+            font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1.5px; padding: 5px 12px; border-radius: 4px;
+        }
+        .port-industry.plumbing { background: rgba(59,130,246,0.2); color: #60a5fa; }
+        .port-industry.roofing { background: rgba(239,68,68,0.2); color: #f87171; }
+        .port-industry.landscaping { background: rgba(34,197,94,0.2); color: #4ade80; }
+        .port-industry.restaurant { background: rgba(245,158,11,0.2); color: #fbbf24; }
+        .port-body { padding: 24px; }
+        .port-body h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+        .port-body p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+        .port-stats {
+            display: flex; gap: 20px; padding-top: 16px; border-top: 1px solid var(--border);
+            margin-bottom: 16px;
+        }
+        .port-stat { display: flex; flex-direction: column; }
+        .port-stat-val { font-size: 1.1rem; font-weight: 800; color: var(--green); }
+        .port-stat-label { font-size: 0.72rem; color: var(--text-dim); font-weight: 500; }
+        .port-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: var(--accent); font-weight: 600; font-size: 0.9rem;
+        }
+        .port-link svg { transition: transform 0.2s; }
+        .port-card:hover .port-link svg { transform: translateX(5px); }
+
+        /* ===== PROCESS ===== */
+        .process {
+            padding: 100px 0; background: var(--bg-card);
+            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+        }
+        .process-header { text-align: center; max-width: 550px; margin: 0 auto 60px; }
+        .process-header h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
+            letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.15;
+        }
+        .process-header p { font-size: 1.1rem; color: var(--text-muted); }
+        .process-steps {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+        }
+        .step {
+            text-align: center; padding: 32px 20px;
+            background: var(--bg); border: 1px solid var(--border); border-radius: 14px;
+            transition: all 0.3s; position: relative;
+        }
+        .step:hover { border-color: rgba(79,110,247,0.3); transform: translateY(-4px); }
+        .step-num {
+            width: 48px; height: 48px; border-radius: 12px;
+            background: var(--accent-glow); border: 1px solid rgba(79,110,247,0.2);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; font-weight: 800; color: var(--accent);
+            margin: 0 auto 20px;
+        }
+        .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+        .step p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+        .step-connector {
+            display: none;
+        }
+
+        /* ===== OBJECTIONS ===== */
+        .objections { padding: 100px 0; }
+        .objections-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
+        .objections-header h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
+            letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.15;
+        }
+        .obj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .obj-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 14px; padding: 32px 28px; transition: all 0.3s;
+        }
+        .obj-card:hover { border-color: rgba(34,197,94,0.3); }
+        .obj-q {
+            font-size: 1.05rem; font-weight: 700; margin-bottom: 12px;
+            color: var(--orange); display: flex; align-items: flex-start; gap: 10px;
+        }
+        .obj-a { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            padding: 100px 0; background: var(--bg-card);
+            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+        }
+        .test-header { text-align: center; max-width: 500px; margin: 0 auto 60px; }
+        .test-header h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
+            letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.15;
+        }
+        .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .test-card {
+            background: var(--bg); border: 1px solid var(--border);
+            border-radius: 14px; padding: 32px 28px;
+        }
+        .test-stars { color: var(--orange); font-size: 1rem; letter-spacing: 2px; margin-bottom: 16px; }
+        .test-card blockquote {
+            font-size: 0.95rem; color: var(--text-muted); line-height: 1.7;
+            margin-bottom: 20px; font-style: italic;
+        }
+        .test-author { font-size: 0.9rem; font-weight: 700; color: var(--text); }
+        .test-role { font-size: 0.8rem; color: var(--text-dim); }
+
+        /* ===== CTA ===== */
+        .final-cta { padding: 120px 0; text-align: center; position: relative; }
+        .final-cta-glow {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 600px; height: 400px;
+            background: radial-gradient(ellipse, rgba(79,110,247,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .final-cta-content { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
+        .final-cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem); font-weight: 900;
+            letter-spacing: -1px; margin-bottom: 16px; line-height: 1.1;
+        }
+        .final-cta p {
+            font-size: 1.1rem; color: var(--text-muted); margin-bottom: 36px;
+        }
+        .final-cta .btn-primary { font-size: 1.1rem; padding: 18px 40px; }
+        .final-cta-sub {
+            margin-top: 20px; font-size: 0.85rem; color: var(--text-dim);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            border-top: 1px solid var(--border); padding: 48px 0;
+        }
+        .footer-inner {
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 20px;
+        }
+        .footer-brand { font-size: 1.1rem; font-weight: 700; }
+        .footer-brand span { color: var(--accent); }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { font-size: 0.85rem; color: var(--text-muted); transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text); }
+        .footer-copy { font-size: 0.8rem; color: var(--text-dim); width: 100%; text-align: center; margin-top: 20px; }
+
+        /* ===== MOBILE BOTTOM BAR ===== */
+        .mobile-bar {
+            display: none; position: fixed; bottom: 0; left: 0; right: 0;
+            z-index: 9999; background: var(--accent); padding: 14px 24px;
+            box-shadow: 0 -4px 30px rgba(0,0,0,0.4);
+        }
+        .mobile-bar a {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            color: white; font-weight: 700; font-size: 1rem;
+        }
+        .mobile-bar svg { width: 20px; height: 20px; fill: white; }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-up { opacity: 0; transform: translateY(24px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .nav-links { display: none; }
+            .nav-email { display: none; }
+            .hamburger { display: flex; }
+            .nav-links.open {
+                display: flex; flex-direction: column; position: absolute;
+                top: 100%; left: 0; right: 0; background: var(--bg-card);
+                border-bottom: 1px solid var(--border); padding: 24px;
+                gap: 8px;
+            }
+            .nav-links.open a { padding: 12px 16px; }
+        }
+        @media (max-width: 768px) {
+            .hero-proof { flex-wrap: wrap; gap: 20px; }
+            .pain-grid { grid-template-columns: 1fr; }
+            .solution-grid { grid-template-columns: 1fr; }
+            .portfolio-grid { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
+            .process-steps { grid-template-columns: 1fr 1fr; }
+            .obj-grid { grid-template-columns: 1fr; }
+            .test-grid { grid-template-columns: 1fr; }
+            .mobile-bar { display: block; }
+            body { padding-bottom: 56px; }
+            .hero { padding-top: 100px; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero-ctas { flex-direction: column; align-items: stretch; }
+            .btn-primary, .btn-secondary { justify-content: center; }
+            .process-steps { grid-template-columns: 1fr; }
+            .footer-links { flex-wrap: wrap; gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <div class="nav-logo">Revvance<span>Group</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#work">Our Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact" class="nav-cta-btn">See What We'd Build For You</a></li>
+    </ul>
+    <span class="nav-email">info@revvancegroup.com</span>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-label fade-up"><span class="dot"></span> Now Accepting New Clients</div>
+      <h1 class="fade-up delay-1">We Build Websites That <span class="highlight">Make Your Phone Ring</span></h1>
+      <p class="hero-sub fade-up delay-2">Your competitors are getting the calls you should be getting. We build done-for-you websites that put your business on page one and turn visitors into paying customers. You just answer the phone.</p>
+      <div class="hero-ctas fade-up delay-3">
+        <a href="#contact" class="btn-primary">
+          See What We'd Build For You
+          <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#work" class="btn-secondary">
+          View Live Demos
+          <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-proof fade-up">
+        <div class="proof-item">
+          <span class="proof-number">48 Hrs</span>
+          <span class="proof-label">Avg. Delivery</span>
+        </div>
+        <div class="proof-item">
+          <span class="proof-number">5&ndash;7</span>
+          <span class="proof-label">Pages Per Site</span>
+        </div>
+        <div class="proof-item">
+          <span class="proof-number">Mobile</span>
+          <span class="proof-label">First Design</span>
+        </div>
+        <div class="proof-item">
+          <span class="proof-number">SEO</span>
+          <span class="proof-label">Built In</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Problem Section (PAS: Problem + Agitate) -->
+<section class="problem" id="problem">
+  <div class="container">
+    <div class="problem-header fade-up">
+      <div class="section-label">The Problem</div>
+      <h2>Every Day Without a Real Website, You're Losing Jobs</h2>
+      <p>Your competitors aren't better at what you do. They just show up first online.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card fade-up">
+        <h3>"I Get All My Work From Referrals"</h3>
+        <p>Even your referrals Google you before they call. If they find a dated site or nothing at all, they move on to the next guy who looks established.</p>
+      </div>
+      <div class="pain-card fade-up delay-1">
+        <h3>"I Already Have a Facebook Page"</h3>
+        <p>Facebook shows your competitor's ads right next to your page. A website is yours &mdash; no algorithm changes, no competing ads, and it actually ranks on Google.</p>
+      </div>
+      <div class="pain-card fade-up delay-2">
+        <h3>"I Don't Have Time For This"</h3>
+        <p>That's the whole point. We handle everything &mdash; design, copy, SEO, hosting. You don't touch a thing. Your only job is to answer the phone when it rings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Solution (What We Do) -->
+<section class="solution" id="services">
+  <div class="container">
+    <div class="solution-header fade-up">
+      <div class="section-label">Services</div>
+      <h2>Everything You Need to Dominate Online</h2>
+      <p>We don't just build a website and disappear. We build a lead generation system for your business.</p>
+    </div>
+    <div class="solution-grid">
+      <div class="sol-card fade-up">
+        <span class="sol-badge core">Core Service</span>
+        <h3>Lead-Generating Websites</h3>
+        <p>Custom-designed, mobile-first websites built to convert visitors into calls and form submissions. Not a template &mdash; built for your brand, your market, your customers.</p>
+        <ul class="sol-features">
+          <li><span class="check">&#10003;</span> Custom design tailored to your industry</li>
+          <li><span class="check">&#10003;</span> Mobile-first responsive on all devices</li>
+          <li><span class="check">&#10003;</span> Click-to-call &amp; sticky call bars</li>
+          <li><span class="check">&#10003;</span> Conversion-optimized contact forms</li>
+          <li><span class="check">&#10003;</span> Google review integration</li>
+          <li><span class="check">&#10003;</span> Schema markup for rich search results</li>
+          <li><span class="check">&#10003;</span> Fast loading &mdash; under 3 seconds</li>
+        </ul>
+      </div>
+      <div class="sol-card fade-up delay-1">
+        <span class="sol-badge core">Core Service</span>
+        <h3>Search Engine Optimization</h3>
+        <p>Get found when people search for what you do in your area. We handle the technical SEO, local listings, and content strategy so you rank above your competition.</p>
+        <ul class="sol-features">
+          <li><span class="check">&#10003;</span> Local SEO &amp; Google Business optimization</li>
+          <li><span class="check">&#10003;</span> Keyword research for your service area</li>
+          <li><span class="check">&#10003;</span> On-page optimization &amp; meta tags</li>
+          <li><span class="check">&#10003;</span> Service area pages for each city you serve</li>
+          <li><span class="check">&#10003;</span> Schema.org structured data</li>
+          <li><span class="check">&#10003;</span> Monthly performance reports</li>
+        </ul>
+      </div>
+      <div class="sol-card fade-up">
+        <span class="sol-badge coming">Coming Soon</span>
+        <h3>Google Ads Management</h3>
+        <p>Paid search campaigns that put you at the top immediately. We manage the ads, you get the calls. Coming soon as an add-on to any website package.</p>
+        <ul class="sol-features">
+          <li><span class="check">&#10003;</span> Google Ads setup &amp; management</li>
+          <li><span class="check">&#10003;</span> Local service ads</li>
+          <li><span class="check">&#10003;</span> Call tracking &amp; reporting</li>
+          <li><span class="check">&#10003;</span> ROI-focused campaign optimization</li>
+        </ul>
+      </div>
+      <div class="sol-card fade-up delay-1">
+        <span class="sol-badge coming">Coming Soon</span>
+        <h3>Reputation Management</h3>
+        <p>Automate review requests, monitor your online reputation, and turn happy customers into 5-star reviews that bring in more business.</p>
+        <ul class="sol-features">
+          <li><span class="check">&#10003;</span> Automated review request system</li>
+          <li><span class="check">&#10003;</span> Review monitoring &amp; alerts</li>
+          <li><span class="check">&#10003;</span> Response management</li>
+          <li><span class="check">&#10003;</span> Review widget for your website</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio -->
+<section class="portfolio" id="work">
+  <div class="container">
+    <div class="portfolio-header fade-up">
+      <div class="section-label">Live Demos</div>
+      <h2>See What We'd Build For You</h2>
+      <p>These aren't mockups. Click through to explore fully built, multi-page websites with real images, SEO, and conversion features.</p>
+    </div>
+    <div class="portfolio-grid">
+      <a href="demos/plumbing/index.html" class="port-card fade-up" target="_blank">
+        <div class="port-preview">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Plumbing website demo" class="port-img">
+          <div class="port-overlay">
+            <span class="port-industry plumbing">Plumbing &amp; HVAC</span>
+          </div>
+        </div>
+        <div class="port-body">
+          <h3>Elite Plumbing &amp; HVAC</h3>
+          <p>5-page site with emergency CTAs, sticky call bar, Google reviews in header, and individual service pages optimized for local search.</p>
+          <div class="port-stats">
+            <div class="port-stat"><span class="port-stat-val">5</span><span class="port-stat-label">Pages</span></div>
+            <div class="port-stat"><span class="port-stat-val">6</span><span class="port-stat-label">Services</span></div>
+            <div class="port-stat"><span class="port-stat-val">10+</span><span class="port-stat-label">Reviews</span></div>
+          </div>
+          <span class="port-link">
+            Explore Live Demo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="demos/roofing/index.html" class="port-card fade-up delay-1" target="_blank">
+        <div class="port-preview">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80" alt="Roofing website demo" class="port-img">
+          <div class="port-overlay">
+            <span class="port-industry roofing">Roofing</span>
+          </div>
+        </div>
+        <div class="port-body">
+          <h3>Summit Roofing Co.</h3>
+          <p>7-page site with GAF certification badges, storm damage landing page, before/after gallery, and financing at $89/mo messaging.</p>
+          <div class="port-stats">
+            <div class="port-stat"><span class="port-stat-val">7</span><span class="port-stat-label">Pages</span></div>
+            <div class="port-stat"><span class="port-stat-val">16</span><span class="port-stat-label">Service Areas</span></div>
+            <div class="port-stat"><span class="port-stat-val">$89/mo</span><span class="port-stat-label">Financing CTA</span></div>
+          </div>
+          <span class="port-link">
+            Explore Live Demo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="demos/landscaping/index.html" class="port-card fade-up" target="_blank">
+        <div class="port-preview">
+          <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=800&q=80" alt="Landscaping website demo" class="port-img">
+          <div class="port-overlay">
+            <span class="port-industry landscaping">Landscaping</span>
+          </div>
+        </div>
+        <div class="port-body">
+          <h3>GreenScape Landscaping</h3>
+          <p>5-page site with before/after portfolio, three-tier service packages, 5-step design process, and seasonal content sections.</p>
+          <div class="port-stats">
+            <div class="port-stat"><span class="port-stat-val">5</span><span class="port-stat-label">Pages</span></div>
+            <div class="port-stat"><span class="port-stat-val">3</span><span class="port-stat-label">Pricing Tiers</span></div>
+            <div class="port-stat"><span class="port-stat-val">8+</span><span class="port-stat-label">Projects</span></div>
+          </div>
+          <span class="port-link">
+            Explore Live Demo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a href="demos/restaurant/index.html" class="port-card fade-up delay-1" target="_blank">
+        <div class="port-preview">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Restaurant website demo" class="port-img">
+          <div class="port-overlay">
+            <span class="port-industry restaurant">Restaurant</span>
+          </div>
+        </div>
+        <div class="port-body">
+          <h3>The Rustic Table</h3>
+          <p>5-page site with full HTML menu, food photography, chef's story, event booking, and reservation widget &mdash; no PDFs.</p>
+          <div class="port-stats">
+            <div class="port-stat"><span class="port-stat-val">5</span><span class="port-stat-label">Pages</span></div>
+            <div class="port-stat"><span class="port-stat-val">20+</span><span class="port-stat-label">Menu Items</span></div>
+            <div class="port-stat"><span class="port-stat-val">HTML</span><span class="port-stat-label">Menu (Not PDF)</span></div>
+          </div>
+          <span class="port-link">
+            Explore Live Demo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process-header fade-up">
+      <div class="section-label">How It Works</div>
+      <h2>Your Site Live in 48 Hours</h2>
+      <p>No tech jargon. No homework for you. We handle everything.</p>
+    </div>
+    <div class="process-steps">
+      <div class="step fade-up">
+        <div class="step-num">1</div>
+        <h3>Discovery Call</h3>
+        <p>15-minute call. We learn about your business, services, and what makes you different. That's it.</p>
+      </div>
+      <div class="step fade-up delay-1">
+        <div class="step-num">2</div>
+        <h3>We Build It</h3>
+        <p>Our team designs and builds your entire website. You don't touch a thing. We write the copy, source the images, everything.</p>
+      </div>
+      <div class="step fade-up delay-2">
+        <div class="step-num">3</div>
+        <h3>You Review</h3>
+        <p>We show you the finished site. Request any changes &mdash; we revise until you love it. Unlimited revisions.</p>
+      </div>
+      <div class="step fade-up delay-3">
+        <div class="step-num">4</div>
+        <h3>Go Live</h3>
+        <p>We launch your site, set up SEO, connect Google Business, and your phone starts ringing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Objections -->
+<section class="objections">
+  <div class="container">
+    <div class="objections-header fade-up">
+      <div class="section-label">Straight Talk</div>
+      <h2>Questions We Get From Business Owners Like You</h2>
+    </div>
+    <div class="obj-grid">
+      <div class="obj-card fade-up">
+        <div class="obj-q">"I already have a website but it doesn't do anything."</div>
+        <p class="obj-a">Most business websites were built to look nice, not to generate leads. We build sites with one purpose: make your phone ring. Click-to-call buttons, optimized contact forms, local SEO, trust signals &mdash; every element exists to turn a visitor into a customer.</p>
+      </div>
+      <div class="obj-card fade-up delay-1">
+        <div class="obj-q">"Websites are too expensive."</div>
+        <p class="obj-a">A single new job from your website can cover the entire cost. We also offer monthly plans so there's no large upfront commitment.</p>
+      </div>
+      <div class="obj-card fade-up">
+        <div class="obj-q">"I'm not tech-savvy at all."</div>
+        <p class="obj-a">You don't need to be. We handle 100% of the technical work &mdash; design, copy, hosting, domain, SEO, updates. You never log into anything. Your only job is answering the phone when new customers call.</p>
+      </div>
+      <div class="obj-card fade-up delay-1">
+        <div class="obj-q">"How long until I see results?"</div>
+        <p class="obj-a">Your site goes live within 48 hours. Calls from the site can start immediately. SEO results typically begin showing within 60&ndash;90 days as Google indexes and ranks your pages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <div class="test-header fade-up">
+      <div class="section-label">Client Results</div>
+      <h2>Don't Take Our Word For It</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card fade-up">
+        <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"They built the whole thing in two days. I didn't have to do anything except send over my logo and answer a few questions. Site looks better than companies that have been around twice as long as me."</blockquote>
+        <div class="test-author">Mike D.</div>
+        <div class="test-role">Owner, Local Plumbing Company</div>
+      </div>
+      <div class="test-card fade-up delay-1">
+        <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"I told them I don't know anything about websites and don't want to deal with it. They said 'perfect.' Two days later I had a site that made my competitors look amateur. Haven't touched it since."</blockquote>
+        <div class="test-author">Sarah K.</div>
+        <div class="test-role">Owner, Landscaping Business</div>
+      </div>
+      <div class="test-card fade-up delay-2">
+        <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"The storm damage page alone has brought in more leads than everything else combined. They understand what actually drives business, not just what looks pretty."</blockquote>
+        <div class="test-author">James R.</div>
+        <div class="test-role">Owner, Roofing Company</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta" id="contact">
+  <div class="final-cta-glow"></div>
+  <div class="final-cta-content">
+    <div class="section-label fade-up">Let's Go</div>
+    <h2 class="fade-up delay-1">Ready to Stop Losing Customers to Your Competitors?</h2>
+    <p class="fade-up delay-2">Tell us about your business and we'll show you exactly what we'd build. No commitment, no pressure &mdash; just a free preview of your future website.</p>
+    <a href="mailto:info@revvancegroup.com?subject=I'm interested in a website&body=Hi Revvance Group,%0A%0AI'm interested in getting a website built for my business.%0A%0ABusiness name:%0AIndustry:%0APhone number:%0A%0AThanks!" class="btn-primary fade-up delay-3" style="font-size: 1.1rem; padding: 18px 40px;">
+      See What We'd Build For You
+      <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <p class="final-cta-sub fade-up">or email us directly at <a href="mailto:info@revvancegroup.com" style="color: var(--accent); font-weight: 600;">info@revvancegroup.com</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">Revvance<span>Group</span></div>
+      <div class="footer-links">
+        <a href="#work">Our Work</a>
+        <a href="#services">Services</a>
+        <a href="#process">How It Works</a>
+        <a href="#reviews">Reviews</a>
+        <a href="mailto:info@revvancegroup.com">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Revvance Group LLC. All rights reserved. &nbsp;|&nbsp; <a href="mailto:info@revvancegroup.com" style="color: var(--text-dim);">info@revvancegroup.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile Bottom Bar -->
+<div class="mobile-bar">
+  <a href="mailto:info@revvancegroup.com?subject=I'm interested in a website">
+    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    Get Your Free Website Preview
+  </a>
+</div>
+
+<script>
+// Nav scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+// Mobile menu
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+// Scroll animations
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    const t = document.querySelector(this.getAttribute('href'));
+    if (t) {
+      const offset = navbar.offsetHeight + 20;
+      window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
+    }
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>

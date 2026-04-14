@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roofing Financing | $89/mo | Summit Roofing Co.</title>
+<meta name="description" content="Affordable roofing financing starting at $89/month. 0% APR for 18 months, no money down, quick approval. Insurance claim assistance available.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --charcoal: #1a1a2e; --charcoal-light: #252542; --rust: #b91c1c; --rust-dark: #991b1b;
+  --slate: #475569; --slate-light: #64748b; --white: #ffffff; --off-white: #f8fafc;
+  --amber: #d97706; --amber-light: #f59e0b; --gray-100: #f1f5f9; --gray-200: #e2e8f0; --gray-800: #1e293b;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Source Sans 3', system-ui, sans-serif; color: #334155; line-height: 1.6; background: var(--white); -webkit-font-smoothing: antialiased; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Oswald', sans-serif; font-weight: 700; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.02em; }
+a { text-decoration: none; color: inherit; } img { max-width: 100%; display: block; } ul { list-style: none; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.top-bar { background: var(--charcoal); color: rgba(255,255,255,0.8); font-size: 0.85rem; padding: 6px 0; }
+.top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.top-bar a { color: var(--amber); } .top-bar .stars { color: var(--amber); }
+.header { background: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.header .container { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-icon { width: 44px; height: 44px; background: var(--rust); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.logo-icon svg { width: 28px; height: 28px; fill: white; }
+.logo-text h1 { font-size: 1.3rem; color: var(--charcoal); letter-spacing: 0.05em; line-height: 1; }
+.logo-text span { font-family: 'Source Sans 3', sans-serif; font-size: 0.65rem; color: var(--slate-light); text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; }
+.nav { display: flex; align-items: center; gap: 8px; }
+.nav a { font-family: 'Oswald', sans-serif; font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: var(--charcoal); padding: 8px 14px; border-radius: 4px; transition: all 0.2s; }
+.nav a:hover, .nav a.active { color: var(--rust); }
+.nav a.nav-cta { background: var(--rust); color: white; padding: 8px 18px; }
+.nav a.nav-cta:hover { background: var(--rust-dark); }
+.header-right { display: flex; align-items: center; gap: 16px; }
+.header-phone { display: flex; align-items: center; gap: 6px; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 600; color: var(--charcoal); }
+.header-phone svg { width: 18px; height: 18px; fill: var(--rust); }
+.header-phone:hover { color: var(--rust); }
+.gaf-badge-header { display: flex; align-items: center; gap: 6px; background: var(--gray-100); padding: 6px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; color: var(--charcoal); text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid var(--gray-200); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+.hamburger span { width: 24px; height: 2.5px; background: var(--charcoal); border-radius: 2px; }
+
+.page-hero { position: relative; padding: 80px 0 60px; background: var(--charcoal); overflow: hidden; text-align: center; }
+.page-hero h2 { font-size: 3rem; color: white; margin-bottom: 12px; }
+.page-hero p { font-size: 1.15rem; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto; }
+.page-hero .price-hero { font-family: 'Oswald', sans-serif; font-size: 3.5rem; color: var(--amber); margin: 20px 0 8px; }
+.page-hero .price-detail { font-size: 1.1rem; color: rgba(255,255,255,0.6); }
+.breadcrumb { display: flex; gap: 8px; align-items: center; font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 16px; justify-content: center; }
+.breadcrumb a { color: var(--amber); }
+
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 14px 32px; border-radius: 4px; border: none; cursor: pointer; transition: all 0.25s; }
+.btn-primary { background: var(--rust); color: white; }
+.btn-primary:hover { background: var(--rust-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(185,28,28,0.4); }
+.btn-amber { background: var(--amber); color: white; }
+.btn-amber:hover { background: var(--amber-light); }
+.btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
+.btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+.section { padding: 80px 0; }
+.section-gray { background: var(--gray-100); }
+.section-dark { background: var(--charcoal); color: white; }
+.section-header { text-align: center; margin-bottom: 50px; }
+.section-header h2 { font-size: 2.5rem; color: var(--charcoal); margin-bottom: 12px; }
+.section-dark .section-header h2 { color: white; }
+.section-header .accent-line { width: 60px; height: 4px; background: var(--rust); margin: 0 auto 16px; }
+.section-header p { font-size: 1.1rem; color: var(--slate); max-width: 600px; margin: 0 auto; }
+
+/* Financing Options */
+.financing-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.financing-card {
+  background: white; border-radius: 8px; padding: 36px 28px; text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 2px solid var(--gray-200); transition: all 0.3s; position: relative;
+}
+.financing-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+.financing-card.featured { border-color: var(--rust); }
+.financing-card.featured::before {
+  content: 'MOST POPULAR'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: var(--rust); color: white; padding: 4px 16px; border-radius: 20px;
+  font-family: 'Oswald', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
+}
+.financing-card h3 { font-size: 1.3rem; color: var(--charcoal); margin-bottom: 8px; }
+.financing-card .rate { font-family: 'Oswald', sans-serif; font-size: 3rem; color: var(--rust); line-height: 1; margin: 16px 0 4px; }
+.financing-card .rate-label { font-size: 0.85rem; color: var(--slate-light); margin-bottom: 20px; }
+.financing-card ul { text-align: left; margin-bottom: 24px; }
+.financing-card ul li { padding: 8px 0; border-bottom: 1px solid var(--gray-100); font-size: 0.95rem; color: #334155; display: flex; align-items: center; gap: 8px; }
+.financing-card ul li svg { width: 16px; height: 16px; fill: var(--rust); flex-shrink: 0; }
+
+/* Calculator */
+.calculator-section { background: var(--charcoal); padding: 80px 0; color: white; }
+.calculator-box {
+  max-width: 500px; margin: 0 auto; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px; padding: 40px;
+}
+.calculator-box h3 { font-size: 1.5rem; margin-bottom: 24px; text-align: center; }
+.calc-row { margin-bottom: 20px; }
+.calc-row label { display: block; font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; color: rgba(255,255,255,0.7); }
+.calc-row input[type="range"] { width: 100%; cursor: pointer; accent-color: var(--rust); }
+.calc-row .range-labels { display: flex; justify-content: space-between; font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
+.calc-result { text-align: center; padding: 24px; background: rgba(185,28,28,0.15); border-radius: 8px; margin-top: 24px; }
+.calc-result .monthly { font-family: 'Oswald', sans-serif; font-size: 3rem; color: var(--amber); line-height: 1; }
+.calc-result .monthly-label { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+.calc-current-val { font-family: 'Oswald', sans-serif; font-size: 1.3rem; color: var(--amber); text-align: center; }
+
+/* Insurance */
+.insurance-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.insurance-content h3 { font-size: 2rem; color: var(--charcoal); margin-bottom: 16px; }
+.insurance-content p { font-size: 1.05rem; color: var(--slate); margin-bottom: 20px; line-height: 1.7; }
+.insurance-steps { counter-reset: step; }
+.insurance-step { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
+.insurance-step-num {
+  counter-increment: step; width: 40px; height: 40px; background: var(--rust); color: white; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.1rem; flex-shrink: 0;
+}
+.insurance-step h4 { font-size: 1rem; color: var(--charcoal); margin-bottom: 4px; }
+.insurance-step p { font-size: 0.9rem; color: var(--slate); margin: 0; }
+.insurance-logos { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.insurance-logo {
+  background: var(--gray-100); border: 1px solid var(--gray-200); padding: 8px 16px; border-radius: 4px;
+  font-family: 'Oswald', sans-serif; font-size: 0.8rem; font-weight: 600; color: var(--slate); text-transform: uppercase;
+}
+
+/* FAQ */
+.faq-list { max-width: 800px; margin: 0 auto; }
+.faq-item { background: white; border-radius: 8px; margin-bottom: 12px; border: 1px solid var(--gray-200); overflow: hidden; }
+.faq-question {
+  padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+  font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 600; color: var(--charcoal); text-transform: uppercase; letter-spacing: 0.03em;
+  transition: background 0.2s;
+}
+.faq-question:hover { background: var(--gray-100); }
+.faq-question svg { width: 20px; height: 20px; fill: var(--slate); transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.open .faq-question svg { transform: rotate(180deg); }
+.faq-answer { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.3s, padding 0.3s; }
+.faq-item.open .faq-answer { max-height: 300px; padding: 0 24px 20px; }
+.faq-answer p { font-size: 0.95rem; color: var(--slate); line-height: 1.7; }
+
+.cta-section { background: linear-gradient(135deg, var(--rust), var(--rust-dark)); padding: 60px 0; text-align: center; color: white; }
+.cta-section h2 { font-size: 2.5rem; margin-bottom: 12px; }
+.cta-section p { font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 28px; max-width: 550px; margin-left: auto; margin-right: auto; }
+
+.footer { background: var(--gray-800); color: rgba(255,255,255,0.7); padding: 60px 0 0; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer h4 { font-size: 1rem; color: white; margin-bottom: 16px; letter-spacing: 0.08em; }
+.footer-about p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 16px; }
+.footer-contact-item { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 0.9rem; }
+.footer-contact-item svg { width: 16px; height: 16px; fill: var(--amber); flex-shrink: 0; }
+.footer ul li { margin-bottom: 8px; }
+.footer ul li a { font-size: 0.9rem; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+.footer ul li a:hover { color: var(--amber); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; }
+.footer-certs { display: flex; gap: 16px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.4); }
+.mobile-bottom-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; background: var(--rust); padding: 12px 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); }
+.mobile-bottom-bar a { display: flex; align-items: center; justify-content: center; gap: 10px; color: white; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 600; text-transform: uppercase; }
+.mobile-bottom-bar svg { width: 22px; height: 22px; fill: white; }
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1024px) {
+  .nav { display: none; } .gaf-badge-header { display: none; } .hamburger { display: flex; }
+  .nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); gap: 4px; }
+}
+@media (max-width: 768px) {
+  .top-bar { display: none; } .page-hero h2 { font-size: 2.2rem; } .page-hero .price-hero { font-size: 2.5rem; }
+  .financing-grid { grid-template-columns: 1fr; } .insurance-row { grid-template-columns: 1fr; gap: 30px; }
+  .section { padding: 50px 0; } .footer-grid { grid-template-columns: 1fr 1fr; }
+  .mobile-bottom-bar { display: block; } body { padding-bottom: 60px; } .header-phone { display: none; }
+}
+@media (max-width: 480px) { .page-hero h2 { font-size: 1.8rem; } .footer-grid { grid-template-columns: 1fr; } .section-header h2 { font-size: 2rem; } }
+</style>
+</head>
+<body>
+
+<div class="top-bar"><div class="container"><div style="display:flex;align-items:center;gap:6px;"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <strong>4.8</strong> out of 5 &mdash; <a href="#">312 Google Reviews</a></div><div>Serving Springfield &amp; Surrounding Areas &nbsp;|&nbsp; <a href="tel:+15558675309">(555) 867-5309</a></div></div></div>
+
+<header class="header" id="header"><div class="container">
+  <a href="index.html" class="logo"><div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18v-2H3v2zm0-4h18v-2H3v2zM12 2L1 12h3v2h16v-2h3L12 2z"/></svg></div><div class="logo-text"><h1>Summit Roofing</h1><span>Certified Roofing Professionals</span></div></a>
+  <nav class="nav" id="nav"><a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="financing.html" class="active">Financing</a><a href="storm-damage.html">Storm Damage</a><a href="contact.html" class="nav-cta">Free Quote</a></nav>
+  <div class="header-right">
+    <div class="gaf-badge-header"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" fill="#b91c1c"/></svg>GAF Master Elite</div>
+    <a href="tel:+15558675309" class="header-phone"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>(555) 867-5309</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+<!-- Hero -->
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Financing</span></div>
+    <h2>Quality Roofing Made Affordable</h2>
+    <div class="price-hero">$89/mo</div>
+    <div class="price-detail">Average new roof &mdash; 0% APR for 18 Months Available</div>
+    <p style="margin-top: 20px;">Don't let cost prevent you from protecting your biggest investment. Flexible financing options with quick approval and no money down.</p>
+  </div>
+</section>
+
+<!-- Financing Options -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="accent-line"></div>
+      <h2>Financing Options</h2>
+      <p>Choose the plan that works best for your budget. All options include quick approval with no impact on your credit score for pre-qualification.</p>
+    </div>
+    <div class="financing-grid">
+      <div class="financing-card fade-up">
+        <h3>Same-As-Cash</h3>
+        <div class="rate">0%</div>
+        <div class="rate-label">APR for 18 Months</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> No interest if paid in full</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> 18-month term</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> No money down</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Quick approval</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Apply Now</a>
+      </div>
+      <div class="financing-card featured fade-up">
+        <h3>Low Monthly Payment</h3>
+        <div class="rate">$89</div>
+        <div class="rate-label">Per Month &mdash; Average Roof</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Fixed monthly payments</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Terms up to 144 months</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> No money down</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Rates from 6.99% APR</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Apply Now</a>
+      </div>
+      <div class="financing-card fade-up">
+        <h3>Deductible Financing</h3>
+        <div class="rate">$0</div>
+        <div class="rate-label">Out of Pocket Today</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Finance your deductible</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> For insurance claims</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> 12-month terms</li>
+          <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> 0% interest available</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Payment Calculator -->
+<section class="calculator-section">
+  <div class="container">
+    <div class="section-header fade-up" style="margin-bottom: 30px;">
+      <div class="accent-line"></div>
+      <h2 style="color:white;">Payment Estimator</h2>
+      <p style="color:rgba(255,255,255,0.7);">Get an idea of your monthly payment. Actual rates depend on credit approval.</p>
+    </div>
+    <div class="calculator-box fade-up">
+      <div class="calc-row">
+        <label>Roof Cost</label>
+        <div class="calc-current-val" id="costDisplay">$12,000</div>
+        <input type="range" id="costSlider" min="5000" max="30000" step="500" value="12000">
+        <div class="range-labels"><span>$5,000</span><span>$30,000</span></div>
+      </div>
+      <div class="calc-row">
+        <label>Loan Term</label>
+        <div class="calc-current-val" id="termDisplay">120 months (10 years)</div>
+        <input type="range" id="termSlider" min="18" max="144" step="6" value="120">
+        <div class="range-labels"><span>18 mo</span><span>144 mo</span></div>
+      </div>
+      <div class="calc-result">
+        <div class="monthly" id="monthlyPayment">$119</div>
+        <div class="monthly-label">Estimated Monthly Payment*</div>
+      </div>
+      <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 16px; text-align: center;">*Estimate based on 6.99% APR. Actual rate may vary based on creditworthiness. Subject to credit approval.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Insurance Claims -->
+<section class="section section-gray">
+  <div class="container">
+    <div class="insurance-row fade-up">
+      <div class="insurance-content">
+        <h3>Insurance Claim Assistance</h3>
+        <p>Filing a roofing insurance claim can be overwhelming. We handle the entire process for you, from the initial inspection to final payment. Our team has processed thousands of claims and knows exactly how to maximize your coverage.</p>
+        <div class="insurance-steps">
+          <div class="insurance-step">
+            <div class="insurance-step-num">1</div>
+            <div><h4>Free Inspection</h4><p>We document all damage with detailed photos and measurements for your claim.</p></div>
+          </div>
+          <div class="insurance-step">
+            <div class="insurance-step-num">2</div>
+            <div><h4>Claim Filed</h4><p>We prepare and submit the claim documentation to your insurance company.</p></div>
+          </div>
+          <div class="insurance-step">
+            <div class="insurance-step-num">3</div>
+            <div><h4>Adjuster Meeting</h4><p>We meet with the adjuster on-site to ensure all damage is properly assessed.</p></div>
+          </div>
+          <div class="insurance-step">
+            <div class="insurance-step-num">4</div>
+            <div><h4>Roof Restored</h4><p>Once approved, we complete the work and handle all final paperwork.</p></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="background:white; border-radius:8px; padding:32px; box-shadow:0 4px 15px rgba(0,0,0,0.06); border:1px solid var(--gray-200);">
+          <h3 style="font-size:1.3rem; color:var(--charcoal); margin-bottom:16px; text-align:center;">We Work With All Insurers</h3>
+          <div class="insurance-logos">
+            <span class="insurance-logo">State Farm</span>
+            <span class="insurance-logo">Allstate</span>
+            <span class="insurance-logo">USAA</span>
+            <span class="insurance-logo">Liberty Mutual</span>
+            <span class="insurance-logo">Farmers</span>
+            <span class="insurance-logo">Nationwide</span>
+            <span class="insurance-logo">Progressive</span>
+            <span class="insurance-logo">American Family</span>
+            <span class="insurance-logo">Travelers</span>
+            <span class="insurance-logo">Erie Insurance</span>
+            <span class="insurance-logo">Auto-Owners</span>
+            <span class="insurance-logo">And Many More</span>
+          </div>
+          <div style="margin-top:24px; text-align:center;">
+            <a href="storm-damage.html" class="btn btn-primary">Start Your Claim</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="accent-line"></div>
+      <h2>Financing FAQs</h2>
+    </div>
+    <div class="faq-list fade-up">
+      <div class="faq-item">
+        <div class="faq-question">Will applying affect my credit score?<svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="faq-answer"><p>Pre-qualification uses a soft credit check that does not affect your credit score. A hard inquiry is only performed once you accept an offer and proceed with the loan.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What credit score do I need?<svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="faq-answer"><p>We work with multiple lending partners and can typically find options for credit scores of 600 and above. Even if you've been declined elsewhere, we may be able to help. Contact us to discuss your options.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How long does approval take?<svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="faq-answer"><p>Most applications receive a decision within minutes. Once approved, we can begin work immediately. The entire process from application to roof installation can happen within days.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I pay off the loan early?<svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="faq-answer"><p>Absolutely. All of our financing options have no prepayment penalties. You can pay off your balance at any time without additional fees or charges.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do you offer financing for insurance deductibles?<svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></div>
+        <div class="faq-answer"><p>Yes. If your roof is being replaced through an insurance claim, we can finance your deductible so you have zero out-of-pocket costs at the time of installation. Ask about our 0% deductible financing option.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container fade-up">
+    <h2>Don't Wait to Protect Your Home</h2>
+    <p>Get pre-qualified in minutes with no impact to your credit score. A new roof is more affordable than you think.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-outline" style="border-color:white;">Get Free Estimate</a>
+      <a href="tel:+15558675309" class="btn btn-amber">Call (555) 867-5309</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-about"><h4>Summit Roofing Co.</h4><p>Family-owned and operated since 2001. GAF Master Elite certified &mdash; a distinction held by only 2% of roofing contractors nationwide.</p>
+      <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+15558675309">(555) 867-5309</a></div>
+      <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:info@summitroofingco.com">info@summitroofingco.com</a></div>
+    </div>
+    <div><h4>Services</h4><ul><li><a href="services.html#replacement">Roof Replacement</a></li><li><a href="services.html#repair">Roof Repair</a></li><li><a href="storm-damage.html">Storm Damage</a></li><li><a href="services.html#commercial">Commercial</a></li><li><a href="services.html#gutters">Gutters</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="financing.html">Financing</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Service Areas</h4><ul><li><a href="#">Springfield</a></li><li><a href="#">Oak Park</a></li><li><a href="#">Riverside</a></li><li><a href="#">Meadowbrook</a></li><li><a href="#">Chatham</a></li><li><a href="#">Rochester</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; 2026 Summit Roofing Co. All rights reserved. License #RCR-2001-4521</span><div class="footer-certs"><span>GAF Master Elite</span><span>Owens Corning Preferred</span><span>BBB A+ Rated</span></div></div>
+</div></footer>
+
+<div class="mobile-bottom-bar"><a href="tel:+15558675309"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Call Now &mdash; (555) 867-5309</a></div>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function() { document.getElementById('nav').classList.toggle('open'); });
+
+// Calculator
+const costSlider = document.getElementById('costSlider');
+const termSlider = document.getElementById('termSlider');
+const costDisplay = document.getElementById('costDisplay');
+const termDisplay = document.getElementById('termDisplay');
+const monthlyPayment = document.getElementById('monthlyPayment');
+
+function calculate() {
+  const cost = parseInt(costSlider.value);
+  const term = parseInt(termSlider.value);
+  const rate = 0.0699 / 12;
+  const payment = cost * (rate * Math.pow(1 + rate, term)) / (Math.pow(1 + rate, term) - 1);
+  costDisplay.textContent = '$' + cost.toLocaleString();
+  const years = Math.floor(term / 12);
+  const months = term % 12;
+  let termText = term + ' months';
+  if (years > 0) termText += ' (' + years + (months > 0 ? '.5' : '') + ' years)';
+  termDisplay.textContent = termText;
+  monthlyPayment.textContent = '$' + Math.round(payment);
+}
+costSlider.addEventListener('input', calculate);
+termSlider.addEventListener('input', calculate);
+calculate();
+
+// FAQ toggle
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => { q.parentElement.classList.toggle('open'); });
+});
+
+// Scroll animations
+const fadeEls = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+fadeEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

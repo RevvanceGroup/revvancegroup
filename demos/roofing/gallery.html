@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Gallery | Summit Roofing Co. | Springfield, IL</title>
+<meta name="description" content="Browse our completed roofing projects across Springfield. Before and after photos, project details, and materials used on every job.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --charcoal: #1a1a2e; --charcoal-light: #252542; --rust: #b91c1c; --rust-dark: #991b1b;
+  --slate: #475569; --slate-light: #64748b; --white: #ffffff; --off-white: #f8fafc;
+  --amber: #d97706; --amber-light: #f59e0b; --gray-100: #f1f5f9; --gray-200: #e2e8f0; --gray-800: #1e293b;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Source Sans 3', system-ui, sans-serif; color: #334155; line-height: 1.6; background: var(--white); -webkit-font-smoothing: antialiased; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Oswald', sans-serif; font-weight: 700; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.02em; }
+a { text-decoration: none; color: inherit; } img { max-width: 100%; display: block; } ul { list-style: none; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.top-bar { background: var(--charcoal); color: rgba(255,255,255,0.8); font-size: 0.85rem; padding: 6px 0; }
+.top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.top-bar a { color: var(--amber); } .top-bar .stars { color: var(--amber); }
+.header { background: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.header .container { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-icon { width: 44px; height: 44px; background: var(--rust); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.logo-icon svg { width: 28px; height: 28px; fill: white; }
+.logo-text h1 { font-size: 1.3rem; color: var(--charcoal); letter-spacing: 0.05em; line-height: 1; }
+.logo-text span { font-family: 'Source Sans 3', sans-serif; font-size: 0.65rem; color: var(--slate-light); text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; }
+.nav { display: flex; align-items: center; gap: 8px; }
+.nav a { font-family: 'Oswald', sans-serif; font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: var(--charcoal); padding: 8px 14px; border-radius: 4px; transition: all 0.2s; }
+.nav a:hover, .nav a.active { color: var(--rust); }
+.nav a.nav-cta { background: var(--rust); color: white; padding: 8px 18px; }
+.nav a.nav-cta:hover { background: var(--rust-dark); }
+.header-right { display: flex; align-items: center; gap: 16px; }
+.header-phone { display: flex; align-items: center; gap: 6px; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 600; color: var(--charcoal); }
+.header-phone svg { width: 18px; height: 18px; fill: var(--rust); }
+.header-phone:hover { color: var(--rust); }
+.gaf-badge-header { display: flex; align-items: center; gap: 6px; background: var(--gray-100); padding: 6px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; color: var(--charcoal); text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid var(--gray-200); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+.hamburger span { width: 24px; height: 2.5px; background: var(--charcoal); border-radius: 2px; }
+
+/* Page Hero */
+.page-hero { position: relative; padding: 80px 0 60px; background: var(--charcoal); overflow: hidden; }
+.page-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(0.3); }
+.page-hero .container { position: relative; z-index: 2; }
+.page-hero h2 { font-size: 3rem; color: white; margin-bottom: 12px; }
+.page-hero p { font-size: 1.15rem; color: rgba(255,255,255,0.8); max-width: 600px; }
+.breadcrumb { display: flex; gap: 8px; align-items: center; font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
+.breadcrumb a { color: var(--amber); }
+
+/* Filter Tabs */
+.filter-bar { background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 16px 0; position: sticky; top: 68px; z-index: 100; }
+.filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.filter-tab {
+  font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+  padding: 8px 20px; border-radius: 4px; border: 2px solid var(--gray-200); background: white; color: var(--slate); cursor: pointer; transition: all 0.2s;
+}
+.filter-tab:hover { border-color: var(--rust); color: var(--rust); }
+.filter-tab.active { background: var(--rust); border-color: var(--rust); color: white; }
+
+/* Gallery Grid */
+.gallery-section { padding: 60px 0 80px; background: var(--gray-100); }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 24px; }
+.project-card {
+  background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  border: 1px solid var(--gray-200); transition: all 0.3s;
+}
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+.project-images { position: relative; height: 260px; overflow: hidden; }
+.project-images img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.project-card:hover .project-images img { transform: scale(1.05); }
+.project-badge {
+  position: absolute; top: 16px; left: 16px; background: var(--rust); color: white; padding: 4px 12px;
+  border-radius: 3px; font-family: 'Oswald', sans-serif; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+}
+.ba-label {
+  position: absolute; bottom: 12px; display: flex; gap: 8px;
+}
+.ba-label span {
+  padding: 3px 10px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.ba-label .before { background: rgba(0,0,0,0.7); color: white; left: 16px; position: relative; }
+.ba-label .after { background: rgba(185,28,28,0.9); color: white; position: relative; }
+.project-details { padding: 24px; }
+.project-details h3 { font-size: 1.15rem; color: var(--charcoal); margin-bottom: 8px; }
+.project-details p { font-size: 0.9rem; color: var(--slate); margin-bottom: 16px; line-height: 1.6; }
+.project-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.project-meta-item { font-size: 0.8rem; }
+.project-meta-item strong { display: block; font-family: 'Oswald', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--charcoal); font-size: 0.7rem; }
+.project-meta-item span { color: var(--slate); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 14px 32px; border-radius: 4px; border: none; cursor: pointer; transition: all 0.25s; }
+.btn-primary { background: var(--rust); color: white; }
+.btn-primary:hover { background: var(--rust-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(185,28,28,0.4); }
+.btn-amber { background: var(--amber); color: white; }
+.btn-amber:hover { background: var(--amber-light); }
+
+/* CTA */
+.cta-section { background: var(--charcoal); padding: 60px 0; text-align: center; color: white; }
+.cta-section h2 { font-size: 2.5rem; margin-bottom: 12px; }
+.cta-section p { font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 28px; max-width: 550px; margin-left: auto; margin-right: auto; }
+
+/* Footer */
+.footer { background: var(--gray-800); color: rgba(255,255,255,0.7); padding: 60px 0 0; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer h4 { font-size: 1rem; color: white; margin-bottom: 16px; letter-spacing: 0.08em; }
+.footer-about p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 16px; }
+.footer-contact-item { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 0.9rem; }
+.footer-contact-item svg { width: 16px; height: 16px; fill: var(--amber); flex-shrink: 0; }
+.footer ul li { margin-bottom: 8px; }
+.footer ul li a { font-size: 0.9rem; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+.footer ul li a:hover { color: var(--amber); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; }
+.footer-certs { display: flex; gap: 16px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.4); }
+
+.mobile-bottom-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; background: var(--rust); padding: 12px 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); }
+.mobile-bottom-bar a { display: flex; align-items: center; justify-content: center; gap: 10px; color: white; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 600; text-transform: uppercase; }
+.mobile-bottom-bar svg { width: 22px; height: 22px; fill: white; }
+
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1024px) {
+  .nav { display: none; } .gaf-badge-header { display: none; } .hamburger { display: flex; }
+  .nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); gap: 4px; }
+}
+@media (max-width: 768px) {
+  .top-bar { display: none; } .page-hero h2 { font-size: 2.2rem; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .mobile-bottom-bar { display: block; } body { padding-bottom: 60px; }
+  .header-phone { display: none; }
+  .filter-bar { top: 60px; }
+}
+@media (max-width: 480px) { .page-hero h2 { font-size: 1.8rem; } .footer-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:6px;"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <strong>4.8</strong> out of 5 &mdash; <a href="#">312 Google Reviews</a></div>
+    <div>Serving Springfield &amp; Surrounding Areas &nbsp;|&nbsp; <a href="tel:+15558675309">(555) 867-5309</a></div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header" id="header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18v-2H3v2zm0-4h18v-2H3v2zM12 2L1 12h3v2h16v-2h3L12 2z"/></svg></div>
+      <div class="logo-text"><h1>Summit Roofing</h1><span>Certified Roofing Professionals</span></div>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html" class="active">Gallery</a><a href="about.html">About</a><a href="financing.html">Financing</a><a href="storm-damage.html">Storm Damage</a><a href="contact.html" class="nav-cta">Free Quote</a>
+    </nav>
+    <div class="header-right">
+      <div class="gaf-badge-header"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" fill="#b91c1c"/></svg>GAF Master Elite</div>
+      <a href="tel:+15558675309" class="header-phone"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>(555) 867-5309</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1920&q=80');"></div>
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Gallery</span></div>
+    <h2>Project Gallery</h2>
+    <p>Browse our completed projects. Every roof tells a story of quality craftsmanship and attention to detail.</p>
+  </div>
+</section>
+
+<!-- Filter Bar -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">All Projects</button>
+      <button class="filter-tab" data-filter="replacement">Replacements</button>
+      <button class="filter-tab" data-filter="repair">Repairs</button>
+      <button class="filter-tab" data-filter="storm">Storm Damage</button>
+      <button class="filter-tab" data-filter="commercial">Commercial</button>
+    </div>
+  </div>
+</div>
+
+<!-- Gallery Grid -->
+<section class="gallery-section">
+  <div class="container">
+    <div class="gallery-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card fade-up" data-category="replacement">
+        <div class="project-images">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80" alt="Oak Park Colonial complete roof replacement" loading="lazy">
+          <span class="project-badge">Replacement</span>
+          <div class="ba-label"><span class="before">Before</span><span class="after">After</span></div>
+        </div>
+        <div class="project-details">
+          <h3>Oak Park Colonial &mdash; Complete Replacement</h3>
+          <p>Full tear-off of aging 3-tab shingles and replacement with GAF Timberline HDZ architectural shingles in Weathered Wood. Included new ice and water shield, ridge vents, and pipe boots.</p>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Type</strong><span>Full Replacement</span></div>
+            <div class="project-meta-item"><strong>Material</strong><span>GAF Timberline HDZ</span></div>
+            <div class="project-meta-item"><strong>Location</strong><span>Oak Park, Springfield</span></div>
+            <div class="project-meta-item"><strong>Timeline</strong><span>3 Days</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card fade-up" data-category="storm">
+        <div class="project-images">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Riverside Ranch hail damage restoration" loading="lazy">
+          <span class="project-badge">Storm Damage</span>
+          <div class="ba-label"><span class="before">Before</span><span class="after">After</span></div>
+        </div>
+        <div class="project-details">
+          <h3>Riverside Ranch &mdash; Hail Damage Restoration</h3>
+          <p>Severe hail damage to shingles and gutters. Full insurance claim handled from inspection through completion. Upgraded to impact-resistant GAF Timberline HDZ shingles in Charcoal.</p>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Type</strong><span>Storm Restoration</span></div>
+            <div class="project-meta-item"><strong>Material</strong><span>GAF Timberline HDZ IR</span></div>
+            <div class="project-meta-item"><strong>Location</strong><span>Riverside, Springfield</span></div>
+            <div class="project-meta-item"><strong>Timeline</strong><span>2 Days</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card fade-up" data-category="replacement">
+        <div class="project-images">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Meadowbrook Estate designer shingle installation" loading="lazy">
+          <span class="project-badge">Premium</span>
+          <div class="ba-label"><span class="before">Before</span><span class="after">After</span></div>
+        </div>
+        <div class="project-details">
+          <h3>Meadowbrook Estate &mdash; Designer Shingles</h3>
+          <p>Premium re-roof with GAF Grand Canyon designer shingles in Mission Brown. Included custom copper flashing, upgraded ventilation system, and seamless gutter installation.</p>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Type</strong><span>Premium Replacement</span></div>
+            <div class="project-meta-item"><strong>Material</strong><span>GAF Grand Canyon</span></div>
+            <div class="project-meta-item"><strong>Location</strong><span>Meadowbrook</span></div>
+            <div class="project-meta-item"><strong>Timeline</strong><span>4 Days</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card fade-up" data-category="commercial">
+        <div class="project-images">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Springfield Commerce Center TPO roof" loading="lazy">
+          <span class="project-badge">Commercial</span>
+        </div>
+        <div class="project-details">
+          <h3>Commerce Center &mdash; TPO Flat Roof System</h3>
+          <p>22,000 sq ft commercial TPO membrane roof replacement. Completed in phases to minimize business disruption. Includes 20-year manufacturer warranty.</p>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Type</strong><span>Commercial Flat Roof</span></div>
+            <div class="project-meta-item"><strong>Material</strong><span>60mil TPO Membrane</span></div>
+            <div class="project-meta-item"><strong>Location</strong><span>Springfield Business Park</span></div>
+            <div class="project-meta-item"><strong>Timeline</strong><span>10 Days</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-card fade-up" data-category="storm">
+        <div class="project-images">
+          <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=800&q=80" alt="Wind damage repair in Chatham" loading="lazy">
+          <span class="project-badge">Storm Damage</span>
+          <div class="ba-label"><span class="before">Before</span><span class="after">After</span></div>
+        </div>
+        <div class="project-details">
+          <h3>Chatham Craftsman &mdash; Wind Damage Repair</h3>
+          <p>Straight-line wind event tore shingles from the south-facing slope. Emergency tarping same day, full restoration within one week. Insurance claim processed and approved.</p>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Type</strong><span>Wind Damage Restoration</span></div>
+            <div class="project-meta-item"><strong>Material</strong><span>GAF Timberline HDZ</span></div>
+            <div class="project-meta-item"><strong>Location</strong><span>Chatham</span></div>
+            <div class="project-meta-item"><strong>Timeline</strong><span>2 Days</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="project-card fade-up" data-category="replacement">
+        <div class="project-images">
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80" alt="Rochester family home re-roof" loading="lazy">
+          <span class="project-badge">Replacement</span>
+          <div class="ba-label"><span class="before">Before</span><span class="after">After</span></div>
+        </div>
+        <div class="project-details">
+          <h3>Rochester Family Home &mdash; Full Re-Roof</h3>
+          <p>20-year-old roof with multiple leak points. Complete tear-off revealed minor deck damage that was repaired before installing new GAF system. Financed at $89/month.</p>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Type</strong><span>Full Replacement</span></div>
+            <div class="project-meta-item"><strong>Material</strong><span>GAF Timberline HDZ</span></div>
+            <div class="project-meta-item"><strong>Location</strong><span>Rochester</span></div>
+            <div class="project-meta-item"><strong>Timeline</strong><span>2 Days</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 7 -->
+      <div class="project-card fade-up" data-category="repair">
+        <div class="project-images">
+          <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=80" alt="Sherman leak repair" loading="lazy">
+          <span class="project-badge">Repair</span>
+        </div>
+        <div class="project-details">
+          <h3>Sherman Bungalow &mdash; Leak Repair</h3>
+          <p>Persistent leak traced to deteriorated chimney flashing and worn pipe boots. Installed new step flashing, counter flashing, and replaced all pipe boots. Problem solved permanently.</p>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Type</strong><span>Leak Repair</span></div>
+            <div class="project-meta-item"><strong>Material</strong><span>Custom Flashing</span></div>
+            <div class="project-meta-item"><strong>Location</strong><span>Sherman</span></div>
+            <div class="project-meta-item"><strong>Timeline</strong><span>1 Day</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 8 -->
+      <div class="project-card fade-up" data-category="replacement">
+        <div class="project-images">
+          <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=800&q=80" alt="Jerome metal roof installation" loading="lazy">
+          <span class="project-badge">Metal Roof</span>
+          <div class="ba-label"><span class="before">Before</span><span class="after">After</span></div>
+        </div>
+        <div class="project-details">
+          <h3>Jerome Farmhouse &mdash; Standing Seam Metal</h3>
+          <p>Conversion from asphalt shingles to standing seam metal roofing in Aged Bronze. 50+ year lifespan with virtually zero maintenance. Dramatic curb appeal transformation.</p>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Type</strong><span>Metal Roof Conversion</span></div>
+            <div class="project-meta-item"><strong>Material</strong><span>Standing Seam Metal</span></div>
+            <div class="project-meta-item"><strong>Location</strong><span>Jerome</span></div>
+            <div class="project-meta-item"><strong>Timeline</strong><span>5 Days</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 9 -->
+      <div class="project-card fade-up" data-category="repair">
+        <div class="project-images">
+          <img src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?auto=format&fit=crop&w=800&q=80" alt="Gutter system replacement" loading="lazy">
+          <span class="project-badge">Gutters</span>
+        </div>
+        <div class="project-details">
+          <h3>Oak Park Home &mdash; Complete Gutter System</h3>
+          <p>Removed deteriorated steel gutters and installed 6-inch seamless aluminum gutters with leaf guards. Added downspout extensions for proper drainage away from foundation.</p>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Type</strong><span>Gutter Replacement</span></div>
+            <div class="project-meta-item"><strong>Material</strong><span>Seamless Aluminum</span></div>
+            <div class="project-meta-item"><strong>Location</strong><span>Oak Park</span></div>
+            <div class="project-meta-item"><strong>Timeline</strong><span>1 Day</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container fade-up">
+    <h2>Your Roof Could Be Next</h2>
+    <p>Schedule your free inspection and see what Summit Roofing can do for your home. Financing available from $89/month.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary">Get Free Estimate</a>
+      <a href="tel:+15558675309" class="btn btn-amber">Call (555) 867-5309</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about"><h4>Summit Roofing Co.</h4><p>Family-owned and operated since 2001. GAF Master Elite certified &mdash; a distinction held by only 2% of roofing contractors nationwide.</p>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+15558675309">(555) 867-5309</a></div>
+        <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:info@summitroofingco.com">info@summitroofingco.com</a></div>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="services.html#replacement">Roof Replacement</a></li><li><a href="services.html#repair">Roof Repair</a></li><li><a href="storm-damage.html">Storm Damage</a></li><li><a href="services.html#commercial">Commercial</a></li><li><a href="services.html#gutters">Gutters</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="financing.html">Financing</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Service Areas</h4><ul><li><a href="#">Springfield</a></li><li><a href="#">Oak Park</a></li><li><a href="#">Riverside</a></li><li><a href="#">Meadowbrook</a></li><li><a href="#">Chatham</a></li><li><a href="#">Rochester</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Summit Roofing Co. All rights reserved. License #RCR-2001-4521</span>
+      <div class="footer-certs"><span>GAF Master Elite</span><span>Owens Corning Preferred</span><span>BBB A+ Rated</span></div>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bottom-bar"><a href="tel:+15558675309"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Call Now &mdash; (555) 867-5309</a></div>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function() { document.getElementById('nav').classList.toggle('open'); });
+
+// Filter functionality
+const filterTabs = document.querySelectorAll('.filter-tab');
+const projectCards = document.querySelectorAll('.project-card');
+filterTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    filterTabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const filter = tab.dataset.filter;
+    projectCards.forEach(card => {
+      if (filter === 'all' || card.dataset.category === filter) {
+        card.style.display = '';
+        setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 50);
+      } else {
+        card.style.opacity = '0'; card.style.transform = 'translateY(20px)';
+        setTimeout(() => { card.style.display = 'none'; }, 300);
+      }
+    });
+  });
+});
+
+// Scroll animations
+const fadeEls = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+fadeEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

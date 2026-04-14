@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Summit Roofing Co. | GAF Master Elite | Springfield, IL</title>
+<meta name="description" content="Learn about Summit Roofing Co. Family-owned since 2001, GAF Master Elite certified, 3,000+ roofs completed. Meet our team and see why Springfield trusts us.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --charcoal: #1a1a2e; --charcoal-light: #252542; --rust: #b91c1c; --rust-dark: #991b1b;
+  --slate: #475569; --slate-light: #64748b; --white: #ffffff;
+  --amber: #d97706; --amber-light: #f59e0b; --gray-100: #f1f5f9; --gray-200: #e2e8f0; --gray-800: #1e293b;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Source Sans 3', system-ui, sans-serif; color: #334155; line-height: 1.6; background: var(--white); -webkit-font-smoothing: antialiased; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Oswald', sans-serif; font-weight: 700; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.02em; }
+a { text-decoration: none; color: inherit; } img { max-width: 100%; display: block; } ul { list-style: none; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.top-bar { background: var(--charcoal); color: rgba(255,255,255,0.8); font-size: 0.85rem; padding: 6px 0; }
+.top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.top-bar a { color: var(--amber); } .top-bar .stars { color: var(--amber); }
+.header { background: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+.header .container { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-icon { width: 44px; height: 44px; background: var(--rust); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.logo-icon svg { width: 28px; height: 28px; fill: white; }
+.logo-text h1 { font-size: 1.3rem; color: var(--charcoal); letter-spacing: 0.05em; line-height: 1; }
+.logo-text span { font-family: 'Source Sans 3', sans-serif; font-size: 0.65rem; color: var(--slate-light); text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; }
+.nav { display: flex; align-items: center; gap: 8px; }
+.nav a { font-family: 'Oswald', sans-serif; font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: var(--charcoal); padding: 8px 14px; border-radius: 4px; transition: all 0.2s; }
+.nav a:hover, .nav a.active { color: var(--rust); }
+.nav a.nav-cta { background: var(--rust); color: white; padding: 8px 18px; }
+.nav a.nav-cta:hover { background: var(--rust-dark); }
+.header-right { display: flex; align-items: center; gap: 16px; }
+.header-phone { display: flex; align-items: center; gap: 6px; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 600; color: var(--charcoal); }
+.header-phone svg { width: 18px; height: 18px; fill: var(--rust); } .header-phone:hover { color: var(--rust); }
+.gaf-badge-header { display: flex; align-items: center; gap: 6px; background: var(--gray-100); padding: 6px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; color: var(--charcoal); text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid var(--gray-200); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+.hamburger span { width: 24px; height: 2.5px; background: var(--charcoal); border-radius: 2px; }
+
+.page-hero { position: relative; padding: 80px 0 60px; background: var(--charcoal); overflow: hidden; }
+.page-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(0.25); }
+.page-hero .container { position: relative; z-index: 2; }
+.page-hero h2 { font-size: 3rem; color: white; margin-bottom: 12px; }
+.page-hero p { font-size: 1.15rem; color: rgba(255,255,255,0.8); max-width: 600px; }
+.breadcrumb { display: flex; gap: 8px; align-items: center; font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 16px; }
+.breadcrumb a { color: var(--amber); }
+
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; padding: 14px 32px; border-radius: 4px; border: none; cursor: pointer; transition: all 0.25s; }
+.btn-primary { background: var(--rust); color: white; }
+.btn-primary:hover { background: var(--rust-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(185,28,28,0.4); }
+.btn-amber { background: var(--amber); color: white; }
+.btn-amber:hover { background: var(--amber-light); }
+
+.section { padding: 80px 0; }
+.section-gray { background: var(--gray-100); }
+.section-dark { background: var(--charcoal); color: white; }
+.section-header { text-align: center; margin-bottom: 50px; }
+.section-header h2 { font-size: 2.5rem; color: var(--charcoal); margin-bottom: 12px; }
+.section-dark .section-header h2 { color: white; }
+.section-header .accent-line { width: 60px; height: 4px; background: var(--rust); margin: 0 auto 16px; }
+.section-header p { font-size: 1.1rem; color: var(--slate); max-width: 600px; margin: 0 auto; }
+.section-dark .section-header p { color: rgba(255,255,255,0.7); }
+
+/* Story Section */
+.story-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.story-img { border-radius: 8px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.12); }
+.story-img img { width: 100%; height: 450px; object-fit: cover; }
+.story-content h3 { font-size: 2rem; color: var(--charcoal); margin-bottom: 16px; }
+.story-content p { font-size: 1.05rem; color: var(--slate); margin-bottom: 16px; line-height: 1.8; }
+.story-highlight { background: rgba(185,28,28,0.06); border-left: 4px solid var(--rust); padding: 16px 20px; margin: 20px 0; border-radius: 0 6px 6px 0; }
+.story-highlight p { font-size: 1.1rem; font-weight: 600; color: var(--charcoal); margin: 0; font-style: italic; }
+
+/* Stats */
+.stats-bar { background: var(--charcoal); padding: 50px 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center; }
+.stat-item h3 { font-size: 3rem; color: var(--amber); margin-bottom: 4px; }
+.stat-item p { font-size: 0.85rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+/* Certifications */
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.cert-card { background: white; border-radius: 8px; padding: 32px; border: 1px solid var(--gray-200); box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
+.cert-card-icon { width: 56px; height: 56px; background: rgba(185,28,28,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.cert-card-icon svg { width: 28px; height: 28px; fill: var(--rust); }
+.cert-card h3 { font-size: 1.15rem; color: var(--charcoal); margin-bottom: 8px; }
+.cert-card p { font-size: 0.95rem; color: var(--slate); line-height: 1.7; }
+.cert-card .cert-highlight { font-family: 'Oswald', sans-serif; font-size: 0.8rem; font-weight: 600; color: var(--rust); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 12px; }
+
+/* Team */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.team-card { text-align: center; background: white; border-radius: 8px; overflow: hidden; border: 1px solid var(--gray-200); box-shadow: 0 4px 15px rgba(0,0,0,0.04); }
+.team-card-img { height: 280px; overflow: hidden; background: var(--gray-200); }
+.team-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.team-card-body { padding: 24px; }
+.team-card h3 { font-size: 1.15rem; color: var(--charcoal); margin-bottom: 4px; }
+.team-card .role { font-family: 'Oswald', sans-serif; font-size: 0.75rem; color: var(--rust); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 10px; }
+.team-card p { font-size: 0.9rem; color: var(--slate); }
+
+/* Community */
+.community-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.community-card { display: flex; gap: 16px; align-items: flex-start; }
+.community-icon { width: 48px; height: 48px; background: rgba(185,28,28,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.community-icon svg { width: 24px; height: 24px; fill: var(--rust); }
+.community-card h4 { font-size: 1rem; color: var(--charcoal); margin-bottom: 4px; }
+.community-card p { font-size: 0.9rem; color: var(--slate); }
+
+.cta-section { background: var(--charcoal); padding: 60px 0; text-align: center; color: white; }
+.cta-section h2 { font-size: 2.5rem; margin-bottom: 12px; }
+.cta-section p { font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 28px; max-width: 550px; margin-left: auto; margin-right: auto; }
+
+.footer { background: var(--gray-800); color: rgba(255,255,255,0.7); padding: 60px 0 0; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer h4 { font-size: 1rem; color: white; margin-bottom: 16px; letter-spacing: 0.08em; }
+.footer-about p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 16px; }
+.footer-contact-item { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 0.9rem; }
+.footer-contact-item svg { width: 16px; height: 16px; fill: var(--amber); flex-shrink: 0; }
+.footer ul li { margin-bottom: 8px; }
+.footer ul li a { font-size: 0.9rem; color: rgba(255,255,255,0.6); transition: color 0.2s; }
+.footer ul li a:hover { color: var(--amber); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; }
+.footer-certs { display: flex; gap: 16px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.4); }
+.mobile-bottom-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; background: var(--rust); padding: 12px 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); }
+.mobile-bottom-bar a { display: flex; align-items: center; justify-content: center; gap: 10px; color: white; font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 600; text-transform: uppercase; }
+.mobile-bottom-bar svg { width: 22px; height: 22px; fill: white; }
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1024px) {
+  .nav { display: none; } .gaf-badge-header { display: none; } .hamburger { display: flex; }
+  .nav.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: white; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); gap: 4px; }
+}
+@media (max-width: 768px) {
+  .top-bar { display: none; } .page-hero h2 { font-size: 2.2rem; }
+  .story-row { grid-template-columns: 1fr; gap: 30px; } .story-img img { height: 300px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 24px; } .stat-item h3 { font-size: 2.2rem; }
+  .section { padding: 50px 0; } .footer-grid { grid-template-columns: 1fr 1fr; }
+  .mobile-bottom-bar { display: block; } body { padding-bottom: 60px; } .header-phone { display: none; }
+}
+@media (max-width: 480px) { .page-hero h2 { font-size: 1.8rem; } .footer-grid { grid-template-columns: 1fr; } .stats-grid { grid-template-columns: 1fr 1fr; } .section-header h2 { font-size: 2rem; } }
+</style>
+</head>
+<body>
+
+<div class="top-bar"><div class="container"><div style="display:flex;align-items:center;gap:6px;"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <strong>4.8</strong> out of 5 &mdash; <a href="#">312 Google Reviews</a></div><div>Serving Springfield &amp; Surrounding Areas &nbsp;|&nbsp; <a href="tel:+15558675309">(555) 867-5309</a></div></div></div>
+
+<header class="header" id="header"><div class="container">
+  <a href="index.html" class="logo"><div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18v-2H3v2zm0-4h18v-2H3v2zM12 2L1 12h3v2h16v-2h3L12 2z"/></svg></div><div class="logo-text"><h1>Summit Roofing</h1><span>Certified Roofing Professionals</span></div></a>
+  <nav class="nav" id="nav"><a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="about.html" class="active">About</a><a href="financing.html">Financing</a><a href="storm-damage.html">Storm Damage</a><a href="contact.html" class="nav-cta">Free Quote</a></nav>
+  <div class="header-right">
+    <div class="gaf-badge-header"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" fill="#b91c1c"/></svg>GAF Master Elite</div>
+    <a href="tel:+15558675309" class="header-phone"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>(555) 867-5309</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</div></header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80');"></div>
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>About</span></div>
+    <h2>About Summit Roofing</h2>
+    <p>Family-owned since 2001. Built on integrity, craftsmanship, and a commitment to protecting Springfield homes.</p>
+  </div>
+</section>
+
+<!-- Our Story -->
+<section class="section">
+  <div class="container">
+    <div class="story-row fade-up">
+      <div class="story-img">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Summit Roofing construction team at work" loading="lazy">
+      </div>
+      <div class="story-content">
+        <h3>Our Story</h3>
+        <p>Summit Roofing Co. was founded in 2001 by Tom and Linda Mercer with a simple mission: deliver honest, quality roofing work at a fair price. What started as a two-person operation working out of a pickup truck has grown into one of Central Illinois' most respected roofing companies.</p>
+        <p>Today, Summit employs over 40 skilled professionals and has completed more than 3,000 residential and commercial roofing projects. Despite our growth, we've never lost sight of the values that built this company: integrity, craftsmanship, and treating every customer's home as if it were our own.</p>
+        <div class="story-highlight">
+          <p>"We don't cut corners. We don't use subcontractors. And we stand behind every roof we install with the industry's strongest warranty."</p>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--slate-light);">&mdash; Tom Mercer, Founder &amp; President</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid fade-up">
+      <div class="stat-item"><h3>3,000+</h3><p>Roofs Completed</p></div>
+      <div class="stat-item"><h3>25</h3><p>Years in Business</p></div>
+      <div class="stat-item"><h3>50-Year</h3><p>Lifetime Warranty</p></div>
+      <div class="stat-item"><h3>A+</h3><p>BBB Rating</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- Certifications -->
+<section class="section section-gray">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="accent-line"></div>
+      <h2>Our Certifications</h2>
+      <p>We maintain the highest industry certifications to ensure your roof is installed to the most rigorous standards.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card fade-up">
+        <div class="cert-card-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+        <h3>GAF Master Elite Contractor</h3>
+        <p>The highest credential GAF offers. Only 2% of roofing contractors in North America qualify. Requirements include proper licensing and insurance, a proven reputation, and a commitment to ongoing professional training. This designation allows us to offer the GAF Golden Pledge 50-year warranty &mdash; the strongest in the industry.</p>
+        <div class="cert-highlight">Only 2% of roofers qualify</div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+        <h3>Owens Corning Preferred Contractor</h3>
+        <p>Selected by Owens Corning for meeting their strict standards for professionalism, workmanship quality, and customer service. Gives us access to exclusive products and enhanced warranty options for our customers.</p>
+        <div class="cert-highlight">Enhanced warranty access</div>
+      </div>
+      <div class="cert-card fade-up">
+        <div class="cert-card-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5v2zm5-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+        <h3>BBB A+ Accredited Business</h3>
+        <p>Accredited by the Better Business Bureau with an A+ rating. We've maintained this rating for over 15 consecutive years through our commitment to resolving any customer concern promptly and fairly.</p>
+        <div class="cert-highlight">15+ consecutive years A+ rated</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="accent-line"></div>
+      <h2>Meet Our Team</h2>
+      <p>The people behind every quality roof we install.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card fade-up">
+        <div class="team-card-img"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80" alt="Tom Mercer, Founder and President" loading="lazy"></div>
+        <div class="team-card-body">
+          <h3>Tom Mercer</h3>
+          <div class="role">Founder &amp; President</div>
+          <p>25+ years in roofing. GAF Master Elite certified since 2005. Personally oversees every major project.</p>
+        </div>
+      </div>
+      <div class="team-card fade-up">
+        <div class="team-card-img"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="Linda Mercer, VP of Operations" loading="lazy"></div>
+        <div class="team-card-body">
+          <h3>Linda Mercer</h3>
+          <div class="role">VP of Operations</div>
+          <p>Co-founder who manages scheduling, customer relations, and ensures every project runs smoothly.</p>
+        </div>
+      </div>
+      <div class="team-card fade-up">
+        <div class="team-card-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80" alt="Jake Mercer, Production Manager" loading="lazy"></div>
+        <div class="team-card-body">
+          <h3>Jake Mercer</h3>
+          <div class="role">Production Manager</div>
+          <p>Second generation roofer with 10+ years experience. Leads our installation crews and quality control.</p>
+        </div>
+      </div>
+      <div class="team-card fade-up">
+        <div class="team-card-img"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=500&q=80" alt="Mark Stevens, Sales Manager" loading="lazy"></div>
+        <div class="team-card-body">
+          <h3>Mark Stevens</h3>
+          <div class="role">Sales &amp; Estimating Manager</div>
+          <p>15 years in the roofing industry. Specializes in insurance claims and helping homeowners find the right solution.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Community -->
+<section class="section section-gray">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="accent-line"></div>
+      <h2>Community Involvement</h2>
+      <p>Giving back to the community that has supported us for 25 years.</p>
+    </div>
+    <div class="community-grid fade-up">
+      <div class="community-card">
+        <div class="community-icon"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div>
+        <div><h4>Habitat for Humanity</h4><p>We donate roofing materials and labor to Habitat for Humanity builds every year. Over 20 homes roofed at no cost since 2008.</p></div>
+      </div>
+      <div class="community-card">
+        <div class="community-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+        <div><h4>Springfield Youth Sports</h4><p>Proud sponsor of Springfield Little League and youth soccer programs. Because the next generation matters.</p></div>
+      </div>
+      <div class="community-card">
+        <div class="community-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+        <div><h4>Disaster Relief</h4><p>When severe storms hit, we provide emergency tarping and discounted repairs for seniors and low-income families in our community.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container fade-up">
+    <h2>Ready to Work With the Best?</h2>
+    <p>Join the 3,000+ homeowners who trust Summit Roofing to protect their biggest investment. Schedule your free inspection today.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary">Schedule Free Inspection</a>
+      <a href="tel:+15558675309" class="btn btn-amber">Call (555) 867-5309</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-about"><h4>Summit Roofing Co.</h4><p>Family-owned and operated since 2001. GAF Master Elite certified &mdash; a distinction held by only 2% of roofing contractors nationwide.</p>
+      <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+15558675309">(555) 867-5309</a></div>
+      <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:info@summitroofingco.com">info@summitroofingco.com</a></div>
+    </div>
+    <div><h4>Services</h4><ul><li><a href="services.html#replacement">Roof Replacement</a></li><li><a href="services.html#repair">Roof Repair</a></li><li><a href="storm-damage.html">Storm Damage</a></li><li><a href="services.html#commercial">Commercial</a></li><li><a href="services.html#gutters">Gutters</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="financing.html">Financing</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Service Areas</h4><ul><li><a href="#">Springfield</a></li><li><a href="#">Oak Park</a></li><li><a href="#">Riverside</a></li><li><a href="#">Meadowbrook</a></li><li><a href="#">Chatham</a></li><li><a href="#">Rochester</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; 2026 Summit Roofing Co. All rights reserved. License #RCR-2001-4521</span><div class="footer-certs"><span>GAF Master Elite</span><span>Owens Corning Preferred</span><span>BBB A+ Rated</span></div></div>
+</div></footer>
+
+<div class="mobile-bottom-bar"><a href="tel:+15558675309"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Call Now &mdash; (555) 867-5309</a></div>
+
+<script>
+document.getElementById('hamburger').addEventListener('click', function() { document.getElementById('nav').classList.toggle('open'); });
+const fadeEls = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+fadeEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

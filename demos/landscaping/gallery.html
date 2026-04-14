@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GreenScape Landscaping portfolio - browse our completed landscape design, hardscaping, maintenance, and commercial projects.">
+    <title>Portfolio | GreenScape Landscaping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --forest: #1a5632; --forest-dark: #0f3a20; --sage: #7cb587; --sage-light: #a8d5b3;
+            --cream: #faf8f0; --cream-dark: #f0edd8; --brown: #6b4423; --brown-light: #8b6344;
+            --gold: #c8962e; --gold-hover: #b5841f; --white: #ffffff; --text: #2c2c2c; --text-light: #5a5a5a;
+            --shadow: 0 2px 20px rgba(0,0,0,0.08); --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Lato', sans-serif; color: var(--text); background: var(--cream); line-height: 1.7; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.3; }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        .header { position: sticky; top: 0; z-index: 1000; background: var(--white); box-shadow: 0 1px 12px rgba(0,0,0,0.06); }
+        .header.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.1); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 72px; max-width: 1400px; margin: 0 auto; }
+        .logo { display: flex; align-items: center; gap: 10px; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--forest); }
+        .logo-icon { width: 38px; height: 38px; background: var(--forest); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .logo-icon svg { width: 22px; height: 22px; fill: var(--white); }
+        .nav { display: flex; align-items: center; gap: 8px; }
+        .nav a { padding: 8px 16px; font-size: 0.92rem; font-weight: 600; color: var(--text); border-radius: 6px; transition: all 0.25s; }
+        .nav a:hover, .nav a.active { color: var(--forest); background: rgba(26,86,50,0.06); }
+        .header-right { display: flex; align-items: center; gap: 16px; }
+        .header-rating { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--text-light); }
+        .header-rating .stars { color: var(--gold); }
+        .header-phone { display: flex; align-items: center; gap: 6px; font-weight: 700; color: var(--forest); font-size: 0.95rem; }
+        .header-phone svg { width: 16px; height: 16px; fill: var(--forest); }
+        .btn-cta { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; background: var(--gold); color: var(--white); font-weight: 700; font-size: 0.95rem; border-radius: 8px; border: none; cursor: pointer; transition: all 0.3s; }
+        .btn-cta:hover { background: var(--gold-hover); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(200,150,46,0.35); }
+        .btn-cta-green { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--forest); color: var(--white); font-weight: 700; font-size: 1rem; border-radius: 8px; border: none; cursor: pointer; transition: all 0.3s; }
+        .btn-cta-green:hover { background: var(--forest-dark); transform: translateY(-1px); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+        .hamburger span { width: 24px; height: 2.5px; background: var(--forest); border-radius: 2px; }
+
+        .page-hero { position: relative; padding: 80px 0 60px; background: var(--forest-dark); overflow: hidden; }
+        .page-hero::before { content: ''; position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1600&q=80') center/cover no-repeat; opacity: 0.15; }
+        .page-hero-content { position: relative; z-index: 2; text-align: center; }
+        .page-hero h1 { font-size: clamp(2rem, 4vw, 3rem); color: var(--white); margin-bottom: 16px; }
+        .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 auto; }
+        .breadcrumb { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+        .breadcrumb a { color: var(--sage-light); }
+
+        .section { padding: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 48px; }
+        .section-label { display: inline-block; padding: 4px 16px; background: rgba(26,86,50,0.08); color: var(--forest); font-size: 0.8rem; font-weight: 700; border-radius: 50px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+        .section-header h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); color: var(--forest-dark); margin-bottom: 16px; }
+        .section-header p { font-size: 1.05rem; color: var(--text-light); max-width: 600px; margin: 0 auto; }
+
+        /* ─── FILTER TABS ─── */
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+        .filter-tab {
+            padding: 10px 24px;
+            border: 2px solid var(--cream-dark);
+            border-radius: 50px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s;
+            background: var(--white);
+        }
+        .filter-tab:hover { border-color: var(--sage); color: var(--forest); }
+        .filter-tab.active {
+            background: var(--forest);
+            color: var(--white);
+            border-color: var(--forest);
+        }
+
+        /* ─── PROJECT GRID ─── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+        .project-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.35s;
+        }
+        .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .project-card-img {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+        .project-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .project-card:hover .project-card-img img { transform: scale(1.05); }
+        .project-category {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            padding: 6px 14px;
+            background: var(--forest);
+            color: var(--white);
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-radius: 50px;
+        }
+        .project-card-body { padding: 32px; }
+        .project-card-body h3 { font-size: 1.3rem; color: var(--forest-dark); margin-bottom: 12px; }
+        .project-before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .ba-section h4 {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 6px;
+        }
+        .ba-before h4 { color: var(--text-light); }
+        .ba-after h4 { color: var(--sage); }
+        .ba-section p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+        .project-narrative {
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 20px;
+            line-height: 1.7;
+            padding-top: 16px;
+            border-top: 1px solid var(--cream-dark);
+        }
+        .project-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .project-detail {
+            display: flex;
+            flex-direction: column;
+        }
+        .project-detail-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-light);
+            margin-bottom: 2px;
+        }
+        .project-detail-value {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--forest);
+        }
+
+        /* ─── CTA ─── */
+        .gallery-cta {
+            text-align: center;
+            padding: 80px 24px;
+            background: var(--forest-dark);
+        }
+        .gallery-cta h2 { color: var(--white); font-size: 2rem; margin-bottom: 16px; }
+        .gallery-cta p { color: rgba(255,255,255,0.7); font-size: 1.05rem; margin-bottom: 28px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+        /* ─── FOOTER ─── */
+        .footer { background: var(--forest-dark); color: rgba(255,255,255,0.8); padding: 80px 0 0; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 60px; }
+        .footer-brand .logo { color: var(--white); margin-bottom: 16px; }
+        .footer-brand p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; color: rgba(255,255,255,0.6); }
+        .footer-social { display: flex; gap: 12px; }
+        .footer-social a { width: 40px; height: 40px; background: rgba(255,255,255,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .footer-social a:hover { background: var(--gold); }
+        .footer-social svg { width: 18px; height: 18px; fill: var(--white); }
+        .footer h4 { font-family: 'Lato', sans-serif; color: var(--white); font-size: 0.95rem; font-weight: 700; margin-bottom: 20px; }
+        .footer ul { list-style: none; }
+        .footer li { margin-bottom: 10px; }
+        .footer li a { font-size: 0.88rem; color: rgba(255,255,255,0.6); transition: color 0.3s; }
+        .footer li a:hover { color: var(--sage-light); }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; font-size: 0.88rem; }
+        .footer-contact-item svg { width: 16px; height: 16px; fill: var(--sage); margin-top: 3px; flex-shrink: 0; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 24px 0; display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+
+        .mobile-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999; background: var(--forest); padding: 12px 20px; box-shadow: 0 -4px 20px rgba(0,0,0,0.2); }
+        .mobile-bar a { display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--white); font-weight: 700; font-size: 1.05rem; width: 100%; padding: 10px; border-radius: 8px; background: var(--gold); }
+        .mobile-bar svg { width: 20px; height: 20px; fill: var(--white); }
+        .mobile-nav { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 998; padding: 24px; flex-direction: column; gap: 4px; }
+        .mobile-nav.open { display: flex; }
+        .mobile-nav a { padding: 16px 20px; font-size: 1.05rem; font-weight: 600; color: var(--text); border-radius: 10px; }
+
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .nav, .header-rating, .header-phone { display: none; }
+            .hamburger { display: flex; }
+            .header-right .btn-cta { display: none; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .project-before-after { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+            .mobile-bar { display: block; }
+            body { padding-bottom: 72px; }
+            .section { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header" id="header">
+    <div class="header-inner">
+        <a href="index.html" class="logo"><div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20c4 0 8.71-3.13 9.49-7.5C18.17 9.5 17 8 17 8zm-5.5 4a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></svg></div>GreenScape</a>
+        <nav class="nav">
+            <a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html" class="active">Portfolio</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-right">
+            <div class="header-rating"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>4.9 (234 reviews)</span></div>
+            <a href="tel:+15553472583" class="header-phone"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>(555) 347-2583</a>
+            <a href="contact.html" class="btn-cta">Get Free Estimate</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+</header>
+<nav class="mobile-nav" id="mobileNav"><a href="index.html">Home</a><a href="services.html">Services</a><a href="gallery.html">Portfolio</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+
+<section class="page-hero">
+    <div class="page-hero-content container">
+        <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Portfolio</span></div>
+        <h1>Our Work</h1>
+        <p>Real projects, real transformations. Browse our portfolio of completed landscaping and hardscaping projects.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="filter-tabs" id="filterTabs">
+            <button class="filter-tab active" data-filter="all">All Projects</button>
+            <button class="filter-tab" data-filter="design">Design & Install</button>
+            <button class="filter-tab" data-filter="hardscaping">Hardscaping</button>
+            <button class="filter-tab" data-filter="maintenance">Maintenance</button>
+            <button class="filter-tab" data-filter="commercial">Commercial</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+
+            <!-- Project 1 -->
+            <div class="project-card fade-up" data-category="design">
+                <div class="project-card-img">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80" alt="Morrison Backyard Revival" loading="lazy">
+                    <span class="project-category">Design & Install</span>
+                </div>
+                <div class="project-card-body">
+                    <h3>The Morrison Backyard Revival</h3>
+                    <div class="project-before-after">
+                        <div class="ba-section ba-before">
+                            <h4>Before</h4>
+                            <p>Overgrown 1/3 acre lot with patchy grass, invasive species, and no usable outdoor space.</p>
+                        </div>
+                        <div class="ba-section ba-after">
+                            <h4>After</h4>
+                            <p>Multi-zone retreat with native garden, flagstone patio, fire pit, and meandering pathways.</p>
+                        </div>
+                    </div>
+                    <p class="project-narrative">The Morrisons wanted a yard their teenage kids would actually use. We created distinct zones for dining, lounging, and a fire pit gathering area, all connected by natural stone paths through native plantings that attract butterflies and birds.</p>
+                    <div class="project-details">
+                        <div class="project-detail"><span class="project-detail-label">Type</span><span class="project-detail-value">Full Redesign</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Location</span><span class="project-detail-value">Maplewood, NJ</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Timeline</span><span class="project-detail-value">3 Weeks</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Budget</span><span class="project-detail-value">$15k - $20k</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card fade-up" data-category="hardscaping">
+                <div class="project-card-img">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&q=80" alt="Chen Outdoor Living Room" loading="lazy">
+                    <span class="project-category">Hardscaping</span>
+                </div>
+                <div class="project-card-body">
+                    <h3>The Chen Outdoor Living Room</h3>
+                    <div class="project-before-after">
+                        <div class="ba-section ba-before">
+                            <h4>Before</h4>
+                            <p>Cracked concrete slab with no shade, no privacy, and weeds growing through every joint.</p>
+                        </div>
+                        <div class="ba-section ba-after">
+                            <h4>After</h4>
+                            <p>Elegant bluestone patio with cedar pergola, built-in seating, landscape lighting, and privacy plantings.</p>
+                        </div>
+                    </div>
+                    <p class="project-narrative">The Chens dreamed of entertaining outdoors but their existing concrete patio was an eyesore. We replaced it with a natural bluestone surface, added a cedar pergola for shade, and surrounded everything with layered evergreen and ornamental plantings for year-round privacy.</p>
+                    <div class="project-details">
+                        <div class="project-detail"><span class="project-detail-label">Type</span><span class="project-detail-value">Patio Build</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Location</span><span class="project-detail-value">Short Hills, NJ</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Timeline</span><span class="project-detail-value">4 Weeks</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Budget</span><span class="project-detail-value">$25k - $30k</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card fade-up" data-category="design">
+                <div class="project-card-img">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=700&q=80" alt="Patel Curb Appeal Makeover" loading="lazy">
+                    <span class="project-category">Design & Install</span>
+                </div>
+                <div class="project-card-body">
+                    <h3>The Patel Curb Appeal Makeover</h3>
+                    <div class="project-before-after">
+                        <div class="ba-section ba-before">
+                            <h4>Before</h4>
+                            <p>Dated foundation plantings from the 1990s, overgrown yews blocking windows, bare soil patches.</p>
+                        </div>
+                        <div class="ba-section ba-after">
+                            <h4>After</h4>
+                            <p>Cohesive front yard design with native perennials, ornamental grasses, fresh mulch, and accent lighting.</p>
+                        </div>
+                    </div>
+                    <p class="project-narrative">A fresh front yard can change the entire feeling of coming home. We removed the overgrown foundation plantings and designed a modern, low-maintenance garden using native perennials and ornamental grasses that look beautiful in every season.</p>
+                    <div class="project-details">
+                        <div class="project-detail"><span class="project-detail-label">Type</span><span class="project-detail-value">Curb Appeal</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Location</span><span class="project-detail-value">Summit, NJ</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Timeline</span><span class="project-detail-value">1 Week</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Budget</span><span class="project-detail-value">$5k - $8k</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card fade-up" data-category="maintenance">
+                <div class="project-card-img">
+                    <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?w=700&q=80" alt="Westfield Estate Grounds" loading="lazy">
+                    <span class="project-category">Maintenance</span>
+                </div>
+                <div class="project-card-body">
+                    <h3>The Westfield Estate Grounds</h3>
+                    <div class="project-before-after">
+                        <div class="ba-section ba-before">
+                            <h4>Before</h4>
+                            <p>Two-acre property with inconsistent lawn quality, neglected beds, and diseased ornamental trees.</p>
+                        </div>
+                        <div class="ba-section ba-after">
+                            <h4>After</h4>
+                            <p>Pristine grounds with a championship-quality lawn, restored garden beds, and healthy mature trees.</p>
+                        </div>
+                    </div>
+                    <p class="project-narrative">This two-acre estate had been through three different lawn services with inconsistent results. After a thorough soil analysis and turf assessment, we created a custom maintenance program. Within one season the lawn was lush and uniform, and the neglected garden beds were restored.</p>
+                    <div class="project-details">
+                        <div class="project-detail"><span class="project-detail-label">Type</span><span class="project-detail-value">Estate Care</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Location</span><span class="project-detail-value">Chatham, NJ</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Timeline</span><span class="project-detail-value">Ongoing</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Budget</span><span class="project-detail-value">$499/mo</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card fade-up" data-category="hardscaping">
+                <div class="project-card-img">
+                    <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=700&q=80" alt="Kim Garden Terrace" loading="lazy">
+                    <span class="project-category">Hardscaping</span>
+                </div>
+                <div class="project-card-body">
+                    <h3>The Kim Garden Terrace</h3>
+                    <div class="project-before-after">
+                        <div class="ba-section ba-before">
+                            <h4>Before</h4>
+                            <p>Steep, unusable slope with erosion problems and runoff into neighbor's yard.</p>
+                        </div>
+                        <div class="ba-section ba-after">
+                            <h4>After</h4>
+                            <p>Three-level terraced garden with natural stone retaining walls, built-in planting beds, and stone steps.</p>
+                        </div>
+                    </div>
+                    <p class="project-narrative">A challenging hillside lot became the Kims' favorite feature. We engineered a terraced system with natural stone retaining walls that solved the erosion problem while creating three usable garden levels, each with its own character and planting scheme.</p>
+                    <div class="project-details">
+                        <div class="project-detail"><span class="project-detail-label">Type</span><span class="project-detail-value">Retaining Walls</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Location</span><span class="project-detail-value">Montclair, NJ</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Timeline</span><span class="project-detail-value">5 Weeks</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Budget</span><span class="project-detail-value">$30k - $40k</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card fade-up" data-category="commercial">
+                <div class="project-card-img">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80" alt="Meridian Office Campus" loading="lazy">
+                    <span class="project-category">Commercial</span>
+                </div>
+                <div class="project-card-body">
+                    <h3>Meridian Office Campus</h3>
+                    <div class="project-before-after">
+                        <div class="ba-section ba-before">
+                            <h4>Before</h4>
+                            <p>Generic commercial landscaping with high water usage, poor curb appeal, and frequent plant replacements.</p>
+                        </div>
+                        <div class="ba-section ba-after">
+                            <h4>After</h4>
+                            <p>Modern, sustainable campus landscape with native plantings, rain gardens, and reduced water usage by 40%.</p>
+                        </div>
+                    </div>
+                    <p class="project-narrative">Meridian Properties wanted their office campus to reflect their sustainability values. We redesigned the grounds with native plants, rain gardens for stormwater management, and drought-tolerant grasses, cutting water usage by 40% while creating a much more attractive environment.</p>
+                    <div class="project-details">
+                        <div class="project-detail"><span class="project-detail-label">Type</span><span class="project-detail-value">Commercial</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Location</span><span class="project-detail-value">Morristown, NJ</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Timeline</span><span class="project-detail-value">8 Weeks</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Budget</span><span class="project-detail-value">$50k+</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="project-card fade-up" data-category="design">
+                <div class="project-card-img">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=80" alt="Garcia Pollinator Garden" loading="lazy">
+                    <span class="project-category">Design & Install</span>
+                </div>
+                <div class="project-card-body">
+                    <h3>The Garcia Pollinator Paradise</h3>
+                    <div class="project-before-after">
+                        <div class="ba-section ba-before">
+                            <h4>Before</h4>
+                            <p>Plain grass yard with no color, no wildlife habitat, and weekly mowing requirements.</p>
+                        </div>
+                        <div class="ba-section ba-after">
+                            <h4>After</h4>
+                            <p>Vibrant pollinator garden with native wildflowers, butterfly bushes, bird feeders, and a small water feature.</p>
+                        </div>
+                    </div>
+                    <p class="project-narrative">The Garcias were passionate about supporting local pollinators. We replaced a large section of lawn with a naturalistic meadow garden featuring over 30 species of native wildflowers and grasses, creating a habitat that now attracts dozens of butterfly and bird species.</p>
+                    <div class="project-details">
+                        <div class="project-detail"><span class="project-detail-label">Type</span><span class="project-detail-value">Eco Design</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Location</span><span class="project-detail-value">South Orange, NJ</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Timeline</span><span class="project-detail-value">2 Weeks</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Budget</span><span class="project-detail-value">$8k - $12k</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="project-card fade-up" data-category="commercial">
+                <div class="project-card-img">
+                    <img src="https://images.unsplash.com/photo-1563191911-e65f8655ebf9?w=700&q=80" alt="Elmwood HOA Common Areas" loading="lazy">
+                    <span class="project-category">Commercial</span>
+                </div>
+                <div class="project-card-body">
+                    <h3>Elmwood HOA Common Areas</h3>
+                    <div class="project-before-after">
+                        <div class="ba-section ba-before">
+                            <h4>Before</h4>
+                            <p>Tired common areas with dead zones, outdated plantings, and a non-functional irrigation system.</p>
+                        </div>
+                        <div class="ba-section ba-after">
+                            <h4>After</h4>
+                            <p>Revitalized community spaces with new plantings, repaired irrigation, and a welcoming entrance garden.</p>
+                        </div>
+                    </div>
+                    <p class="project-narrative">The Elmwood HOA needed a landscape partner who could revitalize their community's appearance on a responsible budget. We redesigned the entrance, repaired the irrigation system, and created a seasonal rotation plan that keeps the common areas looking fresh year-round.</p>
+                    <div class="project-details">
+                        <div class="project-detail"><span class="project-detail-label">Type</span><span class="project-detail-value">HOA / Commercial</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Location</span><span class="project-detail-value">Madison, NJ</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Timeline</span><span class="project-detail-value">6 Weeks</span></div>
+                        <div class="project-detail"><span class="project-detail-label">Budget</span><span class="project-detail-value">$35k - $45k</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="gallery-cta">
+    <div class="container">
+        <h2>Ready to Transform Your Space?</h2>
+        <p>Every project in our portfolio started with a conversation. Let's start yours.</p>
+        <a href="contact.html" class="btn-cta" style="padding:16px 36px;font-size:1.05rem;">Get Your Free Consultation &#8594;</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo"><div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20c4 0 8.71-3.13 9.49-7.5C18.17 9.5 17 8 17 8zm-5.5 4a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></svg></div>GreenScape</a>
+                <p>Creating beautiful, sustainable outdoor spaces for homes and businesses since 2011.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M16 4H8a4 4 0 00-4 4v8a4 4 0 004 4h8a4 4 0 004-4V8a4 4 0 00-4-4zm2 12a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2h8a2 2 0 012 2v8zm-6-7a3 3 0 100 6 3 3 0 000-6zm4.5-.5a1 1 0 110-2 1 1 0 010 2z"/></svg></a>
+                    <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 001.94-2A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
+                </div>
+            </div>
+            <div><h4>Quick Links</h4><ul><li><a href="services.html">Services</a></li><li><a href="gallery.html">Portfolio</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div><h4>Service Areas</h4><ul><li><a href="#">Maplewood</a></li><li><a href="#">South Orange</a></li><li><a href="#">Millburn / Short Hills</a></li><li><a href="#">Summit</a></li><li><a href="#">Chatham / Madison</a></li><li><a href="#">Montclair</a></li></ul></div>
+            <div>
+                <h4>Contact Us</h4>
+                <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg><a href="tel:+15553472583">(555) 347-2583</a></div>
+                <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:hello@greenscapelandscaping.com">hello@greenscapelandscaping.com</a></div>
+                <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg><span>742 Oakwood Drive<br>Maplewood, NJ 07040</span></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 GreenScape Landscaping. All rights reserved.</span>
+            <span>Licensed & Insured | NJ HIC #13VH12345678</span>
+        </div>
+    </div>
+</footer>
+
+<div class="mobile-bar"><a href="tel:+15553472583"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>Call Now - (555) 347-2583</a></div>
+
+<script>
+    document.getElementById('hamburger').addEventListener('click', () => { document.getElementById('mobileNav').classList.toggle('open'); });
+    window.addEventListener('scroll', () => { document.getElementById('header').classList.toggle('scrolled', window.scrollY > 20); });
+
+    // Filter tabs
+    const tabs = document.querySelectorAll('.filter-tab');
+    const cards = document.querySelectorAll('.project-card');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const filter = tab.dataset.filter;
+            cards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = '';
+                    setTimeout(() => card.style.opacity = '1', 10);
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => card.style.display = 'none', 300);
+                }
+            });
+        });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

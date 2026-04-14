@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews | Elite Plumbing & HVAC</title>
+    <meta name="description" content="Read 487+ verified customer reviews for Elite Plumbing & HVAC. 4.9-star Google rating. See why Springfield homeowners trust us for plumbing and HVAC services.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy: #1e3a5f; --blue: #4a90d9; --white: #ffffff; --orange: #e8722a; --orange-hover: #d4621f;
+            --dark: #1a1a2e; --gray-50: #f8f9fa; --gray-100: #f0f1f3; --gray-200: #e2e4e8;
+            --gray-400: #9ca3af; --gray-600: #6b7280; --gray-700: #4b5563;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08); --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+            --radius: 12px; --transition: 0.3s ease;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', system-ui, sans-serif; color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Poppins', system-ui, sans-serif; font-weight: 700; line-height: 1.2; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* HEADER */
+        .header { position: sticky; top: 0; z-index: 1000; background: var(--white); border-bottom: 1px solid var(--gray-200); transition: box-shadow var(--transition); }
+        .header.scrolled { box-shadow: var(--shadow); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; max-width: 1200px; margin: 0 auto; height: 72px; }
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 40px; height: 40px; background: var(--navy); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .logo-icon svg { width: 24px; height: 24px; fill: var(--white); }
+        .logo-text { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--navy); line-height: 1.1; }
+        .logo-text span { display: block; font-size: 0.7rem; font-weight: 500; color: var(--blue); letter-spacing: 0.5px; }
+        .nav-desktop { display: flex; align-items: center; gap: 28px; }
+        .nav-desktop a { font-size: 0.95rem; font-weight: 500; color: var(--gray-700); transition: color var(--transition); position: relative; }
+        .nav-desktop a:hover, .nav-desktop a.active { color: var(--navy); }
+        .nav-desktop a.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: var(--orange); border-radius: 1px; }
+        .header-right { display: flex; align-items: center; gap: 16px; }
+        .google-rating { display: flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--gray-50); border-radius: 8px; font-size: 0.85rem; font-weight: 600; color: var(--dark); }
+        .google-rating .stars { color: #f59e0b; }
+        .google-rating .count { color: var(--gray-600); font-weight: 400; }
+        .header-phone { display: flex; align-items: center; gap: 6px; background: var(--navy); color: var(--white); padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: background var(--transition); }
+        .header-phone:hover { background: #162d4a; }
+        .header-phone svg { width: 16px; height: 16px; fill: currentColor; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+        .hamburger span { width: 24px; height: 2px; background: var(--navy); transition: var(--transition); border-radius: 1px; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .mobile-menu { display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 999; padding: 20px; flex-direction: column; overflow-y: auto; }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a { padding: 16px 0; font-size: 1.1rem; font-weight: 500; color: var(--dark); border-bottom: 1px solid var(--gray-100); }
+        .mobile-menu a.active { color: var(--orange); }
+        .mobile-menu .mobile-phone { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 20px; padding: 16px; background: var(--navy); color: var(--white); border-radius: 10px; font-weight: 600; font-size: 1.1rem; }
+        .mobile-menu .mobile-phone svg { width: 18px; height: 18px; fill: currentColor; }
+
+        /* PAGE HERO */
+        .page-hero { position: relative; padding: 100px 0 60px; background: linear-gradient(135deg, var(--navy) 0%, #2a4f7a 100%); overflow: hidden; }
+        .page-hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: rgba(74,144,217,0.1); border-radius: 50%; }
+        .page-hero .breadcrumb { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 16px; }
+        .page-hero .breadcrumb a { color: rgba(255,255,255,0.6); transition: color var(--transition); }
+        .page-hero .breadcrumb a:hover { color: var(--white); }
+        .page-hero .breadcrumb .sep { font-size: 0.7rem; }
+        .page-hero h1 { font-size: clamp(2rem, 4vw, 3rem); color: var(--white); margin-bottom: 12px; }
+        .page-hero p { font-size: 1.1rem; color: rgba(255,255,255,0.8); max-width: 600px; }
+
+        /* OVERALL RATING */
+        .rating-overview { padding: 48px 0; background: var(--white); border-bottom: 1px solid var(--gray-200); }
+        .rating-overview-inner { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .rating-big { text-align: center; }
+        .rating-big .number { font-family: 'Poppins', sans-serif; font-size: 4rem; font-weight: 700; color: var(--navy); line-height: 1; }
+        .rating-big .stars-big { color: #f59e0b; font-size: 1.8rem; margin: 8px 0; letter-spacing: 2px; }
+        .rating-big .count { color: var(--gray-600); font-size: 1rem; }
+        .rating-breakdown { display: flex; flex-direction: column; gap: 6px; min-width: 240px; }
+        .rating-row { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--gray-700); }
+        .rating-row span:first-child { width: 50px; text-align: right; }
+        .rating-bar { flex: 1; height: 8px; background: var(--gray-200); border-radius: 4px; overflow: hidden; }
+        .rating-bar-fill { height: 100%; background: #f59e0b; border-radius: 4px; }
+        .rating-row span:last-child { width: 36px; font-size: 0.85rem; color: var(--gray-400); }
+
+        /* REVIEWS */
+        .section { padding: 80px 0; }
+        .bg-gray { background: var(--gray-50); }
+        .reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .review-card { background: var(--white); padding: 32px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--gray-100); transition: all var(--transition); }
+        .review-card:hover { box-shadow: var(--shadow-lg); }
+        .review-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+        .review-author { display: flex; align-items: center; gap: 12px; }
+        .review-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--navy); display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 600; font-size: 1rem; }
+        .review-info strong { display: block; font-size: 0.95rem; color: var(--dark); }
+        .review-info .location { font-size: 0.82rem; color: var(--gray-400); }
+        .review-meta { text-align: right; }
+        .review-stars { color: #f59e0b; font-size: 0.95rem; margin-bottom: 2px; }
+        .review-date { font-size: 0.8rem; color: var(--gray-400); }
+        .review-service { display: inline-block; padding: 4px 10px; background: rgba(74,144,217,0.1); color: var(--blue); font-size: 0.78rem; font-weight: 600; border-radius: 50px; margin-bottom: 12px; }
+        .review-text { font-size: 0.95rem; color: var(--gray-700); line-height: 1.7; }
+
+        /* CTA BANNER */
+        .cta-banner { background: linear-gradient(135deg, var(--navy) 0%, #2a4f7a 100%); padding: 64px 0; text-align: center; }
+        .cta-banner h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--white); margin-bottom: 12px; }
+        .cta-banner p { color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-bottom: 28px; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: var(--white); padding: 16px 32px; border-radius: 10px; font-weight: 600; font-size: 1.05rem; border: none; cursor: pointer; transition: all var(--transition); box-shadow: 0 4px 16px rgba(232,114,42,0.3); }
+        .btn-primary:hover { background: var(--orange-hover); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(232,114,42,0.4); }
+        .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: var(--white); color: var(--navy); padding: 16px 32px; border-radius: 10px; font-weight: 600; font-size: 1.05rem; border: 2px solid var(--navy); cursor: pointer; transition: all var(--transition); }
+        .btn-secondary:hover { background: var(--navy); color: var(--white); }
+
+        /* FOOTER */
+        .footer { background: var(--dark); color: rgba(255,255,255,0.7); padding: 64px 0 0; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+        .footer-brand .logo-text { color: var(--white); font-size: 1.2rem; margin-bottom: 12px; }
+        .footer-brand .logo-text span { color: var(--blue); }
+        .footer-brand p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 16px; }
+        .footer-license { display: inline-block; padding: 6px 12px; background: rgba(255,255,255,0.08); border-radius: 6px; font-size: 0.8rem; font-weight: 500; color: rgba(255,255,255,0.5); }
+        .footer h4 { color: var(--white); font-size: 1rem; margin-bottom: 20px; }
+        .footer ul { list-style: none; }
+        .footer ul li { margin-bottom: 10px; }
+        .footer ul a { font-size: 0.9rem; transition: color var(--transition); }
+        .footer ul a:hover { color: var(--white); }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; font-size: 0.9rem; }
+        .footer-contact-item svg { width: 16px; height: 16px; fill: var(--blue); flex-shrink: 0; margin-top: 3px; }
+        .footer-areas { display: flex; flex-wrap: wrap; gap: 6px; }
+        .footer-areas span { font-size: 0.8rem; padding: 4px 10px; background: rgba(255,255,255,0.06); border-radius: 4px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 24px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+        .footer-bottom p { font-size: 0.82rem; }
+        .footer-social { display: flex; gap: 12px; }
+        .footer-social a { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; transition: background var(--transition); }
+        .footer-social a:hover { background: var(--blue); }
+        .footer-social svg { width: 16px; height: 16px; fill: var(--white); }
+
+        /* MOBILE BOTTOM BAR */
+        .mobile-call-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 1001; background: var(--orange); box-shadow: 0 -4px 20px rgba(0,0,0,0.15); }
+        .mobile-call-bar a { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px; color: var(--white); font-weight: 700; font-size: 1.1rem; }
+        .mobile-call-bar svg { width: 22px; height: 22px; fill: currentColor; animation: ring 2s ease-in-out infinite; }
+        @keyframes ring { 0%, 100% { transform: rotate(0); } 5%, 15% { transform: rotate(14deg); } 10%, 20% { transform: rotate(-14deg); } 25% { transform: rotate(0); } }
+
+        .animate-on-scroll { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 1024px) {
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .nav-desktop, .header-phone, .google-rating { display: none; }
+            .hamburger { display: flex; }
+            .header-inner { height: 64px; }
+            .page-hero { padding: 80px 0 40px; }
+            .section { padding: 56px 0; }
+            .reviews-grid { grid-template-columns: 1fr; }
+            .rating-overview-inner { flex-direction: column; gap: 24px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .mobile-call-bar { display: block; }
+            body { padding-bottom: 56px; }
+        }
+        @media (max-width: 480px) {
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></div>
+            <div class="logo-text">Elite Plumbing<span>& HVAC Services</span></div>
+        </a>
+        <nav class="nav-desktop">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="reviews.html" class="active">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-right">
+            <div class="google-rating"><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><strong>4.9</strong><span class="count">(487)</span></div>
+            <a href="tel:+15558473291" class="header-phone"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>(555) 847-3291</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="reviews.html" class="active">Reviews</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:+15558473291" class="mobile-phone"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Call (555) 847-3291</a>
+    </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a> <span class="sep">&#9656;</span> <span>Reviews</span></div>
+        <h1>Customer Reviews</h1>
+        <p>See what our customers have to say about their experience with Elite Plumbing & HVAC.</p>
+    </div>
+</section>
+
+<!-- RATING OVERVIEW -->
+<section class="rating-overview">
+    <div class="container">
+        <div class="rating-overview-inner">
+            <div class="rating-big">
+                <div class="number">4.9</div>
+                <div class="stars-big">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="count">Based on 487 Google Reviews</div>
+            </div>
+            <div class="rating-breakdown">
+                <div class="rating-row"><span>5 star</span><div class="rating-bar"><div class="rating-bar-fill" style="width:92%"></div></div><span>92%</span></div>
+                <div class="rating-row"><span>4 star</span><div class="rating-bar"><div class="rating-bar-fill" style="width:6%"></div></div><span>6%</span></div>
+                <div class="rating-row"><span>3 star</span><div class="rating-bar"><div class="rating-bar-fill" style="width:1.5%"></div></div><span>1.5%</span></div>
+                <div class="rating-row"><span>2 star</span><div class="rating-bar"><div class="rating-bar-fill" style="width:0.5%"></div></div><span>0.5%</span></div>
+                <div class="rating-row"><span>1 star</span><div class="rating-bar"><div class="rating-bar-fill" style="width:0%"></div></div><span>0%</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section bg-gray">
+    <div class="container">
+        <div class="reviews-grid">
+
+            <div class="review-card animate-on-scroll">
+                <div class="review-header">
+                    <div class="review-author"><div class="review-avatar">JR</div><div class="review-info"><strong>James R.</strong><span class="location">Springfield, IL</span></div></div>
+                    <div class="review-meta"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-date">March 2026</div></div>
+                </div>
+                <span class="review-service">Emergency Plumbing</span>
+                <p class="review-text">Our water heater failed at 11 PM on a Saturday. I called Elite expecting to leave a message, but Mike answered and had a tech at our door within 45 minutes. They replaced the unit by morning. The price was exactly what they quoted over the phone. This is the kind of service that earns a customer for life.</p>
+            </div>
+
+            <div class="review-card animate-on-scroll">
+                <div class="review-header">
+                    <div class="review-author"><div class="review-avatar">SL</div><div class="review-info"><strong>Sarah L.</strong><span class="location">Chatham, IL</span></div></div>
+                    <div class="review-meta"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-date">February 2026</div></div>
+                </div>
+                <span class="review-service">HVAC Installation</span>
+                <p class="review-text">We had three companies quote our HVAC replacement. Elite was the only one who took the time to explain our options and help us pick the right system for our home size. Fair price, excellent install. The house has never been more comfortable and our energy bills dropped by about 30%.</p>
+            </div>
+
+            <div class="review-card animate-on-scroll">
+                <div class="review-header">
+                    <div class="review-author"><div class="review-avatar">DW</div><div class="review-info"><strong>David W.</strong><span class="location">Rochester, IL</span></div></div>
+                    <div class="review-meta"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-date">January 2026</div></div>
+                </div>
+                <span class="review-service">Sewer Repair</span>
+                <p class="review-text">I have been using Elite for all my rental properties for five years. They are always on time, clean up after themselves, and their prices are fair. Marcus and his team fixed a slab leak that two other companies said could not be fixed without tearing up the floor. Saved me thousands.</p>
+            </div>
+
+            <div class="review-card animate-on-scroll">
+                <div class="review-header">
+                    <div class="review-author"><div class="review-avatar">MP</div><div class="review-info"><strong>Michelle P.</strong><span class="location">Sherman, IL</span></div></div>
+                    <div class="review-meta"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-date">January 2026</div></div>
+                </div>
+                <span class="review-service">Bathroom Remodel</span>
+                <p class="review-text">Elite did a complete remodel of our master bathroom. From the initial design consultation to the final walkthrough, they were professional and communicative every step of the way. The tile work is flawless and they finished a day ahead of schedule. I could not be happier with the result.</p>
+            </div>
+
+            <div class="review-card animate-on-scroll">
+                <div class="review-header">
+                    <div class="review-author"><div class="review-avatar">TK</div><div class="review-info"><strong>Tom K.</strong><span class="location">Williamsville, IL</span></div></div>
+                    <div class="review-meta"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-date">December 2025</div></div>
+                </div>
+                <span class="review-service">Drain Cleaning</span>
+                <p class="review-text">Had a persistent kitchen drain clog that kept coming back after other plumbers snaked it. Elite used their camera to find the real problem, tree roots in the main line, and cleared it with hydro-jetting. They showed me the video of the before and after. No issues in six months and counting.</p>
+            </div>
+
+            <div class="review-card animate-on-scroll">
+                <div class="review-header">
+                    <div class="review-author"><div class="review-avatar">RG</div><div class="review-info"><strong>Rachel G.</strong><span class="location">Jerome, IL</span></div></div>
+                    <div class="review-meta"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-date">November 2025</div></div>
+                </div>
+                <span class="review-service">AC Repair</span>
+                <p class="review-text">Our AC went out during a heat wave in July. Called Elite and Kevin was at our house the same afternoon. Turned out to be a bad capacitor, which he replaced on the spot. He also did a full system check and pointed out a couple of things we should watch, but did not pressure us into buying anything we did not need. Honest company.</p>
+            </div>
+
+            <div class="review-card animate-on-scroll">
+                <div class="review-header">
+                    <div class="review-author"><div class="review-avatar">AL</div><div class="review-info"><strong>Anthony L.</strong><span class="location">Riverton, IL</span></div></div>
+                    <div class="review-meta"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div><div class="review-date">October 2025</div></div>
+                </div>
+                <span class="review-service">Water Heater Install</span>
+                <p class="review-text">Got a new tankless water heater installed. The work itself was excellent, and the unit works great. The only reason for four stars instead of five is that the scheduling took a bit longer than I expected. Once they arrived, though, the install was smooth and the team was very professional.</p>
+            </div>
+
+            <div class="review-card animate-on-scroll">
+                <div class="review-header">
+                    <div class="review-author"><div class="review-avatar">JC</div><div class="review-info"><strong>Jennifer C.</strong><span class="location">Auburn, IL</span></div></div>
+                    <div class="review-meta"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-date">September 2025</div></div>
+                </div>
+                <span class="review-service">Emergency Plumbing</span>
+                <p class="review-text">Came home from vacation to a flooded basement from a burst pipe. Called Elite in a panic and they were there within the hour. They shut off the water, repaired the pipe, and even helped us start the water extraction process. They went way above and beyond. I tell everyone I know about this company.</p>
+            </div>
+
+            <div class="review-card animate-on-scroll">
+                <div class="review-header">
+                    <div class="review-author"><div class="review-avatar">BM</div><div class="review-info"><strong>Brian M.</strong><span class="location">Springfield, IL</span></div></div>
+                    <div class="review-meta"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-date">August 2025</div></div>
+                </div>
+                <span class="review-service">HVAC Maintenance</span>
+                <p class="review-text">I signed up for their annual maintenance plan and it has been worth every penny. They come out twice a year to service my furnace and AC. Lisa always sends a reminder text and the techs arrive right on time. This past spring they caught a cracked heat exchanger during the inspection. Could have been a serious safety issue if they had not found it.</p>
+            </div>
+
+            <div class="review-card animate-on-scroll">
+                <div class="review-header">
+                    <div class="review-author"><div class="review-avatar">KH</div><div class="review-info"><strong>Karen H.</strong><span class="location">New Berlin, IL</span></div></div>
+                    <div class="review-meta"><div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="review-date">July 2025</div></div>
+                </div>
+                <span class="review-service">Bathroom Remodel</span>
+                <p class="review-text">We hired Elite to update our hall bathroom. They installed a new vanity, toilet, shower tile, and fixtures. The team was respectful of our home, covered the floors, and cleaned up every day before they left. The finished product looks like something out of a magazine. We are already planning to have them do the other bathroom.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+    <div class="container">
+        <h2>Had a Great Experience?</h2>
+        <p>We appreciate every review. Your feedback helps other homeowners find a plumber they can trust.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+            <a href="#" class="btn-primary">Leave a Google Review <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></a>
+            <a href="contact.html" class="btn-primary" style="background:transparent;border:2px solid var(--white);box-shadow:none;">Schedule Service <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-text" style="font-family:'Poppins',sans-serif;">Elite Plumbing<span>& HVAC Services</span></div>
+                <p>Proudly serving Springfield and surrounding communities since 2004. We are committed to providing reliable, professional plumbing and HVAC services at fair prices.</p>
+                <div class="footer-license">License #PLB-2847</div>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Info</h4>
+                <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+15558473291">(555) 847-3291</a></div>
+                <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:info@eliteplumbinghvac.com">info@eliteplumbinghvac.com</a></div>
+                <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span>1847 Commerce Drive, Suite 12<br>Springfield, IL 62704</span></div>
+                <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg><span>Mon-Fri: 7AM - 6PM<br>Sat: 8AM - 2PM<br>Emergency: 24/7</span></div>
+            </div>
+            <div>
+                <h4>Service Areas</h4>
+                <div class="footer-areas">
+                    <span>Springfield</span><span>Chatham</span><span>Rochester</span><span>Sherman</span><span>Williamsville</span><span>Jerome</span><span>Riverton</span><span>Auburn</span><span>Divernon</span><span>Pawnee</span><span>New Berlin</span><span>Mechanicsburg</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Elite Plumbing & HVAC. All rights reserved. License #PLB-2847</p>
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+                <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 01-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 017.8 2zm-.2 2A3.6 3.6 0 004 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 003.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/></svg></a>
+                <a href="#" aria-label="Google Business"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></a>
+                <a href="#" aria-label="Yelp"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- MOBILE CALL BAR -->
+<div class="mobile-call-bar">
+    <a href="tel:+15558473291"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Call Now - (555) 847-3291</a>
+</div>
+
+<script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 20); });
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

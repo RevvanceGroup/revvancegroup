@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(netsh advfirewall:*)",
+      "Bash(ngrok version:*)",
+      "Bash(npx localtunnel:*)",
+      "Bash(cmd /c \"taskkill /PID 17556 /F\")",
+      "Bash(cmd /c \"netstat -ano\")",
+      "Bash(kill 1543)",
+      "Bash(nohup npx:*)",
+      "Bash(echo \"PID: $!\")",
+      "Bash(echo \"tunnel PID: $!\")"
+    ]
+  }
+}
