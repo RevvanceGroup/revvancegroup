@@ -267,6 +267,16 @@
         .port-industry.roofing { background: rgba(239,68,68,0.2); color: #f87171; }
         .port-industry.landscaping { background: rgba(34,197,94,0.2); color: #4ade80; }
         .port-industry.restaurant { background: rgba(245,158,11,0.2); color: #fbbf24; }
+        .port-industry.hvac { background: rgba(249,115,22,0.22); color: #fb923c; }
+        .port-card.featured { border: 2px solid rgba(249,115,22,0.55); position: relative; }
+        .port-card.featured::before {
+          content: 'NEW · FLAGSHIP';
+          position: absolute; top: 16px; right: 16px; z-index: 3;
+          background: #f97316; color: #fff;
+          padding: 6px 12px; border-radius: 100px;
+          font-size: 0.7rem; font-weight: 700;
+          letter-spacing: 0.12em; text-transform: uppercase;
+        }
         .port-body { padding: 24px; }
         .port-body h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
         .port-body p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
@@ -602,6 +612,28 @@
       <p>These aren't mockups. Click through to explore fully built, multi-page websites with real images, SEO, and conversion features.</p>
     </div>
     <div class="portfolio-grid">
+      <a href="demos/hvac/index.html" class="port-card featured fade-up" target="_blank">
+        <div class="port-preview">
+          <img src="https://images.unsplash.com/photo-1635274606728-5f8f3aae5e50?auto=format&fit=crop&w=800&q=80" alt="HVAC website demo" class="port-img">
+          <div class="port-overlay">
+            <span class="port-industry hvac">HVAC</span>
+          </div>
+        </div>
+        <div class="port-body">
+          <h3>Meridian Heating &amp; Air</h3>
+          <p>22-page site with before/after slider, cost calculator, blog, location pages, and FAQ-rich schema built for both Google and AI search (ChatGPT, Perplexity, Claude).</p>
+          <div class="port-stats">
+            <div class="port-stat"><span class="port-stat-val">22</span><span class="port-stat-label">Pages</span></div>
+            <div class="port-stat"><span class="port-stat-val">5</span><span class="port-stat-label">Blog Posts</span></div>
+            <div class="port-stat"><span class="port-stat-val">GEO</span><span class="port-stat-label">AI Search Ready</span></div>
+          </div>
+          <span class="port-link">
+            Explore Live Demo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </a>
+
       <a href="demos/plumbing/index.html" class="port-card fade-up" target="_blank">
         <div class="port-preview">
           <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Plumbing website demo" class="port-img">
