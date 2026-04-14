@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Voltage Electric Co. | Austin's Trusted Electricians Since 2008</title>
+    <meta name="description" content="Learn about Voltage Electric Co. — family-owned and operated since 2008. Master electrician on staff, fully licensed and insured, 1,200+ jobs completed in Austin, TX.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --electric: #1840b0;
+            --electric-light: #2a57d1;
+            --yellow: #f7b731;
+            --yellow-hover: #e6a820;
+            --dark: #111827;
+            --white: #ffffff;
+            --gray-50: #f8f9fa;
+            --gray-100: #f0f2f5;
+            --gray-200: #e2e6ed;
+            --gray-600: #6b7280;
+            --gray-700: #4b5563;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --transition: 0.3s ease;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', system-ui, sans-serif; color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 700; line-height: 1.2; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* HEADER */
+        .header { position: sticky; top: 0; z-index: 1000; background: var(--white); border-bottom: 1px solid var(--gray-200); transition: box-shadow var(--transition); }
+        .header.scrolled { box-shadow: var(--shadow); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; max-width: 1200px; margin: 0 auto; height: 72px; }
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 42px; height: 42px; background: var(--electric); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+        .logo-icon svg { width: 26px; height: 26px; fill: var(--yellow); }
+        .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--dark); line-height: 1.1; }
+        .logo-text .co { color: var(--electric); }
+        .logo-text .sub { display: block; font-size: 0.65rem; font-weight: 600; color: var(--gray-600); letter-spacing: 0.8px; text-transform: uppercase; }
+        .nav-desktop { display: flex; align-items: center; gap: 28px; }
+        .nav-desktop a { font-size: 0.95rem; font-weight: 500; color: var(--gray-700); transition: color var(--transition); position: relative; }
+        .nav-desktop a:hover, .nav-desktop a.active { color: var(--electric); }
+        .nav-desktop a.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: var(--yellow); border-radius: 1px; }
+        .header-right { display: flex; align-items: center; gap: 14px; }
+        .google-rating { display: flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; font-size: 0.85rem; font-weight: 600; color: var(--dark); }
+        .google-rating .stars { color: #f59e0b; font-size: 0.9rem; }
+        .google-rating .count { color: var(--gray-600); font-weight: 400; }
+        .header-phone { display: flex; align-items: center; gap: 6px; background: var(--electric); color: var(--white); padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: background var(--transition); }
+        .header-phone:hover { background: var(--electric-light); }
+        .header-phone svg { width: 16px; height: 16px; fill: currentColor; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+        .hamburger span { width: 24px; height: 2px; background: var(--dark); transition: var(--transition); border-radius: 1px; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 999; padding: 88px 32px 32px; flex-direction: column; gap: 0; overflow-y: auto; }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a { padding: 18px 0; font-size: 1.15rem; font-weight: 600; color: var(--dark); border-bottom: 1px solid var(--gray-100); font-family: 'Montserrat', sans-serif; }
+        .mobile-menu a.active { color: var(--electric); }
+        .mobile-menu .mobile-call { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 28px; padding: 18px; background: var(--yellow); color: var(--dark); border-radius: 12px; font-weight: 700; font-size: 1.1rem; font-family: 'Montserrat', sans-serif; }
+        .mobile-menu .mobile-call svg { width: 20px; height: 20px; fill: currentColor; }
+
+        /* PAGE HERO */
+        .page-hero { background: linear-gradient(135deg, var(--electric) 0%, var(--dark) 100%); padding: 64px 0 56px; }
+        .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-bottom: 20px; }
+        .breadcrumb a { color: rgba(255,255,255,0.7); transition: color var(--transition); }
+        .breadcrumb a:hover { color: var(--white); }
+        .breadcrumb svg { width: 14px; height: 14px; fill: rgba(255,255,255,0.4); }
+        .page-hero h1 { font-size: clamp(1.9rem, 4vw, 3rem); color: var(--white); margin-bottom: 14px; font-weight: 800; max-width: 680px; }
+        .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.78); max-width: 580px; line-height: 1.7; }
+
+        /* STORY SECTION */
+        .section { padding: 88px 0; }
+        .bg-gray { background: var(--gray-100); }
+        .story-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+        .story-img { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
+        .story-img img { width: 100%; height: 480px; object-fit: cover; }
+        .story-img-badge { position: absolute; bottom: 24px; left: 24px; background: var(--electric); color: var(--white); padding: 12px 20px; border-radius: 10px; font-family: 'Montserrat', sans-serif; }
+        .story-img-badge strong { display: block; font-size: 1.6rem; font-weight: 800; line-height: 1; color: var(--yellow); }
+        .story-img-badge span { font-size: 0.78rem; font-weight: 600; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.8px; }
+        .section-label { display: inline-block; font-size: 0.75rem; font-weight: 700; color: var(--electric); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-family: 'Montserrat', sans-serif; }
+        .story-content h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--dark); margin-bottom: 20px; }
+        .story-content p { font-size: 0.95rem; color: var(--gray-700); line-height: 1.78; margin-bottom: 16px; }
+        .story-pullquote { border-left: 4px solid var(--yellow); padding: 16px 20px; background: rgba(24,64,176,0.05); border-radius: 0 var(--radius) var(--radius) 0; margin: 24px 0; font-size: 1.05rem; font-style: italic; color: var(--electric); font-weight: 500; line-height: 1.6; }
+
+        /* STATS BAR */
+        .stats-bar { background: var(--dark); padding: 56px 0; }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+        .stat-item { text-align: center; padding: 16px; border-right: 1px solid rgba(255,255,255,0.1); }
+        .stat-item:last-child { border-right: none; }
+        .stat-number { font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--yellow); line-height: 1; margin-bottom: 8px; }
+        .stat-label { font-size: 0.9rem; color: rgba(255,255,255,0.65); font-weight: 500; }
+
+        /* CREDENTIALS */
+        .creds-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .cred-card { background: var(--white); border-radius: var(--radius); padding: 28px 20px; text-align: center; box-shadow: var(--shadow); border: 1px solid var(--gray-200); transition: all var(--transition); }
+        .cred-card:hover { border-color: var(--electric); transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+        .cred-icon { width: 60px; height: 60px; background: linear-gradient(135deg, var(--electric) 0%, var(--electric-light) 100%); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+        .cred-icon svg { width: 30px; height: 30px; fill: var(--yellow); }
+        .cred-card h3 { font-size: 0.98rem; color: var(--dark); margin-bottom: 8px; }
+        .cred-card p { font-size: 0.85rem; color: var(--gray-600); line-height: 1.6; }
+
+        /* TEAM */
+        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .team-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--gray-200); transition: all var(--transition); }
+        .team-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .team-img { height: 280px; overflow: hidden; }
+        .team-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .team-card:hover .team-img img { transform: scale(1.04); }
+        .team-body { padding: 24px; }
+        .team-body h3 { font-size: 1.1rem; color: var(--dark); margin-bottom: 4px; }
+        .team-role { font-size: 0.82rem; font-weight: 600; color: var(--electric); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; font-family: 'Montserrat', sans-serif; }
+        .team-body p { font-size: 0.88rem; color: var(--gray-600); line-height: 1.65; }
+
+        /* COMMUNITY */
+        .section-header { text-align: center; margin-bottom: 52px; }
+        .section-header h2 { font-size: clamp(1.8rem, 3.5vw, 2.4rem); color: var(--dark); margin-bottom: 14px; }
+        .section-header p { font-size: 1.05rem; color: var(--gray-600); max-width: 560px; margin: 0 auto; }
+        .community-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .community-card { background: var(--white); border-radius: var(--radius); padding: 32px 24px; border: 1px solid var(--gray-200); box-shadow: var(--shadow); }
+        .community-icon { width: 52px; height: 52px; background: linear-gradient(135deg, rgba(24,64,176,0.08), rgba(42,87,209,0.14)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+        .community-icon svg { width: 26px; height: 26px; fill: var(--electric); }
+        .community-card h3 { font-size: 1rem; color: var(--dark); margin-bottom: 10px; }
+        .community-card p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.68; }
+
+        /* CTA BANNER */
+        .cta-banner { background: linear-gradient(135deg, var(--electric) 0%, var(--electric-light) 60%, #1a3a9e 100%); padding: 72px 0; text-align: center; }
+        .cta-banner h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); color: var(--white); margin-bottom: 14px; }
+        .cta-banner p { color: rgba(255,255,255,0.82); font-size: 1.05rem; margin-bottom: 32px; }
+        .cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+        .btn-cta-yellow { display: inline-flex; align-items: center; gap: 10px; background: var(--yellow); color: var(--dark); padding: 16px 36px; border-radius: 10px; font-weight: 700; font-size: 1rem; transition: all var(--transition); font-family: 'Montserrat', sans-serif; }
+        .btn-cta-yellow:hover { background: var(--yellow-hover); transform: translateY(-2px); }
+        .btn-cta-yellow svg { width: 18px; height: 18px; fill: currentColor; }
+        .btn-cta-outline { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: var(--white); padding: 16px 36px; border-radius: 10px; font-weight: 700; font-size: 1rem; border: 2px solid rgba(255,255,255,0.4); transition: all var(--transition); font-family: 'Montserrat', sans-serif; }
+        .btn-cta-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+
+        /* FOOTER */
+        .footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 64px 0 0; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.1fr 1fr; gap: 40px; margin-bottom: 48px; }
+        .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+        .footer-logo-icon { width: 38px; height: 38px; background: var(--electric); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .footer-logo-icon svg { width: 22px; height: 22px; fill: var(--yellow); }
+        .footer-logo-text { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--white); line-height: 1.1; }
+        .footer-logo-text .co { color: var(--electric-light); }
+        .footer-brand p { font-size: 0.88rem; line-height: 1.72; margin-bottom: 16px; }
+        .footer-license { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+        .footer-license svg { width: 13px; height: 13px; fill: var(--yellow); }
+        .footer-social { display: flex; gap: 10px; margin-top: 4px; }
+        .footer-social a { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; transition: background var(--transition); }
+        .footer-social a:hover { background: var(--electric); }
+        .footer-social svg { width: 16px; height: 16px; fill: rgba(255,255,255,0.7); }
+        .footer h4 { color: var(--white); font-size: 0.95rem; font-family: 'Montserrat', sans-serif; margin-bottom: 20px; }
+        .footer ul { list-style: none; }
+        .footer ul li { margin-bottom: 10px; }
+        .footer ul a { font-size: 0.88rem; transition: color var(--transition); }
+        .footer ul a:hover { color: var(--white); }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 13px; font-size: 0.88rem; }
+        .footer-contact-item svg { width: 15px; height: 15px; fill: var(--yellow); flex-shrink: 0; margin-top: 3px; }
+        .footer-contact-item a:hover { color: var(--white); }
+        .footer-areas { display: flex; flex-wrap: wrap; gap: 6px; }
+        .footer-area-pill { font-size: 0.78rem; padding: 4px 10px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; color: rgba(255,255,255,0.55); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 24px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+        .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+
+        /* MOBILE CALL BAR */
+        .mobile-call-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 1001; background: var(--yellow); box-shadow: 0 -4px 20px rgba(0,0,0,0.15); }
+        .mobile-call-bar a { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px; color: var(--dark); font-weight: 700; font-size: 1.05rem; font-family: 'Montserrat', sans-serif; }
+        .mobile-call-bar svg { width: 22px; height: 22px; fill: currentColor; }
+
+        /* ANIMATIONS */
+        .animate-on-scroll { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .creds-grid { grid-template-columns: repeat(2, 1fr); }
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-item:nth-child(2) { border-right: none; }
+            .stat-item:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.1); }
+            .stat-item { border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; }
+        }
+        @media (max-width: 768px) {
+            .nav-desktop, .header-phone, .google-rating { display: none; }
+            .hamburger { display: flex; }
+            .header-inner { height: 64px; }
+            .story-layout { grid-template-columns: 1fr; gap: 32px; }
+            .story-img img { height: 300px; }
+            .creds-grid, .community-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; }
+            .mobile-call-bar { display: block; }
+            body { padding-bottom: 56px; }
+            .cta-btns { flex-direction: column; align-items: center; }
+        }
+        @media (max-width: 480px) {
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+            </div>
+            <div class="logo-text">Voltage Electric <span class="co">Co.</span><span class="sub">Licensed Electricians</span></div>
+        </a>
+        <nav class="nav-desktop">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html" class="active">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-right">
+            <div class="google-rating">
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <strong>4.9</strong>
+                <span class="count">521 reviews</span>
+            </div>
+            <a href="tel:+15128474200" class="header-phone">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                (512) 847-4200
+            </a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:+15128474200" class="mobile-call">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            Call Now — (512) 847-4200
+        </a>
+    </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            <span>About Us</span>
+        </div>
+        <h1>About Voltage Electric Co.</h1>
+        <p>Family-owned and Austin-based since 2008. We started with one truck and one commitment — do the work right, price it honestly, and stand behind it. Eighteen years later, that's still the whole plan.</p>
+    </div>
+</section>
+
+<!-- COMPANY STORY -->
+<section class="section">
+    <div class="container">
+        <div class="story-layout animate-on-scroll">
+            <div class="story-img">
+                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80" alt="Voltage Electric Co. founder Marcus Webb at work" loading="lazy">
+                <div class="story-img-badge">
+                    <strong>2008</strong>
+                    <span>Founded in Austin</span>
+                </div>
+            </div>
+            <div class="story-content">
+                <span class="section-label">Our Story</span>
+                <h2>Built From the Ground Up in Austin</h2>
+                <p>Marcus Webb started Voltage Electric Co. in 2008 with a used service truck, a Texas master electrician's license he'd spent four years earning, and a belief that Austin homeowners deserved better than the industry standard of vague quotes, no-show appointments, and bills that didn't match the estimate.</p>
+                <p>The first few years were lean. Marcus did everything himself — answering the phone, driving to jobs, pulling permits, doing the work, and writing the invoices. What set him apart from the beginning was a refusal to cut corners. Every panel he replaced got a permit. Every circuit he added was the right gauge wire. Every job site got cleaned up before he left.</p>
+                <p>Word spread. By 2013, Marcus had hired his first two electricians. By 2018, Voltage Electric had grown to a team of eight — all licensed, all background-checked, all trained under Marcus's direct supervision. The company has now completed more than 1,200 jobs across the Austin metro area, from small ceiling fan installs in Hyde Park bungalows to full electrical build-outs for commercial tenants in the Domain.</p>
+                <blockquote class="story-pullquote">"We're not trying to be the biggest electrical company in Austin. We're trying to be the one people call back — and the one they tell their neighbors about."<br><br>— Marcus Webb, Founder &amp; Master Electrician</blockquote>
+                <p>Today, Voltage Electric serves 12 cities across the Austin metro area. Marcus still takes jobs himself and reviews every permit submittal personally. The team has grown, but the standards haven't changed.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="stats-bar">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Years Serving Austin</div>
+            </div>
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-number">1,200+</div>
+                <div class="stat-label">Jobs Completed</div>
+            </div>
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-number">4.9</div>
+                <div class="stat-label">Star Rating (521 Reviews)</div>
+            </div>
+            <div class="stat-item animate-on-scroll">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Licensed Electricians on Staff</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="section bg-gray">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <span class="section-label">Credentials</span>
+            <h2>Licensed, Insured, and Accredited</h2>
+            <p>Every credential we carry exists to protect you. Here's what's behind the Voltage Electric name.</p>
+        </div>
+        <div class="creds-grid">
+            <div class="cred-card animate-on-scroll">
+                <div class="cred-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                </div>
+                <h3>Texas TECL License</h3>
+                <p>License number TECL-35291. We're licensed by the Texas Department of Licensing and Regulation as a master electrician contracting company. This license is required by Texas law and is non-negotiable — always ask any electrician for their TECL number before hiring.</p>
+            </div>
+            <div class="cred-card animate-on-scroll">
+                <div class="cred-icon">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+                </div>
+                <h3>Fully Insured</h3>
+                <p>Voltage Electric carries $2 million in general liability insurance and workers' compensation coverage for every employee on our team. If anything goes wrong on a job — which is rare — you're protected. We'll provide a certificate of insurance to any customer or property manager who requests one.</p>
+            </div>
+            <div class="cred-card animate-on-scroll">
+                <div class="cred-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <h3>NFPA Member</h3>
+                <p>Our master electrician holds active membership in the National Fire Protection Association and stays current with the National Electrical Code (NEC) update cycle. The NEC updates every three years — we don't let code knowledge go stale, because outdated electrical practices are a real safety risk.</p>
+            </div>
+            <div class="cred-card animate-on-scroll">
+                <div class="cred-icon">
+                    <svg viewBox="0 0 24 24"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-4h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/></svg>
+                </div>
+                <h3>BBB A+ Rated</h3>
+                <p>Voltage Electric has maintained an A+ rating with the Better Business Bureau since 2011. We respond to every complaint within 24 hours — though complaints are rare, because we address problems directly and promptly before they ever need to escalate. Our record speaks for itself.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section class="section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <span class="section-label">Meet the Team</span>
+            <h2>The People Behind the Work</h2>
+            <p>Every person on our crew is licensed, background-checked, and trained to Marcus's standards. Here are a few of the faces you might see at your door.</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card animate-on-scroll">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Marcus Webb, Founder and Master Electrician" loading="lazy">
+                </div>
+                <div class="team-body">
+                    <h3>Marcus Webb</h3>
+                    <div class="team-role">Founder &amp; Master Electrician</div>
+                    <p>Marcus has been a licensed electrician for 22 years and founded Voltage Electric in 2008. He holds a Texas Master Electrician license and personally reviews every permit submittal. Outside of work, he coaches youth baseball in South Austin and is a vocal advocate for licensed electrical work in the community.</p>
+                </div>
+            </div>
+            <div class="team-card animate-on-scroll">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=600&q=80" alt="James Ortega, Lead Electrician" loading="lazy">
+                </div>
+                <div class="team-body">
+                    <h3>James Ortega</h3>
+                    <div class="team-role">Lead Electrician — Residential</div>
+                    <p>James joined Voltage Electric in 2014 and is the go-to lead for complex residential projects including whole-home rewiring and panel replacements. He holds a Texas Journeyman Electrician license and is currently completing his master electrician exam coursework. Homeowners frequently request James by name for second visits.</p>
+                </div>
+            </div>
+            <div class="team-card animate-on-scroll">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Derek Thompson, Lead Electrician Commercial" loading="lazy">
+                </div>
+                <div class="team-body">
+                    <h3>Derek Thompson</h3>
+                    <div class="team-role">Lead Electrician — Commercial</div>
+                    <p>Derek leads our commercial division and has extensive experience with tenant build-outs, three-phase power systems, and commercial EV charging infrastructure. He previously worked for a large commercial electrical contractor before joining Voltage Electric in 2019, bringing expertise in project management and code compliance documentation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="section bg-gray">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <span class="section-label">In the Community</span>
+            <h2>Invested in Austin</h2>
+            <p>We're not just a business that operates in Austin — we live here, raise our families here, and care about this city.</p>
+        </div>
+        <div class="community-grid">
+            <div class="community-card animate-on-scroll">
+                <div class="community-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/></svg>
+                </div>
+                <h3>Local Giving &amp; Sponsorships</h3>
+                <p>Voltage Electric donates a portion of profits annually to the Austin Community Foundation and sponsors two youth sports leagues in the South Austin area. When local non-profits need electrical work for events or facility improvements, we offer deep discounts or donate the labor entirely.</p>
+            </div>
+            <div class="community-card animate-on-scroll">
+                <div class="community-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+                </div>
+                <h3>Apprenticeship &amp; Trade Education</h3>
+                <p>Marcus partners with Austin Community College's electrical technology program to offer paid internship slots for second-year students. We believe the skilled trades need more investment in the next generation — and that locally-trained electricians who know Austin's housing stock are better for the entire community.</p>
+            </div>
+            <div class="community-card animate-on-scroll">
+                <div class="community-icon">
+                    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                </div>
+                <h3>Commitment to Austin</h3>
+                <p>Every dollar you spend with Voltage Electric stays in Austin. We don't subcontract to out-of-area crews. Our employees live here, shop here, and pay taxes here. When you hire a local, licensed electrician instead of a franchise, you're keeping Austin's skilled trades workforce healthy and accountable.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+    <div class="container">
+        <h2>Ready to Work With Austin's Best?</h2>
+        <p>Get a free estimate with no pressure and no obligation. We'll show up when we say, price it honestly, and do the work right.</p>
+        <div class="cta-btns">
+            <a href="contact.html" class="btn-cta-yellow">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                Request a Free Estimate
+            </a>
+            <a href="tel:+15128474200" class="btn-cta-outline">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                Call (512) 847-4200
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                    </div>
+                    <div class="footer-logo-text">Voltage Electric <span class="co">Co.</span></div>
+                </div>
+                <p>Austin's trusted licensed electricians since 2008. Residential and commercial electrical services with honest pricing, master-licensed technicians, and a satisfaction guarantee on every job.</p>
+                <div class="footer-license">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    Texas TECL-35291 — Master Electrician on Staff
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg></a>
+                    <a href="#" aria-label="Google"><svg viewBox="0 0 24 24"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81z"/></svg></a>
+                </div>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">All Services</a></li>
+                    <li><a href="services.html#panels">Panel Upgrades</a></li>
+                    <li><a href="services.html#ev-chargers">EV Chargers</a></li>
+                    <li><a href="services.html#generators">Generators</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Project Gallery</a></li>
+                    <li><a href="contact.html">Contact &amp; Estimates</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Info</h4>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <a href="tel:+15128474200">(512) 847-4200</a>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <a href="mailto:info@voltageelectricco.com">info@voltageelectricco.com</a>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <span>2847 Industrial Blvd, Suite 8<br>Austin, TX 78745</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    <span>Mon–Fri: 7AM–6PM<br>Sat: 8AM–2PM<br>Emergency: 24/7</span>
+                </div>
+            </div>
+            <div>
+                <h4>Service Areas</h4>
+                <div class="footer-areas">
+                    <span class="footer-area-pill">Austin</span>
+                    <span class="footer-area-pill">Round Rock</span>
+                    <span class="footer-area-pill">Cedar Park</span>
+                    <span class="footer-area-pill">Georgetown</span>
+                    <span class="footer-area-pill">Pflugerville</span>
+                    <span class="footer-area-pill">Kyle</span>
+                    <span class="footer-area-pill">Buda</span>
+                    <span class="footer-area-pill">Hutto</span>
+                    <span class="footer-area-pill">Leander</span>
+                    <span class="footer-area-pill">Manor</span>
+                    <span class="footer-area-pill">Bastrop</span>
+                    <span class="footer-area-pill">San Marcos</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Voltage Electric Co. All rights reserved. Texas TECL-35291.</p>
+            <p>2847 Industrial Blvd, Suite 8, Austin, TX 78745</p>
+        </div>
+    </div>
+</footer>
+
+<!-- MOBILE CALL BAR -->
+<div class="mobile-call-bar">
+    <a href="tel:+15128474200">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Call Now — (512) 847-4200
+    </a>
+</div>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

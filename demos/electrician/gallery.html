@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Gallery | Voltage Electric Co. | Austin Electrical Contractor</title>
+    <meta name="description" content="See completed electrical projects by Voltage Electric Co. — panel upgrades, EV charger installs, generator installations, and lighting projects across Austin, TX.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --electric: #1840b0;
+            --electric-light: #2a57d1;
+            --yellow: #f7b731;
+            --yellow-hover: #e6a820;
+            --dark: #111827;
+            --white: #ffffff;
+            --gray-50: #f8f9fa;
+            --gray-100: #f0f2f5;
+            --gray-200: #e2e6ed;
+            --gray-600: #6b7280;
+            --gray-700: #4b5563;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --transition: 0.3s ease;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', system-ui, sans-serif; color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 700; line-height: 1.2; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* HEADER */
+        .header { position: sticky; top: 0; z-index: 1000; background: var(--white); border-bottom: 1px solid var(--gray-200); transition: box-shadow var(--transition); }
+        .header.scrolled { box-shadow: var(--shadow); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; max-width: 1200px; margin: 0 auto; height: 72px; }
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 42px; height: 42px; background: var(--electric); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+        .logo-icon svg { width: 26px; height: 26px; fill: var(--yellow); }
+        .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--dark); line-height: 1.1; }
+        .logo-text .co { color: var(--electric); }
+        .logo-text .sub { display: block; font-size: 0.65rem; font-weight: 600; color: var(--gray-600); letter-spacing: 0.8px; text-transform: uppercase; }
+        .nav-desktop { display: flex; align-items: center; gap: 28px; }
+        .nav-desktop a { font-size: 0.95rem; font-weight: 500; color: var(--gray-700); transition: color var(--transition); position: relative; }
+        .nav-desktop a:hover { color: var(--electric); }
+        .header-right { display: flex; align-items: center; gap: 14px; }
+        .google-rating { display: flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; font-size: 0.85rem; font-weight: 600; color: var(--dark); }
+        .google-rating .stars { color: #f59e0b; font-size: 0.9rem; }
+        .google-rating .count { color: var(--gray-600); font-weight: 400; }
+        .header-phone { display: flex; align-items: center; gap: 6px; background: var(--electric); color: var(--white); padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: background var(--transition); }
+        .header-phone:hover { background: var(--electric-light); }
+        .header-phone svg { width: 16px; height: 16px; fill: currentColor; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+        .hamburger span { width: 24px; height: 2px; background: var(--dark); transition: var(--transition); border-radius: 1px; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 999; padding: 88px 32px 32px; flex-direction: column; gap: 0; overflow-y: auto; }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a { padding: 18px 0; font-size: 1.15rem; font-weight: 600; color: var(--dark); border-bottom: 1px solid var(--gray-100); font-family: 'Montserrat', sans-serif; }
+        .mobile-menu .mobile-call { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 28px; padding: 18px; background: var(--yellow); color: var(--dark); border-radius: 12px; font-weight: 700; font-size: 1.1rem; font-family: 'Montserrat', sans-serif; }
+        .mobile-menu .mobile-call svg { width: 20px; height: 20px; fill: currentColor; }
+
+        /* PAGE HERO */
+        .page-hero { background: linear-gradient(135deg, var(--electric) 0%, var(--dark) 100%); padding: 64px 0 56px; }
+        .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-bottom: 20px; }
+        .breadcrumb a { color: rgba(255,255,255,0.7); transition: color var(--transition); }
+        .breadcrumb a:hover { color: var(--white); }
+        .breadcrumb svg { width: 14px; height: 14px; fill: rgba(255,255,255,0.4); }
+        .page-hero h1 { font-size: clamp(1.9rem, 4vw, 3rem); color: var(--white); margin-bottom: 14px; font-weight: 800; max-width: 680px; }
+        .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.78); max-width: 580px; line-height: 1.7; }
+
+        /* FILTER TABS */
+        .gallery-section { padding: 72px 0; background: var(--gray-100); }
+        .filter-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+        .filter-tab { padding: 9px 22px; border-radius: 50px; font-size: 0.88rem; font-weight: 600; font-family: 'Montserrat', sans-serif; border: 2px solid var(--gray-200); background: var(--white); color: var(--gray-700); cursor: pointer; transition: all var(--transition); }
+        .filter-tab.active, .filter-tab:hover { background: var(--electric); color: var(--white); border-color: var(--electric); }
+
+        /* GALLERY GRID */
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .gallery-card { border-radius: var(--radius); overflow: hidden; position: relative; background: var(--dark); box-shadow: var(--shadow); aspect-ratio: 4/3; }
+        .gallery-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease, opacity 0.4s ease; }
+        .gallery-card:hover img { transform: scale(1.06); opacity: 0.5; }
+        .gallery-overlay { position: absolute; inset: 0; padding: 24px; display: flex; flex-direction: column; justify-content: flex-end; opacity: 0; transition: opacity var(--transition); }
+        .gallery-card:hover .gallery-overlay { opacity: 1; }
+        .gallery-type { display: inline-block; padding: 4px 12px; background: var(--yellow); color: var(--dark); border-radius: 50px; font-size: 0.75rem; font-weight: 700; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; width: fit-content; }
+        .gallery-overlay h3 { color: var(--white); font-size: 1rem; margin-bottom: 4px; }
+        .gallery-overlay p { color: rgba(255,255,255,0.8); font-size: 0.82rem; line-height: 1.5; }
+        .gallery-location { display: flex; align-items: center; gap: 5px; color: rgba(255,255,255,0.65); font-size: 0.8rem; margin-top: 8px; }
+        .gallery-location svg { width: 12px; height: 12px; fill: var(--yellow); flex-shrink: 0; }
+
+        /* STATS STRIP */
+        .stats-strip { background: var(--electric); padding: 40px 0; }
+        .stats-strip-inner { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
+        .strip-stat { text-align: center; }
+        .strip-stat strong { display: block; font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 800; color: var(--yellow); }
+        .strip-stat span { font-size: 0.88rem; color: rgba(255,255,255,0.75); }
+
+        /* CTA BANNER */
+        .cta-banner { background: linear-gradient(135deg, var(--dark) 0%, #1a2340 100%); padding: 72px 0; text-align: center; }
+        .cta-banner h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); color: var(--white); margin-bottom: 14px; }
+        .cta-banner p { color: rgba(255,255,255,0.75); font-size: 1.05rem; margin-bottom: 32px; max-width: 540px; margin-left: auto; margin-right: auto; }
+        .cta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+        .btn-cta-yellow { display: inline-flex; align-items: center; gap: 10px; background: var(--yellow); color: var(--dark); padding: 16px 36px; border-radius: 10px; font-weight: 700; font-size: 1rem; transition: all var(--transition); font-family: 'Montserrat', sans-serif; }
+        .btn-cta-yellow:hover { background: var(--yellow-hover); transform: translateY(-2px); }
+        .btn-cta-yellow svg { width: 18px; height: 18px; fill: currentColor; }
+        .btn-cta-outline { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: var(--white); padding: 16px 36px; border-radius: 10px; font-weight: 700; font-size: 1rem; border: 2px solid rgba(255,255,255,0.3); transition: all var(--transition); font-family: 'Montserrat', sans-serif; }
+        .btn-cta-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+        /* FOOTER */
+        .footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 64px 0 0; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.1fr 1fr; gap: 40px; margin-bottom: 48px; }
+        .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+        .footer-logo-icon { width: 38px; height: 38px; background: var(--electric); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .footer-logo-icon svg { width: 22px; height: 22px; fill: var(--yellow); }
+        .footer-logo-text { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--white); line-height: 1.1; }
+        .footer-logo-text .co { color: var(--electric-light); }
+        .footer-brand p { font-size: 0.88rem; line-height: 1.72; margin-bottom: 16px; }
+        .footer-license { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+        .footer-license svg { width: 13px; height: 13px; fill: var(--yellow); }
+        .footer-social { display: flex; gap: 10px; margin-top: 4px; }
+        .footer-social a { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; transition: background var(--transition); }
+        .footer-social a:hover { background: var(--electric); }
+        .footer-social svg { width: 16px; height: 16px; fill: rgba(255,255,255,0.7); }
+        .footer h4 { color: var(--white); font-size: 0.95rem; font-family: 'Montserrat', sans-serif; margin-bottom: 20px; }
+        .footer ul { list-style: none; }
+        .footer ul li { margin-bottom: 10px; }
+        .footer ul a { font-size: 0.88rem; transition: color var(--transition); }
+        .footer ul a:hover { color: var(--white); }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 13px; font-size: 0.88rem; }
+        .footer-contact-item svg { width: 15px; height: 15px; fill: var(--yellow); flex-shrink: 0; margin-top: 3px; }
+        .footer-contact-item a:hover { color: var(--white); }
+        .footer-areas { display: flex; flex-wrap: wrap; gap: 6px; }
+        .footer-area-pill { font-size: 0.78rem; padding: 4px 10px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; color: rgba(255,255,255,0.55); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 24px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+        .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+
+        /* MOBILE CALL BAR */
+        .mobile-call-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 1001; background: var(--yellow); box-shadow: 0 -4px 20px rgba(0,0,0,0.15); }
+        .mobile-call-bar a { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px; color: var(--dark); font-weight: 700; font-size: 1.05rem; font-family: 'Montserrat', sans-serif; }
+        .mobile-call-bar svg { width: 22px; height: 22px; fill: currentColor; }
+
+        /* ANIMATIONS */
+        .animate-on-scroll { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .nav-desktop, .header-phone, .google-rating { display: none; }
+            .hamburger { display: flex; }
+            .header-inner { height: 64px; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .mobile-call-bar { display: block; }
+            body { padding-bottom: 56px; }
+            .stats-strip-inner { gap: 32px; }
+            .cta-btns { flex-direction: column; align-items: center; }
+        }
+        @media (max-width: 480px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+            </div>
+            <div class="logo-text">Voltage Electric <span class="co">Co.</span><span class="sub">Licensed Electricians</span></div>
+        </a>
+        <nav class="nav-desktop">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-right">
+            <div class="google-rating">
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <strong>4.9</strong>
+                <span class="count">521 reviews</span>
+            </div>
+            <a href="tel:+15128474200" class="header-phone">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                (512) 847-4200
+            </a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="tel:+15128474200" class="mobile-call">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            Call Now — (512) 847-4200
+        </a>
+    </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            <span>Gallery</span>
+        </div>
+        <h1>Our Work Speaks for Itself</h1>
+        <p>Real projects, real Austin homes and businesses. Hover any card to see project details. Every job shown was completed by our licensed electricians with permits pulled and inspections passed.</p>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+    <div class="container">
+        <div class="filter-tabs animate-on-scroll">
+            <span class="filter-tab active">All Projects</span>
+            <span class="filter-tab">Panel Upgrades</span>
+            <span class="filter-tab">EV Chargers</span>
+            <span class="filter-tab">Generators</span>
+            <span class="filter-tab">Lighting</span>
+        </div>
+        <div class="gallery-grid">
+
+            <div class="gallery-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=600&q=80" alt="200-amp panel upgrade South Austin" loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-type">Panel Upgrade</span>
+                    <h3>200A Service Upgrade</h3>
+                    <p>Replaced failing Federal Pacific Stab-Lok panel with new 200-amp service. Added whole-home surge protection and arc-fault breakers throughout.</p>
+                    <div class="gallery-location">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        South Austin, TX
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80" alt="Tesla Wall Connector Level 2 EV charger install" loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-type">EV Charger</span>
+                    <h3>Tesla Wall Connector Install</h3>
+                    <p>Installed dedicated 50-amp circuit and Tesla Wall Connector Gen 3 in a 3-car garage. Permit pulled, city inspection completed, wall-mounted with clean conduit run.</p>
+                    <div class="gallery-location">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Cedar Park, TX
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80" alt="Generac whole-home standby generator installation" loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-type">Generator</span>
+                    <h3>22kW Generac Standby Generator</h3>
+                    <p>Full Generac 22kW installation with automatic transfer switch and natural gas connection. Powers entire home including HVAC, kitchen, and medical equipment.</p>
+                    <div class="gallery-location">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Round Rock, TX
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=600&q=80" alt="Recessed LED lighting installation living room Austin" loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-type">Lighting</span>
+                    <h3>Whole-Home LED Recessed Lighting</h3>
+                    <p>20 recessed LED wafer lights installed across living, dining, and kitchen. New circuits added at the panel, all on dimmers with Lutron smart switch integration.</p>
+                    <div class="gallery-location">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Pflugerville, TX
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80" alt="Knob and tube wiring remediation rewire Austin" loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-type">Rewiring</span>
+                    <h3>Knob-and-Tube Rewire — 1942 Bungalow</h3>
+                    <p>Complete removal of original knob-and-tube wiring and replacement with modern copper. New panel, 200A service, and AFCI protection throughout. Homeowner's insurance renewed post-completion.</p>
+                    <div class="gallery-location">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Hyde Park, Austin TX
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Commercial tenant build-out electrical Austin" loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-type">Commercial</span>
+                    <h3>Medical Office Tenant Build-Out</h3>
+                    <p>Full electrical for a 3,400 sq ft medical office including dedicated circuits for imaging equipment, exam rooms, nurse call system wiring, and 400A service upgrade.</p>
+                    <div class="gallery-location">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Georgetown, TX
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=600&q=80" alt="Zinsco panel replacement Austin TX" loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-type">Panel Upgrade</span>
+                    <h3>Zinsco Panel Replacement</h3>
+                    <p>Replaced 1970s Zinsco panel that had failed to trip on an overloaded circuit. Installed new 200A Square D Homeline panel with whole-home surge protector. Flagged by home inspector on a sale closing.</p>
+                    <div class="gallery-location">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Kyle, TX
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80" alt="JuiceBox Level 2 EV charger outdoor installation" loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-type">EV Charger</span>
+                    <h3>JuiceBox 48A Outdoor Installation</h3>
+                    <p>Weatherproof JuiceBox 48A installed on exterior wall for F-150 Lightning charging. New 60-amp circuit run from the panel with NEMA 14-50 outlet as backup. HOA documentation provided.</p>
+                    <div class="gallery-location">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Leander, TX
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80" alt="Kohler 20kW standby generator install Bastrop" loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-type">Generator</span>
+                    <h3>Kohler 20kW — Rural Property</h3>
+                    <p>Kohler 20RESAL generator installed on a rural property outside Bastrop with propane fuel supply. Automatic transfer switch, load management, and utility interconnect permits handled by Voltage Electric.</p>
+                    <div class="gallery-location">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Bastrop, TX
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=600&q=80" alt="Outdoor landscape and security lighting Austin" loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-type">Lighting</span>
+                    <h3>Outdoor Landscape Lighting System</h3>
+                    <p>Hardwired low-voltage landscape lighting across a half-acre lot — pathway lights, uplighting on trees, driveway pillars, and security flood lights. All on a timer and photocell control.</p>
+                    <div class="gallery-location">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Buda, TX
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80" alt="Aluminum wiring remediation Austin TX" loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-type">Rewiring</span>
+                    <h3>Aluminum Wiring Remediation</h3>
+                    <p>1972 home with aluminum branch circuit wiring. Installed CO/ALR rated devices throughout and added AlumiConn connectors at all connection points. Full documentation provided to homeowner's insurer.</p>
+                    <div class="gallery-location">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        Manor, TX
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Restaurant electrical build-out service upgrade San Marcos" loading="lazy">
+                <div class="gallery-overlay">
+                    <span class="gallery-type">Commercial</span>
+                    <h3>Restaurant Electrical Build-Out</h3>
+                    <p>Complete electrical for a new restaurant concept — 400A three-phase service, commercial hood exhaust circuits, walk-in cooler and freezer dedicated circuits, and LED lighting throughout dining room and kitchen.</p>
+                    <div class="gallery-location">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        San Marcos, TX
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- STATS STRIP -->
+<section class="stats-strip">
+    <div class="container">
+        <div class="stats-strip-inner">
+            <div class="strip-stat animate-on-scroll">
+                <strong>1,200+</strong>
+                <span>Projects Completed</span>
+            </div>
+            <div class="strip-stat animate-on-scroll">
+                <strong>100%</strong>
+                <span>Permitted &amp; Inspected</span>
+            </div>
+            <div class="strip-stat animate-on-scroll">
+                <strong>4.9★</strong>
+                <span>Average Rating</span>
+            </div>
+            <div class="strip-stat animate-on-scroll">
+                <strong>12</strong>
+                <span>Cities Served</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+    <div class="container">
+        <h2>Like What You See?</h2>
+        <p>Every project shown was completed by our licensed electricians. Get a free estimate and see what Voltage Electric can do for your home or business.</p>
+        <div class="cta-btns">
+            <a href="contact.html" class="btn-cta-yellow">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                Request a Free Estimate
+            </a>
+            <a href="tel:+15128474200" class="btn-cta-outline">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                Call (512) 847-4200
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                    </div>
+                    <div class="footer-logo-text">Voltage Electric <span class="co">Co.</span></div>
+                </div>
+                <p>Austin's trusted licensed electricians since 2008. Residential and commercial electrical services with honest pricing, master-licensed technicians, and a satisfaction guarantee on every job.</p>
+                <div class="footer-license">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    Texas TECL-35291 — Master Electrician on Staff
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg></a>
+                    <a href="#" aria-label="Google"><svg viewBox="0 0 24 24"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81z"/></svg></a>
+                </div>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">All Services</a></li>
+                    <li><a href="services.html#panels">Panel Upgrades</a></li>
+                    <li><a href="services.html#ev-chargers">EV Chargers</a></li>
+                    <li><a href="services.html#generators">Generators</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Project Gallery</a></li>
+                    <li><a href="contact.html">Contact &amp; Estimates</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Info</h4>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <a href="tel:+15128474200">(512) 847-4200</a>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <a href="mailto:info@voltageelectricco.com">info@voltageelectricco.com</a>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <span>2847 Industrial Blvd, Suite 8<br>Austin, TX 78745</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    <span>Mon–Fri: 7AM–6PM<br>Sat: 8AM–2PM<br>Emergency: 24/7</span>
+                </div>
+            </div>
+            <div>
+                <h4>Service Areas</h4>
+                <div class="footer-areas">
+                    <span class="footer-area-pill">Austin</span>
+                    <span class="footer-area-pill">Round Rock</span>
+                    <span class="footer-area-pill">Cedar Park</span>
+                    <span class="footer-area-pill">Georgetown</span>
+                    <span class="footer-area-pill">Pflugerville</span>
+                    <span class="footer-area-pill">Kyle</span>
+                    <span class="footer-area-pill">Buda</span>
+                    <span class="footer-area-pill">Hutto</span>
+                    <span class="footer-area-pill">Leander</span>
+                    <span class="footer-area-pill">Manor</span>
+                    <span class="footer-area-pill">Bastrop</span>
+                    <span class="footer-area-pill">San Marcos</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Voltage Electric Co. All rights reserved. Texas TECL-35291.</p>
+            <p>2847 Industrial Blvd, Suite 8, Austin, TX 78745</p>
+        </div>
+    </div>
+</footer>
+
+<!-- MOBILE CALL BAR -->
+<div class="mobile-call-bar">
+    <a href="tel:+15128474200">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Call Now — (512) 847-4200
+    </a>
+</div>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

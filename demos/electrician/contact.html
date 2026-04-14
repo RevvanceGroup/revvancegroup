@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Voltage Electric Co. | Free Electrical Estimate | Austin, TX</title>
+    <meta name="description" content="Request a free estimate from Voltage Electric Co. in Austin, TX. Call (512) 847-4200 or fill out our online form. Same-day service available. TECL-35291.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --electric: #1840b0;
+            --electric-light: #2a57d1;
+            --yellow: #f7b731;
+            --yellow-hover: #e6a820;
+            --dark: #111827;
+            --white: #ffffff;
+            --gray-50: #f8f9fa;
+            --gray-100: #f0f2f5;
+            --gray-200: #e2e6ed;
+            --gray-600: #6b7280;
+            --gray-700: #4b5563;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --transition: 0.3s ease;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', system-ui, sans-serif; color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', system-ui, sans-serif; font-weight: 700; line-height: 1.2; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* HEADER */
+        .header { position: sticky; top: 0; z-index: 1000; background: var(--white); border-bottom: 1px solid var(--gray-200); transition: box-shadow var(--transition); }
+        .header.scrolled { box-shadow: var(--shadow); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; max-width: 1200px; margin: 0 auto; height: 72px; }
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 42px; height: 42px; background: var(--electric); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+        .logo-icon svg { width: 26px; height: 26px; fill: var(--yellow); }
+        .logo-text { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--dark); line-height: 1.1; }
+        .logo-text .co { color: var(--electric); }
+        .logo-text .sub { display: block; font-size: 0.65rem; font-weight: 600; color: var(--gray-600); letter-spacing: 0.8px; text-transform: uppercase; }
+        .nav-desktop { display: flex; align-items: center; gap: 28px; }
+        .nav-desktop a { font-size: 0.95rem; font-weight: 500; color: var(--gray-700); transition: color var(--transition); position: relative; }
+        .nav-desktop a:hover, .nav-desktop a.active { color: var(--electric); }
+        .nav-desktop a.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 2px; background: var(--yellow); border-radius: 1px; }
+        .header-right { display: flex; align-items: center; gap: 14px; }
+        .google-rating { display: flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; font-size: 0.85rem; font-weight: 600; color: var(--dark); }
+        .google-rating .stars { color: #f59e0b; font-size: 0.9rem; }
+        .google-rating .count { color: var(--gray-600); font-weight: 400; }
+        .header-phone { display: flex; align-items: center; gap: 6px; background: var(--electric); color: var(--white); padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: background var(--transition); }
+        .header-phone:hover { background: var(--electric-light); }
+        .header-phone svg { width: 16px; height: 16px; fill: currentColor; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+        .hamburger span { width: 24px; height: 2px; background: var(--dark); transition: var(--transition); border-radius: 1px; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 999; padding: 88px 32px 32px; flex-direction: column; gap: 0; overflow-y: auto; }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a { padding: 18px 0; font-size: 1.15rem; font-weight: 600; color: var(--dark); border-bottom: 1px solid var(--gray-100); font-family: 'Montserrat', sans-serif; }
+        .mobile-menu a.active { color: var(--electric); }
+        .mobile-menu .mobile-call { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 28px; padding: 18px; background: var(--yellow); color: var(--dark); border-radius: 12px; font-weight: 700; font-size: 1.1rem; font-family: 'Montserrat', sans-serif; }
+        .mobile-menu .mobile-call svg { width: 20px; height: 20px; fill: currentColor; }
+
+        /* PAGE HERO */
+        .page-hero { background: linear-gradient(135deg, var(--electric) 0%, var(--dark) 100%); padding: 64px 0 56px; }
+        .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-bottom: 20px; }
+        .breadcrumb a { color: rgba(255,255,255,0.7); transition: color var(--transition); }
+        .breadcrumb a:hover { color: var(--white); }
+        .breadcrumb svg { width: 14px; height: 14px; fill: rgba(255,255,255,0.4); }
+        .page-hero h1 { font-size: clamp(1.9rem, 4vw, 3rem); color: var(--white); margin-bottom: 14px; font-weight: 800; max-width: 680px; }
+        .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.78); max-width: 580px; line-height: 1.7; }
+
+        /* CONTACT SECTION */
+        .contact-section { padding: 80px 0; background: var(--gray-100); }
+        .contact-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; align-items: start; }
+
+        /* FORM CARD */
+        .form-card { background: var(--white); border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow-lg); border: 1px solid var(--gray-200); }
+        .form-card h2 { font-size: 1.6rem; color: var(--dark); margin-bottom: 8px; }
+        .form-card > p { font-size: 0.92rem; color: var(--gray-600); margin-bottom: 28px; line-height: 1.6; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--dark); margin-bottom: 6px; font-family: 'Montserrat', sans-serif; }
+        .form-group label span { color: #dc2626; }
+        .form-group input,
+        .form-group select,
+        .form-group textarea { width: 100%; padding: 12px 14px; border: 1.5px solid var(--gray-200); border-radius: 9px; font-size: 0.95rem; font-family: 'Inter', sans-serif; color: var(--dark); background: var(--gray-50); transition: border-color var(--transition), box-shadow var(--transition); outline: none; appearance: none; -webkit-appearance: none; }
+        .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%236b7280' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; background-size: 20px; padding-right: 40px; }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus { border-color: var(--electric); box-shadow: 0 0 0 3px rgba(24,64,176,0.1); background: var(--white); }
+        .form-group textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder { color: #9ca3af; }
+        .btn-submit { width: 100%; padding: 16px; background: var(--electric); color: var(--white); border: none; border-radius: 10px; font-size: 1.05rem; font-weight: 700; font-family: 'Montserrat', sans-serif; cursor: pointer; transition: all var(--transition); display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 8px; }
+        .btn-submit:hover { background: var(--electric-light); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(24,64,176,0.25); }
+        .btn-submit svg { width: 18px; height: 18px; fill: currentColor; }
+        .form-note { font-size: 0.8rem; color: var(--gray-600); text-align: center; margin-top: 12px; }
+
+        /* INFO CARD */
+        .info-card { background: var(--white); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow); border: 1px solid var(--gray-200); margin-bottom: 20px; }
+        .info-card h3 { font-size: 1.1rem; color: var(--dark); margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid var(--gray-100); }
+        .info-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px; }
+        .info-item:last-child { margin-bottom: 0; }
+        .info-icon { width: 40px; height: 40px; background: linear-gradient(135deg, rgba(24,64,176,0.08), rgba(42,87,209,0.14)); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .info-icon svg { width: 20px; height: 20px; fill: var(--electric); }
+        .info-item strong { display: block; font-size: 0.85rem; font-weight: 600; color: var(--dark); margin-bottom: 2px; font-family: 'Montserrat', sans-serif; }
+        .info-item span, .info-item a { font-size: 0.9rem; color: var(--gray-700); line-height: 1.5; }
+        .info-item a:hover { color: var(--electric); }
+
+        /* HOURS CARD */
+        .hours-table { width: 100%; }
+        .hours-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--gray-100); font-size: 0.88rem; }
+        .hours-row:last-child { border-bottom: none; }
+        .hours-row .day { color: var(--gray-700); font-weight: 500; }
+        .hours-row .time { color: var(--dark); font-weight: 600; }
+        .hours-row .time.emergency { color: #16a34a; font-weight: 700; }
+        .hours-badge { display: inline-flex; align-items: center; gap: 5px; padding: 2px 8px; background: rgba(22,163,74,0.1); border-radius: 50px; font-size: 0.75rem; font-weight: 600; color: #16a34a; }
+        .hours-badge .dot { width: 6px; height: 6px; background: #16a34a; border-radius: 50%; animation: pulse-green 2s infinite; }
+        @keyframes pulse-green { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        /* EMERGENCY CALLOUT */
+        .emergency-callout { background: linear-gradient(135deg, #1a1f2e 0%, #0f1520 100%); border-radius: var(--radius); padding: 28px; border: 1px solid rgba(247,183,49,0.2); box-shadow: var(--shadow); }
+        .emergency-callout h3 { color: var(--white); font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .emergency-callout h3 svg { width: 20px; height: 20px; fill: var(--yellow); flex-shrink: 0; }
+        .emergency-callout p { color: rgba(255,255,255,0.7); font-size: 0.88rem; line-height: 1.6; margin-bottom: 16px; }
+        .emergency-call-btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--yellow); color: var(--dark); padding: 14px 20px; border-radius: 9px; font-weight: 700; font-size: 1rem; transition: all var(--transition); font-family: 'Montserrat', sans-serif; }
+        .emergency-call-btn:hover { background: var(--yellow-hover); transform: translateY(-1px); }
+        .emergency-call-btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+        /* TRUST STRIP */
+        .trust-strip { background: var(--electric); padding: 32px 0; }
+        .trust-strip-inner { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+        .trust-strip-item { display: flex; align-items: center; gap: 10px; color: var(--white); }
+        .trust-strip-item svg { width: 22px; height: 22px; fill: var(--yellow); flex-shrink: 0; }
+        .trust-strip-item span { font-size: 0.92rem; font-weight: 500; }
+
+        /* SERVICE AREAS */
+        .areas-section { padding: 72px 0; background: var(--white); }
+        .section-header { text-align: center; margin-bottom: 44px; }
+        .section-label { display: inline-block; font-size: 0.75rem; font-weight: 700; color: var(--electric); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; font-family: 'Montserrat', sans-serif; }
+        .section-header h2 { font-size: clamp(1.7rem, 3.2vw, 2.3rem); color: var(--dark); margin-bottom: 14px; }
+        .section-header p { font-size: 1rem; color: var(--gray-600); max-width: 520px; margin: 0 auto; }
+        .areas-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+        .area-card { background: var(--gray-100); border-radius: var(--radius); padding: 20px; border: 1px solid var(--gray-200); transition: all var(--transition); text-align: center; }
+        .area-card:hover { background: var(--electric); border-color: var(--electric); }
+        .area-card:hover h4, .area-card:hover p { color: var(--white); }
+        .area-card:hover .area-icon svg { fill: var(--yellow); }
+        .area-icon { width: 36px; height: 36px; background: rgba(24,64,176,0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; transition: background var(--transition); }
+        .area-card:hover .area-icon { background: rgba(255,255,255,0.15); }
+        .area-icon svg { width: 18px; height: 18px; fill: var(--electric); transition: fill var(--transition); }
+        .area-card h4 { font-size: 0.95rem; color: var(--dark); margin-bottom: 3px; transition: color var(--transition); }
+        .area-card p { font-size: 0.78rem; color: var(--gray-600); transition: color var(--transition); }
+
+        /* FOOTER */
+        .footer { background: var(--dark); color: rgba(255,255,255,0.65); padding: 64px 0 0; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.1fr 1fr; gap: 40px; margin-bottom: 48px; }
+        .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+        .footer-logo-icon { width: 38px; height: 38px; background: var(--electric); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .footer-logo-icon svg { width: 22px; height: 22px; fill: var(--yellow); }
+        .footer-logo-text { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--white); line-height: 1.1; }
+        .footer-logo-text .co { color: var(--electric-light); }
+        .footer-brand p { font-size: 0.88rem; line-height: 1.72; margin-bottom: 16px; }
+        .footer-license { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
+        .footer-license svg { width: 13px; height: 13px; fill: var(--yellow); }
+        .footer-social { display: flex; gap: 10px; margin-top: 4px; }
+        .footer-social a { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center; transition: background var(--transition); }
+        .footer-social a:hover { background: var(--electric); }
+        .footer-social svg { width: 16px; height: 16px; fill: rgba(255,255,255,0.7); }
+        .footer h4 { color: var(--white); font-size: 0.95rem; font-family: 'Montserrat', sans-serif; margin-bottom: 20px; }
+        .footer ul { list-style: none; }
+        .footer ul li { margin-bottom: 10px; }
+        .footer ul a { font-size: 0.88rem; transition: color var(--transition); }
+        .footer ul a:hover { color: var(--white); }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 13px; font-size: 0.88rem; }
+        .footer-contact-item svg { width: 15px; height: 15px; fill: var(--yellow); flex-shrink: 0; margin-top: 3px; }
+        .footer-contact-item a:hover { color: var(--white); }
+        .footer-areas { display: flex; flex-wrap: wrap; gap: 6px; }
+        .footer-area-pill { font-size: 0.78rem; padding: 4px 10px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; color: rgba(255,255,255,0.55); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding: 24px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+        .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+
+        /* MOBILE CALL BAR */
+        .mobile-call-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 1001; background: var(--yellow); box-shadow: 0 -4px 20px rgba(0,0,0,0.15); }
+        .mobile-call-bar a { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px; color: var(--dark); font-weight: 700; font-size: 1.05rem; font-family: 'Montserrat', sans-serif; }
+        .mobile-call-bar svg { width: 22px; height: 22px; fill: currentColor; }
+
+        /* ANIMATIONS */
+        .animate-on-scroll { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .areas-grid { grid-template-columns: repeat(3, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .nav-desktop, .header-phone, .google-rating { display: none; }
+            .hamburger { display: flex; }
+            .header-inner { height: 64px; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+            .areas-grid { grid-template-columns: repeat(2, 1fr); }
+            .trust-strip-inner { gap: 24px; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .mobile-call-bar { display: block; }
+            body { padding-bottom: 56px; }
+        }
+        @media (max-width: 480px) {
+            .form-card { padding: 24px; }
+            .areas-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+    <div class="header-inner">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+            </div>
+            <div class="logo-text">Voltage Electric <span class="co">Co.</span><span class="sub">Licensed Electricians</span></div>
+        </a>
+        <nav class="nav-desktop">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+        <div class="header-right">
+            <div class="google-rating">
+                <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <strong>4.9</strong>
+                <span class="count">521 reviews</span>
+            </div>
+            <a href="tel:+15128474200" class="header-phone">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                (512) 847-4200
+            </a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="tel:+15128474200" class="mobile-call">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            Call Now — (512) 847-4200
+        </a>
+    </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            <span>Contact</span>
+        </div>
+        <h1>Get Your Free Electrical Estimate</h1>
+        <p>No pressure, no obligation. Fill out the form and we'll respond within one business hour — or call now for immediate assistance. Same-day service available for most jobs.</p>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-grid">
+
+            <!-- FORM -->
+            <div class="form-card animate-on-scroll">
+                <h2>Request a Free Estimate</h2>
+                <p>Tell us about your project and we'll get back to you with a firm, written quote — no vague ranges, no bait-and-switch.</p>
+                <form action="#" method="POST" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name <span>*</span></label>
+                            <input type="text" id="first-name" name="first_name" placeholder="Sarah" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name <span>*</span></label>
+                            <input type="text" id="last-name" name="last_name" placeholder="Johnson" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span>*</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="(512) 555-0100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="sarah@email.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City / Area <span>*</span></label>
+                        <input type="text" id="city" name="city" placeholder="e.g. Cedar Park, Round Rock, Austin...">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed <span>*</span></label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Select a service...</option>
+                            <option value="panel">Panel Upgrade or Replacement</option>
+                            <option value="ev-charger">EV Charger Installation</option>
+                            <option value="generator">Generator Installation</option>
+                            <option value="rewiring">Whole-Home Rewiring</option>
+                            <option value="lighting">Lighting &amp; Controls</option>
+                            <option value="commercial">Commercial Electrical</option>
+                            <option value="emergency">Emergency Electrical Repair</option>
+                            <option value="outlets-fans">Ceiling Fans &amp; Outlets</option>
+                            <option value="other">Other / Not Sure</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell Us About Your Project</label>
+                        <textarea id="message" name="message" placeholder="Describe what you need — the more detail, the more accurate our estimate. For example: '1970s house, original panel, want to add EV charger in garage' or 'half the outlets on one side of the house stopped working.'" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                        Request Free Estimate
+                    </button>
+                    <p class="form-note">We respond within 1 business hour. Your info is never shared or sold.</p>
+                </form>
+            </div>
+
+            <!-- INFO COLUMN -->
+            <div>
+                <!-- CONTACT INFO -->
+                <div class="info-card animate-on-scroll">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        </div>
+                        <div>
+                            <strong>Phone</strong>
+                            <a href="tel:+15128474200">(512) 847-4200</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </div>
+                        <div>
+                            <strong>Email</strong>
+                            <a href="mailto:info@voltageelectricco.com">info@voltageelectricco.com</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </div>
+                        <div>
+                            <strong>Office Address</strong>
+                            <span>2847 Industrial Blvd, Suite 8<br>Austin, TX 78745</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                        </div>
+                        <div>
+                            <strong>License</strong>
+                            <span>Texas TECL-35291<br>Master Electrician on Staff</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HOURS CARD -->
+                <div class="info-card animate-on-scroll">
+                    <h3>Business Hours</h3>
+                    <div class="hours-table">
+                        <div class="hours-row">
+                            <span class="day">Monday – Friday</span>
+                            <span class="time">7:00 AM – 6:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Saturday</span>
+                            <span class="time">8:00 AM – 2:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="day">Sunday</span>
+                            <span class="time">Closed (Emergency only)</span>
+                        </div>
+                        <div class="hours-row" style="padding-top:14px;">
+                            <span class="day" style="font-weight:600;color:var(--dark);">Emergency Line</span>
+                            <span class="time emergency">
+                                <span class="hours-badge"><span class="dot"></span> 24/7</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EMERGENCY CALLOUT -->
+                <div class="emergency-callout animate-on-scroll">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                        Electrical Emergency?
+                    </h3>
+                    <p>Burning smell, sparking outlets, panel issues, or power out in part of your home? Don't wait — call us now. A licensed electrician answers 24 hours a day, 7 days a week.</p>
+                    <a href="tel:+15128474200" class="emergency-call-btn">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        Call Now 24/7 — (512) 847-4200
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust-strip">
+    <div class="container">
+        <div class="trust-strip-inner">
+            <div class="trust-strip-item animate-on-scroll">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                <span>Licensed &amp; Insured</span>
+            </div>
+            <div class="trust-strip-item animate-on-scroll">
+                <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                <span>Upfront Written Pricing</span>
+            </div>
+            <div class="trust-strip-item animate-on-scroll">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span>Same-Day Service Available</span>
+            </div>
+            <div class="trust-strip-item animate-on-scroll">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>100% Satisfaction Guaranteed</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section class="areas-section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <span class="section-label">Where We Work</span>
+            <h2>Areas We Serve</h2>
+            <p>We serve Austin and 11 surrounding cities across the metro area. Not sure if we cover your location? Call us — we'll let you know.</p>
+        </div>
+        <div class="areas-grid">
+            <div class="area-card animate-on-scroll">
+                <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                <h4>Austin</h4>
+                <p>All zip codes</p>
+            </div>
+            <div class="area-card animate-on-scroll">
+                <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                <h4>Round Rock</h4>
+                <p>Full service area</p>
+            </div>
+            <div class="area-card animate-on-scroll">
+                <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                <h4>Cedar Park</h4>
+                <p>Full service area</p>
+            </div>
+            <div class="area-card animate-on-scroll">
+                <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                <h4>Georgetown</h4>
+                <p>Full service area</p>
+            </div>
+            <div class="area-card animate-on-scroll">
+                <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                <h4>Pflugerville</h4>
+                <p>Full service area</p>
+            </div>
+            <div class="area-card animate-on-scroll">
+                <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                <h4>Kyle</h4>
+                <p>Full service area</p>
+            </div>
+            <div class="area-card animate-on-scroll">
+                <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                <h4>Buda</h4>
+                <p>Full service area</p>
+            </div>
+            <div class="area-card animate-on-scroll">
+                <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                <h4>Hutto</h4>
+                <p>Full service area</p>
+            </div>
+            <div class="area-card animate-on-scroll">
+                <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                <h4>Leander</h4>
+                <p>Full service area</p>
+            </div>
+            <div class="area-card animate-on-scroll">
+                <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                <h4>Manor</h4>
+                <p>Full service area</p>
+            </div>
+            <div class="area-card animate-on-scroll">
+                <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                <h4>Bastrop</h4>
+                <p>Full service area</p>
+            </div>
+            <div class="area-card animate-on-scroll">
+                <div class="area-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                <h4>San Marcos</h4>
+                <p>Full service area</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                    </div>
+                    <div class="footer-logo-text">Voltage Electric <span class="co">Co.</span></div>
+                </div>
+                <p>Austin's trusted licensed electricians since 2008. Residential and commercial electrical services with honest pricing, master-licensed technicians, and a satisfaction guarantee on every job.</p>
+                <div class="footer-license">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    Texas TECL-35291 — Master Electrician on Staff
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg></a>
+                    <a href="#" aria-label="Google"><svg viewBox="0 0 24 24"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81z"/></svg></a>
+                </div>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">All Services</a></li>
+                    <li><a href="services.html#panels">Panel Upgrades</a></li>
+                    <li><a href="services.html#ev-chargers">EV Chargers</a></li>
+                    <li><a href="services.html#generators">Generators</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="gallery.html">Project Gallery</a></li>
+                    <li><a href="contact.html">Contact &amp; Estimates</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact Info</h4>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <a href="tel:+15128474200">(512) 847-4200</a>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <a href="mailto:info@voltageelectricco.com">info@voltageelectricco.com</a>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <span>2847 Industrial Blvd, Suite 8<br>Austin, TX 78745</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                    <span>Mon–Fri: 7AM–6PM<br>Sat: 8AM–2PM<br>Emergency: 24/7</span>
+                </div>
+            </div>
+            <div>
+                <h4>Service Areas</h4>
+                <div class="footer-areas">
+                    <span class="footer-area-pill">Austin</span>
+                    <span class="footer-area-pill">Round Rock</span>
+                    <span class="footer-area-pill">Cedar Park</span>
+                    <span class="footer-area-pill">Georgetown</span>
+                    <span class="footer-area-pill">Pflugerville</span>
+                    <span class="footer-area-pill">Kyle</span>
+                    <span class="footer-area-pill">Buda</span>
+                    <span class="footer-area-pill">Hutto</span>
+                    <span class="footer-area-pill">Leander</span>
+                    <span class="footer-area-pill">Manor</span>
+                    <span class="footer-area-pill">Bastrop</span>
+                    <span class="footer-area-pill">San Marcos</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Voltage Electric Co. All rights reserved. Texas TECL-35291.</p>
+            <p>2847 Industrial Blvd, Suite 8, Austin, TX 78745</p>
+        </div>
+    </div>
+</footer>
+
+<!-- MOBILE CALL BAR -->
+<div class="mobile-call-bar">
+    <a href="tel:+15128474200">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Call Now — (512) 847-4200
+    </a>
+</div>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

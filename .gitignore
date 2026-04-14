@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Serve cache / local dev
+.cache/
+.serve/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# Claude Code local config
+.claude/settings.local.json
