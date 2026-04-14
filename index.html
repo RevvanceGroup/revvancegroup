@@ -3,475 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revvance Group | Websites That Make Your Phone Ring</title>
-    <meta name="description" content="Revvance Group builds high-converting websites for local businesses. We handle everything — you just answer the phone when it rings. See live demos of our work.">
-    <meta property="og:title" content="Revvance Group | Websites That Make Your Phone Ring">
-    <meta property="og:description" content="Done-for-you websites that generate leads. Built for plumbers, roofers, landscapers, electricians, and more.">
+    <title>Revvance Group | Websites &amp; SEO for Home Service Contractors</title>
+    <meta name="description" content="Revvance Group builds lead-generating websites and handles SEO for plumbers, HVAC companies, roofers, electricians, and landscapers. Flat $297/mo. No contracts. Live in 48 hours.">
+    <link rel="canonical" href="https://revvancegroup.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Revvance Group | Websites &amp; SEO for Home Service Contractors">
+    <meta property="og:description" content="Done-for-you websites that generate leads. Built for plumbers, roofers, HVAC companies, electricians, and landscapers. Flat $297/mo, no contracts.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://revvancegroup.com">
+    <meta property="og:image" content="https://revvancegroup.com/assets/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Revvance Group | Websites &amp; SEO for Contractors">
+    <meta name="twitter:description" content="Done-for-you contractor websites. Flat $297/mo, no contracts, live in 48 hours.">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        :root {
-            --bg: #0a0a0f;
-            --bg-card: #12121a;
-            --bg-elevated: #1a1a26;
-            --border: #2a2a3a;
-            --accent: #4f6ef7;
-            --accent-hover: #3b5bdb;
-            --accent-glow: rgba(79, 110, 247, 0.15);
-            --green: #22c55e;
-            --orange: #f59e0b;
-            --text: #f0f0f5;
-            --text-muted: #8888a0;
-            --text-dim: #55556a;
-        }
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="assets/css/site.css">
 
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Inter', -apple-system, system-ui, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a { text-decoration: none; color: inherit; }
-        img { max-width: 100%; display: block; }
-
-        .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-
-        /* ===== NAV ===== */
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            padding: 16px 0;
-            transition: all 0.3s;
-        }
-        nav.scrolled {
-            background: rgba(10, 10, 15, 0.92);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            padding: 10px 0;
-        }
-        .nav-inner {
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        .nav-logo {
-            font-size: 1.3rem; font-weight: 800; letter-spacing: -0.5px;
-        }
-        .nav-logo span { color: var(--accent); }
-        .nav-links {
-            display: flex; align-items: center; gap: 32px; list-style: none;
-        }
-        .nav-links a {
-            font-size: 0.9rem; font-weight: 500; color: var(--text-muted);
-            transition: color 0.2s;
-        }
-        .nav-links a:hover { color: var(--text); }
-        .nav-cta-btn {
-            background: var(--accent); color: white !important; padding: 10px 22px;
-            border-radius: 8px; font-weight: 600; font-size: 0.9rem;
-            transition: all 0.2s;
-        }
-        .nav-cta-btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
-        .nav-email {
-            font-size: 0.85rem; color: var(--text-muted);
-        }
-        .hamburger {
-            display: none; background: none; border: none; cursor: pointer; padding: 8px;
-            flex-direction: column; gap: 5px;
-        }
-        .hamburger span {
-            width: 22px; height: 2px; background: var(--text); border-radius: 2px;
-            transition: all 0.3s;
-        }
-
-        /* ===== HERO ===== */
-        .hero {
-            min-height: 100vh; display: flex; align-items: center;
-            padding: 120px 0 80px; position: relative;
-        }
-        .hero-glow {
-            position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
-            width: 800px; height: 600px;
-            background: radial-gradient(ellipse, rgba(79,110,247,0.08) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .hero-content { position: relative; z-index: 2; max-width: 720px; }
-        .hero-label {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: var(--accent-glow); border: 1px solid rgba(79,110,247,0.2);
-            color: var(--accent); padding: 6px 16px; border-radius: 50px;
-            font-size: 0.82rem; font-weight: 600; margin-bottom: 28px;
-        }
-        .hero-label .dot {
-            width: 6px; height: 6px; background: var(--green); border-radius: 50%;
-            animation: pulse 2s ease infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
-        }
-        .hero h1 {
-            font-size: clamp(2.8rem, 5.5vw, 4.2rem); font-weight: 900;
-            line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 24px;
-        }
-        .hero h1 .highlight {
-            background: linear-gradient(135deg, var(--accent), #818cf8);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .hero-sub {
-            font-size: 1.2rem; color: var(--text-muted); line-height: 1.7;
-            margin-bottom: 40px; max-width: 560px;
-        }
-        .hero-ctas { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-        .btn-primary {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: var(--accent); color: white; padding: 16px 32px;
-            border-radius: 10px; font-weight: 700; font-size: 1rem;
-            transition: all 0.25s; border: none; cursor: pointer;
-        }
-        .btn-primary:hover {
-            background: var(--accent-hover); transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(79,110,247,0.3);
-        }
-        .btn-secondary {
-            display: inline-flex; align-items: center; gap: 8px;
-            color: var(--text); padding: 16px 28px; border-radius: 10px;
-            font-weight: 600; font-size: 1rem; border: 1px solid var(--border);
-            transition: all 0.25s;
-        }
-        .btn-secondary:hover { border-color: var(--accent); background: var(--accent-glow); }
-        .btn-arrow { transition: transform 0.2s; }
-        .btn-primary:hover .btn-arrow, .btn-secondary:hover .btn-arrow { transform: translateX(4px); }
-
-        .hero-proof {
-            margin-top: 56px; display: flex; align-items: center; gap: 32px;
-            padding-top: 32px; border-top: 1px solid var(--border);
-        }
-        .proof-item { display: flex; flex-direction: column; }
-        .proof-number { font-size: 1.8rem; font-weight: 800; color: var(--text); letter-spacing: -1px; }
-        .proof-label { font-size: 0.8rem; color: var(--text-dim); font-weight: 500; }
-
-        /* ===== PROBLEM SECTION (PAS) ===== */
-        .problem {
-            padding: 100px 0; border-top: 1px solid var(--border);
-        }
-        .problem-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
-        .section-label {
-            font-size: 0.78rem; font-weight: 700; letter-spacing: 2px;
-            text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
-        }
-        .problem-header h2 {
-            font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
-            letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.15;
-        }
-        .problem-header p { font-size: 1.1rem; color: var(--text-muted); }
-        .pain-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-        }
-        .pain-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 14px; padding: 32px 28px;
-            transition: all 0.3s;
-        }
-        .pain-card:hover { border-color: rgba(245,158,11,0.3); transform: translateY(-4px); }
-        .pain-card h3 {
-            font-size: 1.1rem; font-weight: 700; margin-bottom: 10px;
-        }
-        .pain-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.65; }
-
-        /* ===== SOLUTION (What We Do) ===== */
-        .solution {
-            padding: 100px 0; background: var(--bg-card);
-            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-        }
-        .solution-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
-        .solution-header h2 {
-            font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
-            letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.15;
-        }
-        .solution-header p { font-size: 1.1rem; color: var(--text-muted); }
-        .solution-grid {
-            display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
-        }
-        .sol-card {
-            background: var(--bg); border: 1px solid var(--border);
-            border-radius: 14px; padding: 36px 32px;
-            transition: all 0.3s; position: relative; overflow: hidden;
-        }
-        .sol-card:hover { border-color: rgba(79,110,247,0.3); }
-        .sol-card::after {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-            background: var(--accent); transform: scaleX(0); transition: transform 0.3s;
-            transform-origin: left;
-        }
-        .sol-card:hover::after { transform: scaleX(1); }
-        .sol-badge {
-            display: inline-block; font-size: 0.7rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1.5px; padding: 4px 10px;
-            border-radius: 4px; margin-bottom: 16px;
-        }
-        .sol-badge.core { background: rgba(79,110,247,0.12); color: var(--accent); }
-        .sol-badge.coming { background: rgba(245,158,11,0.12); color: var(--orange); }
-        .sol-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; }
-        .sol-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 16px; }
-        .sol-features {
-            list-style: none; display: flex; flex-direction: column; gap: 8px;
-        }
-        .sol-features li {
-            font-size: 0.88rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px;
-        }
-        .sol-features li .check { color: var(--green); font-weight: 700; flex-shrink: 0; }
-
-        /* ===== PORTFOLIO ===== */
-        .portfolio { padding: 100px 0; }
-        .portfolio-header { text-align: center; max-width: 650px; margin: 0 auto 60px; }
-        .portfolio-header h2 {
-            font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
-            letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.15;
-        }
-        .portfolio-header p { font-size: 1.1rem; color: var(--text-muted); }
-        .portfolio-grid {
-            display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
-        }
-        .port-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 16px; overflow: hidden; transition: all 0.35s;
-            display: block;
-        }
-        .port-card:hover { transform: translateY(-6px); border-color: rgba(79,110,247,0.3); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
-        .port-preview {
-            height: 220px; position: relative; overflow: hidden;
-        }
-        .port-img {
-            width: 100%; height: 100%; object-fit: cover;
-            transition: transform 0.5s;
-        }
-        .port-card:hover .port-img { transform: scale(1.05); }
-        .port-overlay {
-            position: absolute; inset: 0;
-            background: linear-gradient(to top, rgba(10,10,15,0.95) 0%, rgba(10,10,15,0.2) 60%);
-            display: flex; align-items: flex-end; padding: 20px;
-        }
-        .port-industry {
-            font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 1.5px; padding: 5px 12px; border-radius: 4px;
-        }
-        .port-industry.plumbing { background: rgba(59,130,246,0.2); color: #60a5fa; }
-        .port-industry.roofing { background: rgba(239,68,68,0.2); color: #f87171; }
-        .port-industry.landscaping { background: rgba(34,197,94,0.2); color: #4ade80; }
-        .port-industry.electrician { background: rgba(24,64,176,0.2); color: #60a5fa; }
-        .port-industry.hvac { background: rgba(249,115,22,0.22); color: #fb923c; }
-        .port-card.featured { border: 2px solid rgba(249,115,22,0.55); position: relative; }
-        .port-card.featured::before {
-          content: 'NEW · FLAGSHIP';
-          position: absolute; top: 16px; right: 16px; z-index: 3;
-          background: #f97316; color: #fff;
-          padding: 6px 12px; border-radius: 100px;
-          font-size: 0.7rem; font-weight: 700;
-          letter-spacing: 0.12em; text-transform: uppercase;
-        }
-        .port-body { padding: 24px; }
-        .port-body h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
-        .port-body p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
-        .port-stats {
-            display: flex; gap: 20px; padding-top: 16px; border-top: 1px solid var(--border);
-            margin-bottom: 16px;
-        }
-        .port-stat { display: flex; flex-direction: column; }
-        .port-stat-val { font-size: 1.1rem; font-weight: 800; color: var(--green); }
-        .port-stat-label { font-size: 0.72rem; color: var(--text-dim); font-weight: 500; }
-        .port-link {
-            display: inline-flex; align-items: center; gap: 6px;
-            color: var(--accent); font-weight: 600; font-size: 0.9rem;
-        }
-        .port-link svg { transition: transform 0.2s; }
-        .port-card:hover .port-link svg { transform: translateX(5px); }
-
-        /* ===== PROCESS ===== */
-        .process {
-            padding: 100px 0; background: var(--bg-card);
-            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-        }
-        .process-header { text-align: center; max-width: 550px; margin: 0 auto 60px; }
-        .process-header h2 {
-            font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
-            letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.15;
-        }
-        .process-header p { font-size: 1.1rem; color: var(--text-muted); }
-        .process-steps {
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
-        }
-        .step {
-            text-align: center; padding: 32px 20px;
-            background: var(--bg); border: 1px solid var(--border); border-radius: 14px;
-            transition: all 0.3s; position: relative;
-        }
-        .step:hover { border-color: rgba(79,110,247,0.3); transform: translateY(-4px); }
-        .step-num {
-            width: 48px; height: 48px; border-radius: 12px;
-            background: var(--accent-glow); border: 1px solid rgba(79,110,247,0.2);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem; font-weight: 800; color: var(--accent);
-            margin: 0 auto 20px;
-        }
-        .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
-        .step p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
-        .step-connector {
-            display: none;
-        }
-
-        /* ===== OBJECTIONS ===== */
-        .objections { padding: 100px 0; }
-        .objections-header { text-align: center; max-width: 600px; margin: 0 auto 60px; }
-        .objections-header h2 {
-            font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
-            letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.15;
-        }
-        .obj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .obj-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 14px; padding: 32px 28px; transition: all 0.3s;
-        }
-        .obj-card:hover { border-color: rgba(34,197,94,0.3); }
-        .obj-q {
-            font-size: 1.05rem; font-weight: 700; margin-bottom: 12px;
-            color: var(--orange); display: flex; align-items: flex-start; gap: 10px;
-        }
-        .obj-a { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; }
-
-        /* ===== TESTIMONIALS ===== */
-        .testimonials {
-            padding: 100px 0; background: var(--bg-card);
-            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-        }
-        .test-header { text-align: center; max-width: 500px; margin: 0 auto 60px; }
-        .test-header h2 {
-            font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800;
-            letter-spacing: -0.5px; margin-bottom: 16px; line-height: 1.15;
-        }
-        .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .test-card {
-            background: var(--bg); border: 1px solid var(--border);
-            border-radius: 14px; padding: 32px 28px;
-        }
-        .test-stars { color: var(--orange); font-size: 1rem; letter-spacing: 2px; margin-bottom: 16px; }
-        .test-card blockquote {
-            font-size: 0.95rem; color: var(--text-muted); line-height: 1.7;
-            margin-bottom: 20px; font-style: italic;
-        }
-        .test-author { font-size: 0.9rem; font-weight: 700; color: var(--text); }
-        .test-role { font-size: 0.8rem; color: var(--text-dim); }
-
-        /* ===== CTA ===== */
-        .final-cta { padding: 120px 0; text-align: center; position: relative; }
-        .final-cta-glow {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 600px; height: 400px;
-            background: radial-gradient(ellipse, rgba(79,110,247,0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .final-cta-content { position: relative; z-index: 2; max-width: 600px; margin: 0 auto; }
-        .final-cta h2 {
-            font-size: clamp(2rem, 4vw, 3rem); font-weight: 900;
-            letter-spacing: -1px; margin-bottom: 16px; line-height: 1.1;
-        }
-        .final-cta p {
-            font-size: 1.1rem; color: var(--text-muted); margin-bottom: 36px;
-        }
-        .final-cta .btn-primary { font-size: 1.1rem; padding: 18px 40px; }
-        .final-cta-sub {
-            margin-top: 20px; font-size: 0.85rem; color: var(--text-dim);
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            border-top: 1px solid var(--border); padding: 48px 0;
-        }
-        .footer-inner {
-            display: flex; justify-content: space-between; align-items: center;
-            flex-wrap: wrap; gap: 20px;
-        }
-        .footer-brand { font-size: 1.1rem; font-weight: 700; }
-        .footer-brand span { color: var(--accent); }
-        .footer-links { display: flex; gap: 24px; }
-        .footer-links a { font-size: 0.85rem; color: var(--text-muted); transition: color 0.2s; }
-        .footer-links a:hover { color: var(--text); }
-        .footer-copy { font-size: 0.8rem; color: var(--text-dim); width: 100%; text-align: center; margin-top: 20px; }
-
-        /* ===== MOBILE BOTTOM BAR ===== */
-        .mobile-bar {
-            display: none; position: fixed; bottom: 0; left: 0; right: 0;
-            z-index: 9999; background: var(--accent); padding: 14px 24px;
-            box-shadow: 0 -4px 30px rgba(0,0,0,0.4);
-        }
-        .mobile-bar a {
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            color: white; font-weight: 700; font-size: 1rem;
-        }
-        .mobile-bar svg { width: 20px; height: 20px; fill: white; }
-
-        /* ===== ANIMATIONS ===== */
-        .fade-up { opacity: 0; transform: translateY(24px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
-        .fade-up.visible { opacity: 1; transform: translateY(0); }
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .nav-links { display: none; }
-            .nav-email { display: none; }
-            .hamburger { display: flex; }
-            .nav-links.open {
-                display: flex; flex-direction: column; position: absolute;
-                top: 100%; left: 0; right: 0; background: var(--bg-card);
-                border-bottom: 1px solid var(--border); padding: 24px;
-                gap: 8px;
-            }
-            .nav-links.open a { padding: 12px 16px; }
-        }
-        @media (max-width: 768px) {
-            .hero-proof { flex-wrap: wrap; gap: 20px; }
-            .pain-grid { grid-template-columns: 1fr; }
-            .solution-grid { grid-template-columns: 1fr; }
-            .portfolio-grid { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
-            .process-steps { grid-template-columns: 1fr 1fr; }
-            .obj-grid { grid-template-columns: 1fr; }
-            .test-grid { grid-template-columns: 1fr; }
-            .mobile-bar { display: block; }
-            body { padding-bottom: 56px; }
-            .hero { padding-top: 100px; }
-        }
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero-ctas { flex-direction: column; align-items: stretch; }
-            .btn-primary, .btn-secondary { justify-content: center; }
-            .process-steps { grid-template-columns: 1fr; }
-            .footer-links { flex-wrap: wrap; gap: 16px; }
-        }
-    </style>
+    <!-- Schema.org: Organization + WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://revvancegroup.com/#organization",
+          "name": "Revvance Group",
+          "url": "https://revvancegroup.com",
+          "logo": "https://revvancegroup.com/assets/logo.png",
+          "email": "info@revvancegroup.com",
+          "description": "Revvance Group builds lead-generating websites and provides SEO services for home service contractors including plumbers, HVAC companies, roofers, electricians, and landscapers.",
+          "knowsAbout": ["Web Design", "SEO", "Local SEO", "Home Service Marketing", "Contractor Websites"],
+          "serviceArea": {"@type": "Country", "name": "United States"},
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Contractor Web Design & SEO Services",
+            "itemListElement": [
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Plumber Website Design"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "HVAC Website Design"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Roofing Website Design"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Electrician Website Design"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Landscaping Website Design"}},
+              {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO for Contractors"}}
+            ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://revvancegroup.com/#website",
+          "url": "https://revvancegroup.com",
+          "name": "Revvance Group",
+          "publisher": {"@id": "https://revvancegroup.com/#organization"}
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
 <!-- Nav -->
 <nav id="navbar">
   <div class="container nav-inner">
-    <div class="nav-logo">Revvance<span>Group</span></div>
+    <a href="/" class="nav-logo">Revvance<span>Group</span></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#work">Our Work</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#contact" class="nav-cta-btn">See What We'd Build For You</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services/contractor-websites.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="case-studies/index.html">Work</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta-btn">Get a Free Preview</a></li>
     </ul>
-    <span class="nav-email">info@revvancegroup.com</span>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -482,11 +90,11 @@
   <div class="container">
     <div class="hero-content">
       <div class="hero-label fade-up"><span class="dot"></span> Now Accepting New Clients</div>
-      <h1 class="fade-up delay-1">We Build Websites That <span class="highlight">Make Your Phone Ring</span></h1>
-      <p class="hero-sub fade-up delay-2">Your competitors are getting the calls you should be getting. We build done-for-you websites that put your business on page one and turn visitors into paying customers. You just answer the phone.</p>
+      <h1 class="fade-up delay-1">Contractor Websites That <span class="highlight">Rank and Convert</span></h1>
+      <p class="hero-sub fade-up delay-2">We build done-for-you websites for plumbers, HVAC companies, roofers, electricians, and landscapers. SEO included, live in 48 hours, flat $297/mo — no contracts, no surprises.</p>
       <div class="hero-ctas fade-up delay-3">
-        <a href="#contact" class="btn-primary">
-          See What We'd Build For You
+        <a href="contact.html" class="btn-primary">
+          Get Your Free Site Preview
           <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#work" class="btn-secondary">
@@ -500,12 +108,12 @@
           <span class="proof-label">Avg. Delivery</span>
         </div>
         <div class="proof-item">
-          <span class="proof-number">5&ndash;7</span>
-          <span class="proof-label">Pages Per Site</span>
+          <span class="proof-number">$297</span>
+          <span class="proof-label">Flat Monthly Rate</span>
         </div>
         <div class="proof-item">
-          <span class="proof-number">Mobile</span>
-          <span class="proof-label">First Design</span>
+          <span class="proof-number">No Lock-In</span>
+          <span class="proof-label">Cancel Anytime</span>
         </div>
         <div class="proof-item">
           <span class="proof-number">SEO</span>
@@ -516,90 +124,205 @@
   </div>
 </section>
 
-<!-- Problem Section (PAS: Problem + Agitate) -->
+<!-- Trust Strip -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-strip-inner">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        Trade-specialized design
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        Local SEO included
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        No long-term contracts
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        Schema markup for AI search
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        Mobile-first on every device
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Problem Section -->
 <section class="problem" id="problem">
   <div class="container">
     <div class="problem-header fade-up">
       <div class="section-label">The Problem</div>
-      <h2>Every Day Without a Real Website, You're Losing Jobs</h2>
-      <p>Your competitors aren't better at what you do. They just show up first online.</p>
+      <h2>Every Day Without a Real Website, You're Losing Jobs to Your Competitors</h2>
+      <p>They're not better at what you do. They just show up first when someone Googles your trade.</p>
     </div>
     <div class="pain-grid">
       <div class="pain-card fade-up">
         <h3>"I Get All My Work From Referrals"</h3>
-        <p>Even your referrals Google you before they call. If they find a dated site or nothing at all, they move on to the next guy who looks established.</p>
+        <p>Even your referrals Google you before they call. If they find a dated site — or nothing at all — they move on to the next contractor who looks established. A referral is not a guaranteed booking; your website is the closer.</p>
       </div>
       <div class="pain-card fade-up delay-1">
         <h3>"I Already Have a Facebook Page"</h3>
-        <p>Facebook shows your competitor's ads right next to your page. A website is yours &mdash; no algorithm changes, no competing ads, and it actually ranks on Google.</p>
+        <p>Facebook shows your competitor's ads right next to your posts. A website is yours — no algorithm changes, no competing ads. It ranks on Google, shows up in AI search results, and works for you 24 hours a day.</p>
       </div>
       <div class="pain-card fade-up delay-2">
         <h3>"I Don't Have Time For This"</h3>
-        <p>That's the whole point. We handle everything &mdash; design, copy, SEO, hosting. You don't touch a thing. Your only job is to answer the phone when it rings.</p>
+        <p>That's the whole point. We handle everything — design, copy, SEO, hosting, schema markup. You don't touch a thing. Your only job is to answer the phone when new customers call from your site.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Solution (What We Do) -->
+<!-- Solution (Services) -->
 <section class="solution" id="services">
   <div class="container">
     <div class="solution-header fade-up">
       <div class="section-label">Services</div>
-      <h2>Everything You Need to Dominate Online</h2>
-      <p>We don't just build a website and disappear. We build a lead generation system for your business.</p>
+      <h2>Everything You Need to Dominate Your Local Market Online</h2>
+      <p>We don't just build a website and disappear. We build a complete lead generation system — website, SEO, structured data, and city pages — designed to rank and convert.</p>
     </div>
     <div class="solution-grid">
       <div class="sol-card fade-up">
         <span class="sol-badge core">Core Service</span>
-        <h3>Lead-Generating Websites</h3>
-        <p>Custom-designed, mobile-first websites built to convert visitors into calls and form submissions. Not a template &mdash; built for your brand, your market, your customers.</p>
+        <h3>Contractor Website Design</h3>
+        <p>Custom-designed, trade-specific websites built to convert visitors into calls. Not a template — built for your industry, your market, and the way your customers search. Every demo below is a real example.</p>
         <ul class="sol-features">
-          <li><span class="check">&#10003;</span> Custom design tailored to your industry</li>
-          <li><span class="check">&#10003;</span> Mobile-first responsive on all devices</li>
-          <li><span class="check">&#10003;</span> Click-to-call &amp; sticky call bars</li>
+          <li><span class="check">&#10003;</span> Trade-specific design (plumbing, HVAC, roofing, electric, landscaping)</li>
+          <li><span class="check">&#10003;</span> Mobile-first — designed for phone users</li>
+          <li><span class="check">&#10003;</span> Click-to-call buttons and sticky call bar</li>
           <li><span class="check">&#10003;</span> Conversion-optimized contact forms</li>
-          <li><span class="check">&#10003;</span> Google review integration</li>
-          <li><span class="check">&#10003;</span> Schema markup for rich search results</li>
-          <li><span class="check">&#10003;</span> Fast loading &mdash; under 3 seconds</li>
+          <li><span class="check">&#10003;</span> Google review integration and trust signals</li>
+          <li><span class="check">&#10003;</span> Schema.org markup for rich search results</li>
+          <li><span class="check">&#10003;</span> Live in 48 hours, unlimited revisions</li>
         </ul>
       </div>
       <div class="sol-card fade-up delay-1">
         <span class="sol-badge core">Core Service</span>
-        <h3>Search Engine Optimization</h3>
-        <p>Get found when people search for what you do in your area. We handle the technical SEO, local listings, and content strategy so you rank above your competition.</p>
+        <h3>Local SEO for Contractors</h3>
+        <p>Get found when homeowners search for your trade in your service area. We handle the technical SEO, local content, city landing pages, and structured data so you rank above the competition — and show up in AI-powered searches too.</p>
         <ul class="sol-features">
-          <li><span class="check">&#10003;</span> Local SEO &amp; Google Business optimization</li>
-          <li><span class="check">&#10003;</span> Keyword research for your service area</li>
-          <li><span class="check">&#10003;</span> On-page optimization &amp; meta tags</li>
-          <li><span class="check">&#10003;</span> Service area pages for each city you serve</li>
-          <li><span class="check">&#10003;</span> Schema.org structured data</li>
+          <li><span class="check">&#10003;</span> Keyword research for your specific trade and cities</li>
+          <li><span class="check">&#10003;</span> On-page optimization, meta tags, heading structure</li>
+          <li><span class="check">&#10003;</span> City/service area landing pages</li>
+          <li><span class="check">&#10003;</span> Google Business Profile optimization</li>
+          <li><span class="check">&#10003;</span> Schema.org LocalBusiness + Service markup</li>
+          <li><span class="check">&#10003;</span> GEO optimization for ChatGPT, Perplexity, Claude</li>
           <li><span class="check">&#10003;</span> Monthly performance reports</li>
         </ul>
       </div>
       <div class="sol-card fade-up">
         <span class="sol-badge coming">Coming Soon</span>
-        <h3>Google Ads Management</h3>
-        <p>Paid search campaigns that put you at the top immediately. We manage the ads, you get the calls. Coming soon as an add-on to any website package.</p>
+        <h3>Google &amp; LSA Ad Management</h3>
+        <p>Paid search campaigns that put you at the very top immediately. Local Service Ads and Google Ads managed end-to-end — setup, copywriting, bid management, call tracking, and reporting. Available as an add-on.</p>
         <ul class="sol-features">
-          <li><span class="check">&#10003;</span> Google Ads setup &amp; management</li>
-          <li><span class="check">&#10003;</span> Local service ads</li>
-          <li><span class="check">&#10003;</span> Call tracking &amp; reporting</li>
-          <li><span class="check">&#10003;</span> ROI-focused campaign optimization</li>
+          <li><span class="check">&#10003;</span> Google Ads and Local Service Ads setup</li>
+          <li><span class="check">&#10003;</span> Call tracking and lead attribution</li>
+          <li><span class="check">&#10003;</span> Budget management and bid optimization</li>
+          <li><span class="check">&#10003;</span> Monthly ROI reporting</li>
         </ul>
       </div>
       <div class="sol-card fade-up delay-1">
         <span class="sol-badge coming">Coming Soon</span>
-        <h3>Reputation Management</h3>
-        <p>Automate review requests, monitor your online reputation, and turn happy customers into 5-star reviews that bring in more business.</p>
+        <h3>Reputation &amp; Review Management</h3>
+        <p>Automate review requests, monitor your online reputation across Google and Yelp, and build the five-star profile that separates you from competitors. Integrates directly with your website.</p>
         <ul class="sol-features">
-          <li><span class="check">&#10003;</span> Automated review request system</li>
-          <li><span class="check">&#10003;</span> Review monitoring &amp; alerts</li>
-          <li><span class="check">&#10003;</span> Response management</li>
-          <li><span class="check">&#10003;</span> Review widget for your website</li>
+          <li><span class="check">&#10003;</span> Automated post-job review request SMS/email</li>
+          <li><span class="check">&#10003;</span> Review monitoring and alert system</li>
+          <li><span class="check">&#10003;</span> Review widget embedded on your website</li>
+          <li><span class="check">&#10003;</span> Response management and guidance</li>
         </ul>
       </div>
     </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="services/contractor-websites.html" class="btn-outline fade-up">
+        See All Services
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="pricing-header fade-up">
+      <div class="section-label">Transparent Pricing</div>
+      <h2>One Flat Rate. No Surprises. No Contracts.</h2>
+      <p>Most agencies charge $3,000–$8,000 upfront, then disappear. We charge $297/mo and stay involved. Cancel anytime.</p>
+    </div>
+    <div class="pricing-grid fade-up">
+      <div class="price-card">
+        <div class="price-name">Starter</div>
+        <div class="price-amount">
+          <span class="price-dollar">$</span>
+          <span class="price-number">197</span>
+          <span class="price-period">/mo</span>
+        </div>
+        <div class="price-desc">Get a professional website live fast. Great for businesses starting their online presence.</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><span class="pf-icon">&#10003;</span> 5-page custom website</li>
+          <li><span class="pf-icon">&#10003;</span> Mobile-first design</li>
+          <li><span class="pf-icon">&#10003;</span> Click-to-call &amp; contact form</li>
+          <li><span class="pf-icon">&#10003;</span> Basic SEO (title tags, meta, schema)</li>
+          <li><span class="pf-icon">&#10003;</span> Hosting &amp; SSL included</li>
+          <li><span class="pf-icon">&#10003;</span> 48-hour delivery</li>
+          <li><span class="pf-icon na">&#8212;</span> City landing pages</li>
+          <li><span class="pf-icon na">&#8212;</span> Blog / content strategy</li>
+          <li><span class="pf-icon na">&#8212;</span> Google Business optimization</li>
+        </ul>
+        <a href="contact.html" class="price-btn secondary">Get Started</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-name">Growth</div>
+        <div class="price-amount">
+          <span class="price-dollar">$</span>
+          <span class="price-number">297</span>
+          <span class="price-period">/mo</span>
+        </div>
+        <div class="price-desc">Full website plus local SEO. The complete system most contractors need to dominate their market.</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><span class="pf-icon">&#10003;</span> 10–15 page custom website</li>
+          <li><span class="pf-icon">&#10003;</span> Trade-specific design &amp; copy</li>
+          <li><span class="pf-icon">&#10003;</span> Click-to-call, forms, trust signals</li>
+          <li><span class="pf-icon">&#10003;</span> Full on-page SEO optimization</li>
+          <li><span class="pf-icon">&#10003;</span> 3 city/service area pages</li>
+          <li><span class="pf-icon">&#10003;</span> Google Business profile setup</li>
+          <li><span class="pf-icon">&#10003;</span> Schema.org + GEO markup</li>
+          <li><span class="pf-icon">&#10003;</span> Monthly content updates</li>
+          <li><span class="pf-icon na">&#8212;</span> Blog &amp; content strategy</li>
+        </ul>
+        <a href="contact.html" class="price-btn primary">Get Started</a>
+      </div>
+      <div class="price-card">
+        <div class="price-name">Authority</div>
+        <div class="price-amount">
+          <span class="price-dollar">$</span>
+          <span class="price-number">497</span>
+          <span class="price-period">/mo</span>
+        </div>
+        <div class="price-desc">Dominate organically. Full site, SEO, blog content, and city pages — built to rank for every service you offer.</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><span class="pf-icon">&#10003;</span> 20+ page website</li>
+          <li><span class="pf-icon">&#10003;</span> Premium trade design &amp; copywriting</li>
+          <li><span class="pf-icon">&#10003;</span> All Growth features included</li>
+          <li><span class="pf-icon">&#10003;</span> 6+ city landing pages</li>
+          <li><span class="pf-icon">&#10003;</span> Blog — 2 posts/mo</li>
+          <li><span class="pf-icon">&#10003;</span> FAQ &amp; financing pages</li>
+          <li><span class="pf-icon">&#10003;</span> Competitor gap analysis</li>
+          <li><span class="pf-icon">&#10003;</span> Priority support &amp; updates</li>
+          <li><span class="pf-icon">&#10003;</span> Review integration widget</li>
+        </ul>
+        <a href="contact.html" class="price-btn secondary">Get Started</a>
+      </div>
+    </div>
+    <p class="pricing-note fade-up">All plans include hosting, SSL, and unlimited revision requests. No setup fees. Cancel anytime with 30 days notice. <a href="pricing.html">Compare full plan details &rarr;</a></p>
   </div>
 </section>
 
@@ -608,118 +331,111 @@
   <div class="container">
     <div class="portfolio-header fade-up">
       <div class="section-label">Live Demos</div>
-      <h2>See What We'd Build For You</h2>
-      <p>These aren't mockups. Click through to explore fully built, multi-page websites with real images, SEO, and conversion features.</p>
+      <h2>See What We Build for Contractors</h2>
+      <p>These aren't mockups. Click through to explore fully built, multi-page websites with real copy, real SEO structure, and real conversion features — built for each trade.</p>
     </div>
     <div class="portfolio-grid">
+
       <a href="demos/hvac/index.html" class="port-card featured fade-up" target="_blank">
         <div class="port-preview">
-          <img src="https://images.unsplash.com/photo-1635274606728-5f8f3aae5e50?auto=format&fit=crop&w=800&q=80" alt="HVAC website demo" class="port-img">
+          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="HVAC website design demo — Meridian Heating & Air" class="port-img">
           <div class="port-overlay">
             <span class="port-industry hvac">HVAC</span>
           </div>
         </div>
         <div class="port-body">
           <h3>Meridian Heating &amp; Air</h3>
-          <p>22-page site with before/after slider, cost calculator, blog, location pages, and FAQ-rich schema built for both Google and AI search (ChatGPT, Perplexity, Claude).</p>
+          <p>22-page flagship site with before/after slider, cost calculator, blog, service area pages, and FAQ-rich schema built for both Google and AI search (ChatGPT, Perplexity, Claude).</p>
           <div class="port-stats">
             <div class="port-stat"><span class="port-stat-val">22</span><span class="port-stat-label">Pages</span></div>
             <div class="port-stat"><span class="port-stat-val">5</span><span class="port-stat-label">Blog Posts</span></div>
-            <div class="port-stat"><span class="port-stat-val">GEO</span><span class="port-stat-label">AI Search Ready</span></div>
+            <div class="port-stat"><span class="port-stat-val">GEO</span><span class="port-stat-label">AI-Ready</span></div>
           </div>
-          <span class="port-link">
-            Explore Live Demo
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </span>
-        </div>
-      </a>
-
-      <a href="demos/plumbing/index.html" class="port-card fade-up" target="_blank">
-        <div class="port-preview">
-          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Plumbing website demo" class="port-img">
-          <div class="port-overlay">
-            <span class="port-industry plumbing">Plumbing &amp; HVAC</span>
-          </div>
-        </div>
-        <div class="port-body">
-          <h3>Elite Plumbing &amp; HVAC</h3>
-          <p>5-page site with emergency CTAs, sticky call bar, Google reviews in header, and individual service pages optimized for local search.</p>
-          <div class="port-stats">
-            <div class="port-stat"><span class="port-stat-val">5</span><span class="port-stat-label">Pages</span></div>
-            <div class="port-stat"><span class="port-stat-val">6</span><span class="port-stat-label">Services</span></div>
-            <div class="port-stat"><span class="port-stat-val">10+</span><span class="port-stat-label">Reviews</span></div>
-          </div>
-          <span class="port-link">
-            Explore Live Demo
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </span>
-        </div>
-      </a>
-
-      <a href="demos/roofing/index.html" class="port-card fade-up delay-1" target="_blank">
-        <div class="port-preview">
-          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80" alt="Roofing website demo" class="port-img">
-          <div class="port-overlay">
-            <span class="port-industry roofing">Roofing</span>
-          </div>
-        </div>
-        <div class="port-body">
-          <h3>Summit Roofing Co.</h3>
-          <p>7-page site with GAF certification badges, storm damage landing page, before/after gallery, and financing at $89/mo messaging.</p>
-          <div class="port-stats">
-            <div class="port-stat"><span class="port-stat-val">7</span><span class="port-stat-label">Pages</span></div>
-            <div class="port-stat"><span class="port-stat-val">16</span><span class="port-stat-label">Service Areas</span></div>
-            <div class="port-stat"><span class="port-stat-val">$89/mo</span><span class="port-stat-label">Financing CTA</span></div>
-          </div>
-          <span class="port-link">
-            Explore Live Demo
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </span>
-        </div>
-      </a>
-
-      <a href="demos/landscaping/index.html" class="port-card fade-up" target="_blank">
-        <div class="port-preview">
-          <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=800&q=80" alt="Landscaping website demo" class="port-img">
-          <div class="port-overlay">
-            <span class="port-industry landscaping">Landscaping</span>
-          </div>
-        </div>
-        <div class="port-body">
-          <h3>GreenScape Landscaping</h3>
-          <p>5-page site with before/after portfolio, three-tier service packages, 5-step design process, and seasonal content sections.</p>
-          <div class="port-stats">
-            <div class="port-stat"><span class="port-stat-val">5</span><span class="port-stat-label">Pages</span></div>
-            <div class="port-stat"><span class="port-stat-val">3</span><span class="port-stat-label">Pricing Tiers</span></div>
-            <div class="port-stat"><span class="port-stat-val">8+</span><span class="port-stat-label">Projects</span></div>
-          </div>
-          <span class="port-link">
-            Explore Live Demo
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </span>
+          <span class="port-link">Explore Live Demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
       </a>
 
       <a href="demos/electrician/index.html" class="port-card fade-up delay-1" target="_blank">
         <div class="port-preview">
-          <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80" alt="Electrician website demo" class="port-img">
+          <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80" alt="Electrician website design demo — Voltage Electric Co." class="port-img">
           <div class="port-overlay">
             <span class="port-industry electrician">Electrician</span>
           </div>
         </div>
         <div class="port-body">
           <h3>Voltage Electric Co.</h3>
-          <p>5-page site with panel upgrades, EV charger installs, generator services, 24/7 emergency callouts, and GEO-optimized schema for Austin TX.</p>
+          <p>28-page site with service pages for every offering, 6 city landing pages, blog, FAQ, financing, and 24/7 emergency CTAs — built for Austin TX with full Schema.org and GEO markup.</p>
           <div class="port-stats">
-            <div class="port-stat"><span class="port-stat-val">5</span><span class="port-stat-label">Pages</span></div>
-            <div class="port-stat"><span class="port-stat-val">8</span><span class="port-stat-label">Services</span></div>
+            <div class="port-stat"><span class="port-stat-val">28</span><span class="port-stat-label">Pages</span></div>
+            <div class="port-stat"><span class="port-stat-val">6</span><span class="port-stat-label">City Pages</span></div>
             <div class="port-stat"><span class="port-stat-val">24/7</span><span class="port-stat-label">Emergency</span></div>
           </div>
-          <span class="port-link">
-            Explore Live Demo
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </span>
+          <span class="port-link">Explore Live Demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
+      </a>
+
+      <a href="demos/plumbing/index.html" class="port-card fade-up" target="_blank">
+        <div class="port-preview">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="Plumbing website design demo — Elite Plumbing & HVAC" class="port-img">
+          <div class="port-overlay">
+            <span class="port-industry plumbing">Plumbing</span>
+          </div>
+        </div>
+        <div class="port-body">
+          <h3>Elite Plumbing &amp; HVAC</h3>
+          <p>5-page site with emergency CTAs, sticky call bar, Google reviews in the header, and individual service pages optimized for local plumbing search terms.</p>
+          <div class="port-stats">
+            <div class="port-stat"><span class="port-stat-val">5</span><span class="port-stat-label">Pages</span></div>
+            <div class="port-stat"><span class="port-stat-val">6</span><span class="port-stat-label">Services</span></div>
+            <div class="port-stat"><span class="port-stat-val">10+</span><span class="port-stat-label">Reviews</span></div>
+          </div>
+          <span class="port-link">Explore Live Demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="demos/roofing/index.html" class="port-card fade-up delay-1" target="_blank">
+        <div class="port-preview">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80" alt="Roofing website design demo — Summit Roofing Co." class="port-img">
+          <div class="port-overlay">
+            <span class="port-industry roofing">Roofing</span>
+          </div>
+        </div>
+        <div class="port-body">
+          <h3>Summit Roofing Co.</h3>
+          <p>7-page site with GAF certification badges, storm damage landing page, before/after gallery, and financing messaging — designed for insurance-claim roofing jobs.</p>
+          <div class="port-stats">
+            <div class="port-stat"><span class="port-stat-val">7</span><span class="port-stat-label">Pages</span></div>
+            <div class="port-stat"><span class="port-stat-val">16</span><span class="port-stat-label">Service Areas</span></div>
+            <div class="port-stat"><span class="port-stat-val">$89/mo</span><span class="port-stat-label">Financing CTA</span></div>
+          </div>
+          <span class="port-link">Explore Live Demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="demos/landscaping/index.html" class="port-card fade-up" target="_blank">
+        <div class="port-preview">
+          <img src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=800&q=80" alt="Landscaping website design demo — GreenScape Landscaping" class="port-img">
+          <div class="port-overlay">
+            <span class="port-industry landscaping">Landscaping</span>
+          </div>
+        </div>
+        <div class="port-body">
+          <h3>GreenScape Landscaping</h3>
+          <p>5-page site with before/after portfolio, three-tier service packages, a 5-step design process section, and seasonal content targeting high-value landscaping jobs.</p>
+          <div class="port-stats">
+            <div class="port-stat"><span class="port-stat-val">5</span><span class="port-stat-label">Pages</span></div>
+            <div class="port-stat"><span class="port-stat-val">3</span><span class="port-stat-label">Pricing Tiers</span></div>
+            <div class="port-stat"><span class="port-stat-val">8+</span><span class="port-stat-label">Projects</span></div>
+          </div>
+          <span class="port-link">Explore Live Demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="case-studies/index.html" class="btn-outline fade-up">
+        View All Case Studies
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
   </div>
@@ -731,29 +447,32 @@
     <div class="process-header fade-up">
       <div class="section-label">How It Works</div>
       <h2>Your Site Live in 48 Hours</h2>
-      <p>No tech jargon. No homework for you. We handle everything.</p>
+      <p>No tech homework. No lengthy onboarding. We handle everything from design to launch.</p>
     </div>
     <div class="process-steps">
       <div class="step fade-up">
         <div class="step-num">1</div>
         <h3>Discovery Call</h3>
-        <p>15-minute call. We learn about your business, services, and what makes you different. That's it.</p>
+        <p>15-minute call. We learn about your business, services, market, and what makes you different from every other contractor in your area.</p>
       </div>
       <div class="step fade-up delay-1">
         <div class="step-num">2</div>
         <h3>We Build It</h3>
-        <p>Our team designs and builds your entire website. You don't touch a thing. We write the copy, source the images, everything.</p>
+        <p>Our team designs and builds your full website — copy, images, SEO, schema markup, city pages. You don't do a thing.</p>
       </div>
       <div class="step fade-up delay-2">
         <div class="step-num">3</div>
         <h3>You Review</h3>
-        <p>We show you the finished site. Request any changes &mdash; we revise until you love it. Unlimited revisions.</p>
+        <p>We show you the finished site. Request any changes — unlimited revisions until you love every detail.</p>
       </div>
       <div class="step fade-up delay-3">
         <div class="step-num">4</div>
-        <h3>Go Live</h3>
-        <p>We launch your site, set up SEO, connect Google Business, and your phone starts ringing.</p>
+        <h3>Go Live &amp; Rank</h3>
+        <p>We launch, set up your Google Business Profile, submit to search engines, and your site starts ranking and generating calls.</p>
       </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="process.html" class="btn-outline fade-up">See Full Process Details &rarr;</a>
     </div>
   </div>
 </section>
@@ -763,24 +482,24 @@
   <div class="container">
     <div class="objections-header fade-up">
       <div class="section-label">Straight Talk</div>
-      <h2>Questions We Get From Business Owners Like You</h2>
+      <h2>Questions We Get From Contractors Every Day</h2>
     </div>
     <div class="obj-grid">
       <div class="obj-card fade-up">
         <div class="obj-q">"I already have a website but it doesn't do anything."</div>
-        <p class="obj-a">Most business websites were built to look nice, not to generate leads. We build sites with one purpose: make your phone ring. Click-to-call buttons, optimized contact forms, local SEO, trust signals &mdash; every element exists to turn a visitor into a customer.</p>
+        <p class="obj-a">Most contractor websites were built to look nice, not generate leads. We build sites with one purpose: make your phone ring. Click-to-call buttons, local SEO, city pages, trust signals — every element is there to convert a visitor into a paying customer.</p>
       </div>
       <div class="obj-card fade-up delay-1">
-        <div class="obj-q">"Websites are too expensive."</div>
-        <p class="obj-a">A single new job from your website can cover the entire cost. We also offer monthly plans so there's no large upfront commitment.</p>
+        <div class="obj-q">"$297 a month — what am I actually paying for?"</div>
+        <p class="obj-a">Custom design, copywriting, hosting, SSL, ongoing SEO, content updates, schema markup, and support. A single new job from your website covers the monthly cost. Most clients see their first organic lead within 60 days.</p>
       </div>
       <div class="obj-card fade-up">
         <div class="obj-q">"I'm not tech-savvy at all."</div>
-        <p class="obj-a">You don't need to be. We handle 100% of the technical work &mdash; design, copy, hosting, domain, SEO, updates. You never log into anything. Your only job is answering the phone when new customers call.</p>
+        <p class="obj-a">Good — you don't need to be. We handle 100% of the technical work. You never log in, never update anything, never deal with hosting. Your only job is answering the phone when new customers call from your site.</p>
       </div>
       <div class="obj-card fade-up delay-1">
         <div class="obj-q">"How long until I see results?"</div>
-        <p class="obj-a">Your site goes live within 48 hours. Calls from the site can start immediately. SEO results typically begin showing within 60&ndash;90 days as Google indexes and ranks your pages.</p>
+        <p class="obj-a">Your site goes live within 48 hours. Calls can start immediately from direct traffic. SEO results — organic rankings and Google Business visibility — typically build over 60–90 days as Google indexes and ranks your pages.</p>
       </div>
     </div>
   </div>
@@ -798,19 +517,19 @@
         <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <blockquote>"They built the whole thing in two days. I didn't have to do anything except send over my logo and answer a few questions. Site looks better than companies that have been around twice as long as me."</blockquote>
         <div class="test-author">Mike D.</div>
-        <div class="test-role">Owner, Local Plumbing Company</div>
+        <div class="test-role">Owner, Residential Plumbing Co.</div>
       </div>
       <div class="test-card fade-up delay-1">
         <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>"I told them I don't know anything about websites and don't want to deal with it. They said 'perfect.' Two days later I had a site that made my competitors look amateur. Haven't touched it since."</blockquote>
+        <blockquote>"I told them I don't know anything about websites and don't want to deal with it. They said 'perfect.' Two days later I had a site that made my competitors look amateur. I haven't touched it once."</blockquote>
         <div class="test-author">Sarah K.</div>
-        <div class="test-role">Owner, Landscaping Business</div>
+        <div class="test-role">Owner, Landscaping &amp; Outdoor Design</div>
       </div>
       <div class="test-card fade-up delay-2">
         <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <blockquote>"The storm damage page alone has brought in more leads than everything else combined. They understand what actually drives business, not just what looks pretty."</blockquote>
+        <blockquote>"The storm damage page alone has brought in more leads than everything else combined. They understand what actually drives roofing business — not just what looks pretty."</blockquote>
         <div class="test-author">James R.</div>
-        <div class="test-role">Owner, Roofing Company</div>
+        <div class="test-role">Owner, Residential Roofing Company</div>
       </div>
     </div>
   </div>
@@ -822,70 +541,74 @@
   <div class="final-cta-content">
     <div class="section-label fade-up">Let's Go</div>
     <h2 class="fade-up delay-1">Ready to Stop Losing Customers to Your Competitors?</h2>
-    <p class="fade-up delay-2">Tell us about your business and we'll show you exactly what we'd build. No commitment, no pressure &mdash; just a free preview of your future website.</p>
-    <a href="mailto:info@revvancegroup.com?subject=I'm interested in a website&body=Hi Revvance Group,%0A%0AI'm interested in getting a website built for my business.%0A%0ABusiness name:%0AIndustry:%0APhone number:%0A%0AThanks!" class="btn-primary fade-up delay-3" style="font-size: 1.1rem; padding: 18px 40px;">
-      See What We'd Build For You
+    <p class="fade-up delay-2">Tell us about your business and we'll show you exactly what we'd build for it — before you spend a dollar. Free preview, no commitment.</p>
+    <a href="contact.html" class="btn-primary fade-up delay-3">
+      Get Your Free Site Preview
       <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
-    <p class="final-cta-sub fade-up">or email us directly at <a href="mailto:info@revvancegroup.com" style="color: var(--accent); font-weight: 600;">info@revvancegroup.com</a></p>
+    <p class="final-cta-sub fade-up">or email us at <a href="mailto:info@revvancegroup.com" style="color:var(--accent);font-weight:600;">info@revvancegroup.com</a></p>
   </div>
 </section>
 
 <!-- Footer -->
 <footer>
   <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand">Revvance<span>Group</span></div>
-      <div class="footer-links">
-        <a href="#work">Our Work</a>
-        <a href="#services">Services</a>
-        <a href="#process">How It Works</a>
-        <a href="#reviews">Reviews</a>
-        <a href="mailto:info@revvancegroup.com">Contact</a>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Revvance<span>Group</span></div>
+        <p class="footer-tagline">Websites and SEO built exclusively for home service contractors — plumbers, HVAC, roofers, electricians, and landscapers. Flat monthly rate, no contracts.</p>
+        <div class="footer-email"><a href="mailto:info@revvancegroup.com">info@revvancegroup.com</a></div>
       </div>
-      <p class="footer-copy">&copy; 2026 Revvance Group LLC. All rights reserved. &nbsp;|&nbsp; <a href="mailto:info@revvancegroup.com" style="color: var(--text-dim);">info@revvancegroup.com</a></p>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services/plumber-websites.html">Plumber Websites</a></li>
+          <li><a href="services/hvac-websites.html">HVAC Websites</a></li>
+          <li><a href="services/roofing-websites.html">Roofing Websites</a></li>
+          <li><a href="services/electrician-websites.html">Electrician Websites</a></li>
+          <li><a href="services/landscaping-websites.html">Landscaping Websites</a></li>
+          <li><a href="services/contractor-websites.html">Contractor Websites</a></li>
+          <li><a href="services/seo-for-contractors.html">SEO for Contractors</a></li>
+          <li><a href="services/local-seo.html">Local SEO</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="process.html">How It Works</a></li>
+          <li><a href="case-studies/index.html">Case Studies</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Demos</h4>
+        <ul>
+          <li><a href="demos/hvac/index.html" target="_blank">HVAC Demo</a></li>
+          <li><a href="demos/electrician/index.html" target="_blank">Electrician Demo</a></li>
+          <li><a href="demos/plumbing/index.html" target="_blank">Plumbing Demo</a></li>
+          <li><a href="demos/roofing/index.html" target="_blank">Roofing Demo</a></li>
+          <li><a href="demos/landscaping/index.html" target="_blank">Landscaping Demo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span data-year></span> Revvance Group LLC. All rights reserved.</p>
+      <p><a href="sitemap.xml">Sitemap</a> &nbsp;&middot;&nbsp; <a href="mailto:info@revvancegroup.com">info@revvancegroup.com</a></p>
     </div>
   </div>
 </footer>
 
 <!-- Mobile Bottom Bar -->
 <div class="mobile-bar">
-  <a href="mailto:info@revvancegroup.com?subject=I'm interested in a website">
+  <a href="contact.html">
     <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
     Get Your Free Website Preview
   </a>
 </div>
 
-<script>
-// Nav scroll
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
-}, { passive: true });
-
-// Mobile menu
-document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('navLinks').classList.toggle('open');
-});
-
-// Scroll animations
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', function(e) {
-    e.preventDefault();
-    const t = document.querySelector(this.getAttribute('href'));
-    if (t) {
-      const offset = navbar.offsetHeight + 20;
-      window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
-    }
-    document.getElementById('navLinks').classList.remove('open');
-  });
-});
-</script>
+<script src="assets/js/site.js"></script>
 </body>
 </html>
