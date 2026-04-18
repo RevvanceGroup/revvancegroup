@@ -609,6 +609,140 @@ nav.scrolled {
 .value-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
 .value-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
 
+/* ===== FREE DEMO OFFER (homepage cold-call hook) ===== */
+.free-demo {
+    padding: 100px 0; border-top: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--bg) 0%, #0c0c14 100%);
+    position: relative; overflow: hidden;
+}
+.free-demo::before {
+    content: ''; position: absolute; top: -150px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(ellipse, rgba(245,158,11,0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+.fd-grid {
+    display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: start;
+    position: relative; z-index: 2;
+}
+.fd-left h2 {
+    font-size: clamp(1.8rem, 3.4vw, 2.5rem); font-weight: 800;
+    letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 18px;
+}
+.fd-left p {
+    font-size: 1.02rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 16px;
+}
+.fd-left .btn-primary { margin-top: 12px; }
+.fd-right {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 36px 32px;
+}
+.fd-steps h3 {
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 24px;
+}
+.fd-step {
+    display: grid; grid-template-columns: 44px 1fr; gap: 16px;
+    padding: 18px 0; border-bottom: 1px solid var(--border);
+}
+.fd-step:last-child { border-bottom: none; padding-bottom: 0; }
+.fd-step:first-child { padding-top: 0; }
+.fd-num {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--accent-glow); border: 1px solid rgba(79,110,247,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.95rem; font-weight: 800; color: var(--accent); margin-top: 2px;
+}
+.fd-step h4 { font-size: 0.98rem; font-weight: 700; margin-bottom: 4px; }
+.fd-step p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+/* ===== GUARANTEE ===== */
+.guarantee {
+    padding: 100px 0; border-top: 1px solid var(--border);
+    background: var(--bg-card);
+}
+.guar-card {
+    max-width: 880px; margin: 0 auto;
+    background: linear-gradient(135deg, rgba(34,197,94,0.06) 0%, rgba(34,197,94,0.02) 100%);
+    border: 1px solid rgba(34,197,94,0.25);
+    border-radius: 20px; padding: 56px 48px; text-align: center; position: relative;
+}
+.guar-badge {
+    display: inline-block;
+    background: rgba(34,197,94,0.15); color: var(--green);
+    padding: 6px 16px; border-radius: 50px;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; margin-bottom: 20px;
+}
+.guar-card h2 {
+    font-size: clamp(1.6rem, 3.2vw, 2.3rem); font-weight: 800;
+    letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 20px; max-width: 640px;
+    margin-left: auto; margin-right: auto;
+}
+.guar-card > p {
+    font-size: 1.02rem; color: var(--text-muted); line-height: 1.75;
+    max-width: 640px; margin: 0 auto 40px;
+}
+.guar-points {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    text-align: left; max-width: 720px; margin: 0 auto;
+}
+.guar-point {
+    display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start;
+}
+.guar-check {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: rgba(34,197,94,0.15); color: var(--green);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.78rem; margin-top: 2px;
+}
+.guar-point h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+.guar-point p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.55; margin: 0; }
+
+/* ===== CONTACT OPTIONS (contact.html — Calendly + Form split) ===== */
+.contact-options-section { padding: 48px 0 16px; }
+.contact-options {
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 20px;
+    max-width: 960px; margin: 0 auto;
+}
+.contact-option {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 32px 28px; position: relative;
+    transition: all 0.25s;
+}
+.contact-option:hover { border-color: rgba(79,110,247,0.3); }
+.contact-option-featured {
+    border: 1px solid rgba(79,110,247,0.45);
+    background: linear-gradient(135deg, rgba(79,110,247,0.05) 0%, var(--bg-card) 100%);
+}
+.co-badge {
+    display: inline-block;
+    background: var(--accent-glow); color: var(--accent);
+    padding: 4px 12px; border-radius: 50px;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; margin-bottom: 16px;
+}
+.co-badge-alt { background: rgba(245,158,11,0.12); color: var(--orange); }
+.contact-option h2 {
+    font-size: 1.4rem; font-weight: 800; letter-spacing: -0.3px;
+    margin-bottom: 12px; line-height: 1.2;
+}
+.contact-option p {
+    font-size: 0.95rem; color: var(--text-muted);
+    line-height: 1.65; margin-bottom: 20px;
+}
+.contact-option .btn-primary,
+.contact-option .btn-secondary {
+    margin-bottom: 12px;
+}
+.co-footnote {
+    font-size: 0.8rem; color: var(--text-dim); margin: 0;
+}
+
+@media (max-width: 768px) {
+    .contact-options { grid-template-columns: 1fr; }
+}
+
 /* ===== FOOTER ===== */
 footer { border-top: 1px solid var(--border); padding: 64px 0 0; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
@@ -658,6 +792,10 @@ footer { border-top: 1px solid var(--border); padding: 64px 0 0; }
     .about-grid { grid-template-columns: 1fr; }
     .blog-grid { grid-template-columns: repeat(2, 1fr); }
 }
+@media (max-width: 1024px) {
+    .fd-grid { grid-template-columns: 1fr; gap: 32px; }
+    .guar-points { grid-template-columns: 1fr; max-width: 480px; }
+}
 @media (max-width: 768px) {
     .hero-proof { flex-wrap: wrap; gap: 20px; }
     .pain-grid { grid-template-columns: 1fr; }
@@ -676,6 +814,8 @@ footer { border-top: 1px solid var(--border); padding: 64px 0 0; }
     .values-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; gap: 28px; }
     .trust-strip-inner { gap: 24px; }
+    .guar-card { padding: 40px 28px; }
+    .fd-right { padding: 28px 24px; }
 }
 @media (max-width: 480px) {
     .hero h1 { font-size: 2.2rem; }
