@@ -519,41 +519,6 @@
 
   <!-- ===== PLUMBING DEMO — Clear Flow Plumbing ===== -->
 
-  <url>
-    <loc>https://revvancegroup.com/demos/plumbing/index.html</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://revvancegroup.com/demos/plumbing/services.html</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://revvancegroup.com/demos/plumbing/about.html</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://revvancegroup.com/demos/plumbing/reviews.html</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://revvancegroup.com/demos/plumbing/contact.html</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
   <!-- ===== ROOFING DEMO — Summit Roofing ===== -->
 
   <url>
@@ -606,40 +571,5 @@
   </url>
 
   <!-- ===== LANDSCAPING DEMO — GreenEdge Landscaping ===== -->
-
-  <url>
-    <loc>https://revvancegroup.com/demos/landscaping/index.html</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://revvancegroup.com/demos/landscaping/services.html</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://revvancegroup.com/demos/landscaping/about.html</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://revvancegroup.com/demos/landscaping/gallery.html</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://revvancegroup.com/demos/landscaping/contact.html</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
 </urlset>
