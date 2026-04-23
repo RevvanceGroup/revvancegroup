@@ -9,7 +9,10 @@
       "Bash(kill 1543)",
       "Bash(nohup npx:*)",
       "Bash(echo \"PID: $!\")",
-      "Bash(echo \"tunnel PID: $!\")"
+      "Bash(echo \"tunnel PID: $!\")",
+      "Read(//c/Users/culbr/OneDrive/Desktop//**)",
+      "Bash(node -e ':*)",
+      "Bash(npx --version)"
     ]
   }
 }

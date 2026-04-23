@@ -6,6 +6,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["serve", ".", "-l", "3000", "--no-clipboard"],
       "port": 3000
+    },
+    {
+      "name": "rankli",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["-y", "serve", "C:/Users/culbr/OneDrive/Desktop/Rankli/public", "-l", "4173", "--no-clipboard"],
+      "port": 4173
     }
   ]
 }
