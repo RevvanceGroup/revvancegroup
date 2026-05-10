@@ -99,7 +99,18 @@
         <h2>Tell us about your business</h2>
         <p class="form-intro">Fill out the form below. We'll research your market, build your demo, and send you a live preview link within 24 hours. No credit card. No contract. No obligation.</p>
 
-        <form data-validate action="#" method="POST" class="contact-form">
+        <form id="lead-form" class="contact-form">
+
+          <div class="form-group" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div>
+              <label for="first-name">First name</label>
+              <input type="text" id="first-name" name="first_name" placeholder="Cody" required>
+            </div>
+            <div>
+              <label for="last-name">Last name</label>
+              <input type="text" id="last-name" name="last_name" placeholder="Smith" required>
+            </div>
+          </div>
 
           <div class="form-group">
             <label for="business-name">Business name</label>
@@ -248,5 +259,43 @@
   </div>
 </footer>
 <script src="assets/js/site.js"></script>
+<script>
+(function () {
+  var WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/nD0A4F3TJ6eW9QDB9W1k/webhook-trigger/b56a6a45-7dc2-458b-860c-8be46abb1c71';
+  var form = document.getElementById('lead-form');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var btn = form.querySelector('button[type="submit"]');
+    var originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    var data = new FormData(form);
+    var payload = {};
+    data.forEach(function (value, key) { payload[key] = value; });
+
+    payload.full_name = ((payload.first_name || '') + ' ' + (payload.last_name || '')).trim();
+    payload.source = 'revvancegroup.com - contact form';
+    payload.tags = 'website-lead';
+
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function () {
+      window.location.href = 'thank-you.html';
+    }).catch(function (err) {
+      console.error('Webhook error:', err);
+      btn.disabled = false;
+      btn.textContent = originalText;
+      alert('Something went wrong. Please email cody@revvancegroup.com directly and we will get right back to you.');
+    });
+  });
+})();
+</script>
 </body>
 </html>
