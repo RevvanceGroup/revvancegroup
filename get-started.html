@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#0a0a0f">
+<title>Free Custom Demo of Your New Contractor Site + Lead System | Revvance Group</title>
+<meta name="description" content="Custom contractor website + AI lead capture + automated follow-up + Google reviews. Built in 7 days. $297/month, no setup, no contract. Free demo before you pay.">
+<link rel="canonical" href="https://revvancegroup.com/get-started.html">
+<meta name="robots" content="noindex,nofollow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Get Your Free Contractor Website + Lead System Demo | Revvance Group">
+<meta property="og:description" content="We build the website, AI handles the leads, you take the calls. $297/month. Free demo first.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://revvancegroup.com/get-started.html">
+<meta property="og:image" content="https://revvancegroup.com/assets/og-image.jpg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Done-For-You Contractor Website + Lead System",
+  "description": "Custom contractor website with AI lead capture, automated follow-up, Google reviews automation, and smart calendar booking. Built and managed by Revvance Group.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Revvance Group, LLC",
+    "url": "https://revvancegroup.com",
+    "telephone": "+18338591898",
+    "email": "cody@revvancegroup.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2207 Wilkes Ridge Pl",
+      "addressLocality": "Richmond",
+      "addressRegion": "VA",
+      "postalCode": "23233",
+      "addressCountry": "US"
+    }
+  },
+  "areaServed": {"@type": "Country", "name": "United States"},
+  "offers": {
+    "@type": "Offer",
+    "price": "297",
+    "priceCurrency": "USD",
+    "priceSpecification": {"@type": "UnitPriceSpecification", "price": "297", "priceCurrency": "USD", "billingIncrement": "1", "unitCode": "MON"}
+  }
+}
+</script>
+
+<style>
+/* ================================================================
+   RESET + BASE
+   ================================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #f0f0f5;
+  background: #0a0a0f;
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 76px; /* room for sticky mobile CTA */
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; }
+input, select, textarea { font-family: inherit; font-size: 16px; }
+
+:root {
+  --bg: #0a0a0f;
+  --bg-card: #12121a;
+  --bg-elevated: #1a1a26;
+  --border: #2a2a3a;
+  --accent: #4f6ef7;
+  --accent-hover: #3b5bdb;
+  --accent-glow: rgba(79, 110, 247, 0.15);
+  --green: #22c55e;
+  --orange: #f59e0b;
+  --text: #f0f0f5;
+  --text-muted: #8888a0;
+  --text-dim: #55556a;
+}
+
+.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; width: 100%; }
+
+/* ================================================================
+   STICKY BOTTOM MOBILE CTA
+   ================================================================ */
+.mobile-cta {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
+  background: var(--accent); padding: 12px 16px;
+  display: flex; gap: 10px; align-items: center;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
+}
+.mobile-cta a {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: white; color: var(--accent); font-weight: 700; font-size: 0.95rem;
+  padding: 14px 16px; border-radius: 8px; line-height: 1.2;
+}
+.mobile-cta a svg { width: 18px; height: 18px; flex-shrink: 0; }
+@media (min-width: 768px) {
+  .mobile-cta { display: none; }
+  body { padding-bottom: 0; }
+}
+
+/* ================================================================
+   TOP HEADER (minimal — just logo + CTA)
+   ================================================================ */
+.lp-header {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(10, 10, 15, 0.92); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+}
+.lp-header .container {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.lp-logo { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.5px; }
+.lp-logo span { color: var(--accent); }
+.lp-header-cta {
+  background: var(--accent); color: white; font-weight: 700;
+  padding: 9px 18px; border-radius: 8px; font-size: 0.88rem;
+  white-space: nowrap; transition: background 0.2s;
+}
+.lp-header-cta:hover { background: var(--accent-hover); }
+@media (max-width: 480px) {
+  .lp-header-cta { padding: 9px 14px; font-size: 0.82rem; }
+  .lp-logo { font-size: 1rem; }
+}
+
+/* ================================================================
+   HERO
+   ================================================================ */
+.hero {
+  padding: 56px 0 40px; position: relative; overflow: hidden;
+  background: linear-gradient(180deg, #0a0a0f 0%, #0d0d18 100%);
+}
+.hero-glow {
+  position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 600px; pointer-events: none;
+  background: radial-gradient(ellipse, rgba(79,110,247,0.10) 0%, transparent 70%);
+}
+.hero-inner { position: relative; z-index: 2; text-align: center; max-width: 820px; margin: 0 auto; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent-glow); border: 1px solid rgba(79,110,247,0.25);
+  padding: 6px 14px; border-radius: 50px; font-size: 0.78rem; font-weight: 600;
+  color: var(--accent); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;
+}
+.hero-eyebrow .dot {
+  width: 6px; height: 6px; background: var(--green); border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.hero h1 {
+  font-size: clamp(1.85rem, 5.5vw, 3.2rem);
+  font-weight: 900; line-height: 1.08;
+  letter-spacing: -1.2px; margin-bottom: 18px;
+}
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--accent) 0%, #818cf8 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-sub {
+  font-size: clamp(1rem, 2.4vw, 1.18rem);
+  color: var(--text-muted); line-height: 1.65; max-width: 660px;
+  margin: 0 auto 28px;
+}
+
+/* VSL embed */
+.vsl-wrap {
+  position: relative; max-width: 720px; margin: 0 auto 28px;
+  border-radius: 14px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  border: 1px solid var(--border);
+}
+.vsl-frame {
+  position: relative; width: 100%; padding-bottom: 56.25%; /* 16:9 */
+  background: linear-gradient(135deg, #1a1a26 0%, #0d0d18 100%);
+  display: flex; align-items: center; justify-content: center;
+}
+.vsl-placeholder {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 16px; padding: 24px; text-align: center;
+}
+.vsl-play-btn {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--accent); border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 30px rgba(79,110,247,0.5);
+  transition: transform 0.2s;
+}
+.vsl-play-btn:hover { transform: scale(1.08); }
+.vsl-play-btn svg { width: 26px; height: 26px; fill: white; margin-left: 4px; }
+.vsl-placeholder p { font-size: 0.92rem; color: var(--text-muted); }
+.vsl-placeholder strong { color: var(--text); display: block; margin-bottom: 4px; font-size: 1.05rem; }
+
+/* CTA button */
+.btn-cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--accent); color: white; font-weight: 700; font-size: 1.05rem;
+  padding: 18px 36px; border-radius: 10px; line-height: 1;
+  transition: all 0.2s; border: none;
+  box-shadow: 0 8px 24px rgba(79,110,247,0.35);
+}
+.btn-cta:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(79,110,247,0.5); }
+.btn-cta svg { width: 18px; height: 18px; }
+.btn-cta-large { font-size: 1.1rem; padding: 20px 44px; }
+.btn-cta-block { width: 100%; max-width: 360px; }
+
+.hero-trust-line {
+  font-size: 0.85rem; color: var(--text-dim); margin-top: 16px;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  flex-wrap: wrap;
+}
+.hero-trust-line svg { width: 14px; height: 14px; fill: var(--green); }
+
+/* ================================================================
+   STAT STRIP
+   ================================================================ */
+.stat-strip {
+  background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 28px 0;
+}
+.stat-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: center;
+}
+.stat-item .stat-num {
+  font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 800; color: var(--accent);
+  display: block; line-height: 1; margin-bottom: 6px; letter-spacing: -0.5px;
+}
+.stat-item .stat-label {
+  font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;
+  letter-spacing: 1px; font-weight: 600;
+}
+@media (max-width: 480px) {
+  .stat-item .stat-label { font-size: 0.7rem; }
+}
+
+/* ================================================================
+   SECTION BASICS
+   ================================================================ */
+.section { padding: 64px 0; }
+.section-tight { padding: 48px 0; }
+@media (min-width: 768px) {
+  .section { padding: 88px 0; }
+  .section-tight { padding: 64px 0; }
+}
+.section-header { text-align: center; max-width: 720px; margin: 0 auto 40px; }
+.section-header .eyebrow {
+  display: inline-block; font-size: 0.78rem; color: var(--accent);
+  font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px;
+}
+.section-header h2 {
+  font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 800;
+  letter-spacing: -0.8px; line-height: 1.15; margin-bottom: 14px;
+}
+.section-header p {
+  font-size: clamp(0.98rem, 2vw, 1.1rem); color: var(--text-muted); line-height: 1.65;
+}
+
+/* ================================================================
+   "WHAT YOU GET" 6-CARD GRID
+   ================================================================ */
+.feature-grid {
+  display: grid; grid-template-columns: 1fr; gap: 16px;
+}
+@media (min-width: 640px) {
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .feature-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.feature-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 26px 24px; transition: all 0.25s;
+}
+.feature-card:hover { border-color: rgba(79,110,247,0.4); transform: translateY(-3px); }
+.feature-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--accent-glow); border: 1px solid rgba(79,110,247,0.25);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+}
+.feature-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 2; }
+.feature-card h3 {
+  font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.2px;
+}
+.feature-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
+
+/* ================================================================
+   PAIN SECTION
+   ================================================================ */
+.pain-section { background: linear-gradient(180deg, #0d0d18 0%, #0a0a0f 100%); }
+.pain-grid {
+  display: grid; grid-template-columns: 1fr; gap: 18px; max-width: 800px; margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .pain-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.pain-card {
+  background: var(--bg-card); border: 1px solid rgba(245,158,11,0.2); border-radius: 12px;
+  padding: 24px; text-align: center;
+}
+.pain-card .x-icon {
+  width: 40px; height: 40px; margin: 0 auto 14px;
+  background: rgba(245,158,11,0.12); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; color: var(--orange);
+  font-size: 1.4rem; font-weight: 700;
+}
+.pain-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+.pain-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; }
+.pain-transition {
+  text-align: center; margin-top: 36px;
+  font-size: 1.1rem; color: var(--text); font-weight: 600;
+}
+.pain-transition .accent { color: var(--accent); }
+
+/* ================================================================
+   HOW IT WORKS (3 STEPS)
+   ================================================================ */
+.steps-grid {
+  display: grid; grid-template-columns: 1fr; gap: 18px; max-width: 900px; margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .steps-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.step-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 28px 24px; text-align: center; position: relative;
+}
+.step-num {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--accent); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 1.15rem; margin: 0 auto 16px;
+  box-shadow: 0 6px 20px rgba(79,110,247,0.4);
+}
+.step-card h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+.step-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.55; }
+
+/* ================================================================
+   PRICING BLOCK
+   ================================================================ */
+.pricing-block { background: var(--bg-card); }
+.pricing-card {
+  background: linear-gradient(135deg, rgba(79,110,247,0.08) 0%, var(--bg-elevated) 100%);
+  border: 1px solid rgba(79,110,247,0.35); border-radius: 18px;
+  max-width: 560px; margin: 0 auto; padding: 40px 32px; text-align: center;
+}
+.pricing-card .tag {
+  display: inline-block; background: var(--accent); color: white;
+  padding: 5px 14px; border-radius: 50px;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 18px;
+}
+.pricing-card .price {
+  display: flex; align-items: baseline; justify-content: center; gap: 4px;
+  margin-bottom: 8px;
+}
+.pricing-card .price-amount {
+  font-size: clamp(3rem, 8vw, 4rem); font-weight: 900; letter-spacing: -2px;
+  color: var(--text); line-height: 1;
+}
+.pricing-card .price-period { font-size: 1rem; color: var(--text-muted); }
+.pricing-card .price-sub {
+  font-size: 0.92rem; color: var(--text-muted); margin-bottom: 28px;
+}
+.pricing-features {
+  text-align: left; max-width: 380px; margin: 0 auto 32px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.pricing-features li {
+  display: flex; align-items: flex-start; gap: 12px; list-style: none;
+  font-size: 0.95rem; color: var(--text);
+}
+.pricing-features li svg {
+  width: 20px; height: 20px; fill: var(--green); flex-shrink: 0; margin-top: 2px;
+}
+.pricing-card .pricing-foot {
+  font-size: 0.82rem; color: var(--text-dim); margin-top: 16px;
+}
+
+/* ================================================================
+   FAQ
+   ================================================================ */
+.faq-list { max-width: 760px; margin: 0 auto; }
+.faq-item {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+  margin-bottom: 12px; overflow: hidden; transition: border-color 0.2s;
+}
+.faq-item:hover { border-color: rgba(79,110,247,0.3); }
+.faq-q {
+  width: 100%; background: transparent; border: none; color: var(--text);
+  text-align: left; font-family: inherit; font-weight: 600; font-size: 1rem;
+  padding: 18px 22px; cursor: pointer; display: flex; align-items: center;
+  justify-content: space-between; gap: 16px; line-height: 1.4;
+}
+.faq-q::after {
+  content: '+'; font-size: 1.5rem; font-weight: 400; color: var(--accent);
+  flex-shrink: 0; line-height: 1; transition: transform 0.3s;
+}
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-q:hover { color: var(--accent); }
+.faq-a {
+  display: none; padding: 0 22px 20px;
+  font-size: 0.95rem; color: var(--text-muted); line-height: 1.7;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ================================================================
+   FINAL CTA
+   ================================================================ */
+.final-cta {
+  background: linear-gradient(135deg, #0d0d18 0%, #1a1a26 100%);
+  position: relative; overflow: hidden;
+  padding: 80px 0;
+}
+.final-cta::before {
+  content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 700px; height: 500px; pointer-events: none;
+  background: radial-gradient(ellipse, rgba(79,110,247,0.12) 0%, transparent 70%);
+}
+.final-cta-inner { position: relative; z-index: 2; text-align: center; max-width: 680px; margin: 0 auto; }
+.final-cta h2 {
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem); font-weight: 900;
+  letter-spacing: -1px; line-height: 1.1; margin-bottom: 16px;
+}
+.final-cta p {
+  font-size: 1.05rem; color: var(--text-muted); margin-bottom: 32px; line-height: 1.6;
+}
+.final-cta .btn-cta { margin-bottom: 14px; }
+.final-cta-sub { font-size: 0.85rem; color: var(--text-dim); margin-top: 4px; }
+
+/* ================================================================
+   FOOTER (MINIMAL)
+   ================================================================ */
+.lp-footer { background: var(--bg); border-top: 1px solid var(--border); padding: 32px 0; }
+.lp-footer-inner {
+  display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;
+}
+.lp-footer p { font-size: 0.82rem; color: var(--text-dim); line-height: 1.6; }
+.lp-footer a { color: var(--text-muted); transition: color 0.2s; }
+.lp-footer a:hover { color: var(--accent); }
+.lp-footer-links {
+  display: flex; gap: 18px; flex-wrap: wrap; justify-content: center;
+  font-size: 0.82rem;
+}
+
+/* ================================================================
+   ANIMATIONS
+   ================================================================ */
+.fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ================================================================
+   RESPONSIVE TIGHTENING
+   ================================================================ */
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .hero { padding: 40px 0 32px; }
+  .pricing-card { padding: 32px 22px; }
+  .feature-card { padding: 22px 20px; }
+  .step-card { padding: 24px 20px; }
+  .pain-card { padding: 22px 20px; }
+  .btn-cta { padding: 16px 28px; font-size: 1rem; }
+  .btn-cta-large { padding: 18px 32px; font-size: 1.05rem; }
+  .vsl-play-btn { width: 60px; height: 60px; }
+  .vsl-play-btn svg { width: 22px; height: 22px; }
+  .stat-grid { gap: 8px; }
+}
+</style>
+
+<!-- Meta Pixel placeholder - add real pixel ID when Meta ads launch -->
+<!--
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+-->
+</head>
+<body>
+
+<!-- TOP HEADER -->
+<header class="lp-header">
+  <div class="container">
+    <a href="https://revvancegroup.com" class="lp-logo">Revvance<span>Group</span></a>
+    <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" class="lp-header-cta">Book Free Demo</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-eyebrow"><span class="dot"></span> For Home Service Contractors</div>
+      <h1>Your New Website + the AI That <span class="highlight">Captures Every Lead</span> for You</h1>
+      <p class="hero-sub">Custom contractor site, AI that responds in 60 seconds, automated 14-day follow-up, Google reviews on autopilot. We build it. We run it. You take the calls.</p>
+
+      <!-- VSL EMBED PLACEHOLDER -->
+      <div class="vsl-wrap">
+        <div class="vsl-frame">
+          <!-- REPLACE BLOCK BELOW WITH LOOM EMBED WHEN AVAILABLE -->
+          <div class="vsl-placeholder">
+            <button class="vsl-play-btn" onclick="window.open('https://calendly.com/cody-revvancegroup/30min', '_blank')" aria-label="Book a call">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <div>
+              <strong>Watch the 4-min walkthrough</strong>
+              <p>Coming Monday. In the meantime, book a 30-min call to see your custom demo.</p>
+            </div>
+          </div>
+          <!-- END PLACEHOLDER -->
+          <!-- LOOM EMBED FORMAT (uncomment & paste your Loom share URL ID):
+          <iframe src="https://www.loom.com/embed/YOUR_LOOM_ID" frameborder="0" allowfullscreen
+                  style="position:absolute;inset:0;width:100%;height:100%;"></iframe>
+          -->
+        </div>
+      </div>
+
+      <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" class="btn-cta btn-cta-large">
+        Book My Free Demo Call
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <div class="hero-trust-line">
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        Free demo
+        <span>&middot;</span>
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        No credit card
+        <span>&middot;</span>
+        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        14-day money-back
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat-item">
+        <span class="stat-num">60 sec</span>
+        <span class="stat-label">Lead Response Time</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">7 days</span>
+        <span class="stat-label">Site Built &amp; Live</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">$297</span>
+        <span class="stat-label">Flat Monthly</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT YOU GET -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="eyebrow">What You Get</span>
+      <h2>Six Things Working for You 24/7</h2>
+      <p>This isn&rsquo;t just a website. It&rsquo;s the entire system that turns ad clicks and Google searches into booked jobs.</p>
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+        </div>
+        <h3>Custom Website</h3>
+        <p>Built for your trade and your market. Not a template. Service pages, city pages, schema markup, mobile-optimized. Lives at your domain or ours.</p>
+      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>AI Lead Capture</h3>
+        <p>Chat widget on every page. Answers questions, collects contact info, books calls into your calendar. Responds in under 60 seconds, 24/7. Trained on your business.</p>
+      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 6 12 13 2 6"/><path d="M2 6h20v12H2z"/></svg>
+        </div>
+        <h3>Automated Follow-Up</h3>
+        <p>14-day email + SMS sequence on every lead. Stops the moment they reply or book. So no lead falls through the cracks while you&rsquo;re on a job.</p>
+      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5 12 2"/></svg>
+        </div>
+        <h3>Google Reviews on Autopilot</h3>
+        <p>Every customer gets a review request after the job. One tap to leave a 5-star review. Builds your local SEO ranking month after month.</p>
+      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>Smart Calendar Booking</h3>
+        <p>Customers book themselves into your calendar. Auto-confirmations, reminders, reschedule links. Cuts the back-and-forth phone tag completely.</p>
+      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/></svg>
+        </div>
+        <h3>Lead Dashboard</h3>
+        <p>One screen shows every lead, every conversation, every booking. Mobile and desktop. Never wonder where a lead came from again.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- THE PROBLEM -->
+<section class="section pain-section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="eyebrow">Be Honest</span>
+      <h2>Why Your Phone Isn&rsquo;t Ringing</h2>
+      <p>Most contractors are losing leads not because of skill or pricing, but because their setup is broken.</p>
+    </div>
+
+    <div class="pain-grid">
+      <div class="pain-card fade-up">
+        <div class="x-icon">!</div>
+        <h4>Your Site Looks Dead</h4>
+        <p>No reviews, no fresh content, slow to load. Visitors bounce in 8 seconds and call your competitor instead.</p>
+      </div>
+      <div class="pain-card fade-up">
+        <div class="x-icon">!</div>
+        <h4>Leads Disappear</h4>
+        <p>Form submissions sit in your inbox while you&rsquo;re on a job. By the time you call back, they&rsquo;ve hired someone else.</p>
+      </div>
+      <div class="pain-card fade-up">
+        <div class="x-icon">!</div>
+        <h4>You&rsquo;re Slow to Reply</h4>
+        <p>Studies show contractors who respond in under 5 minutes book 60% more jobs. You&rsquo;re competing with people responding in 90 seconds.</p>
+      </div>
+    </div>
+
+    <p class="pain-transition fade-up">We fix all three. <span class="accent">In 7 days.</span></p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="eyebrow">How It Works</span>
+      <h2>From Ad Click to Booked Job</h2>
+      <p>Three steps. No tech homework. No long onboarding.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card fade-up">
+        <div class="step-num">1</div>
+        <h4>Book a 30-Min Call</h4>
+        <p>We learn about your business, your market, what you do best. Then we walk through your custom demo together on the call.</p>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">2</div>
+        <h4>We Build Your System</h4>
+        <p>Site live in 5-7 days. AI chat trained. Follow-up sequence loaded. Reviews flow set up. Calendar wired in. You approve before launch.</p>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">3</div>
+        <h4>Your Phone Rings</h4>
+        <p>Leads get instant responses. Bookings hit your calendar. You only pay if you go live, and you can cancel any month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing-block">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="eyebrow">Pricing</span>
+      <h2>One Flat Price. Everything Included.</h2>
+      <p>No setup fee. No long contract. No hidden add-ons. Cancel any month with one email.</p>
+    </div>
+
+    <div class="pricing-card fade-up">
+      <div class="tag">Done-For-You</div>
+      <div class="price">
+        <span class="price-amount">$297</span>
+        <span class="price-period">/month</span>
+      </div>
+      <p class="price-sub">Flat. No setup fee. Cancel any month.</p>
+
+      <ul class="pricing-features">
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Custom-built website (not a template)
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          AI chat widget that captures &amp; books leads 24/7
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Automated 14-day email + SMS follow-up
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Google reviews automation after every job
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Smart calendar booking + reminders
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Lead dashboard (mobile + desktop)
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Local SEO + Google Business Profile setup
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Hosting, security, updates &mdash; all handled
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          14-day money-back promise after launch
+        </li>
+      </ul>
+
+      <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" class="btn-cta btn-cta-block">
+        See My Free Demo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <p class="pricing-foot">Free demo built before you pay anything.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="eyebrow">Common Questions</span>
+      <h2>What Contractors Ask Us</h2>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q">How long until my site is live?</button>
+        <div class="faq-a">
+          <p>Most sites are live within 5-7 business days from the call. We do all the building &mdash; you approve the design and copy before launch. If you have ready content (logo, photos, license info), it can go faster. If you don&rsquo;t, we handle the writing and use professional stock imagery for your trade.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">What if I don&rsquo;t like the demo?</button>
+        <div class="faq-a">
+          <p>You owe us nothing. The free demo is built on our time as a way to show you what we&rsquo;d deliver. If you don&rsquo;t want to move forward, we shut it down and that&rsquo;s the end of it. No invoice, no follow-up sales calls.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Do I own the website?</button>
+        <div class="faq-a">
+          <p>Yes. The website, content, and copy are yours. If you ever cancel, we hand it over &mdash; you can move it to any host and keep using it. Some agencies hold sites hostage when you cancel. We don&rsquo;t. That&rsquo;s in writing in our terms.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">What if I cancel after launch?</button>
+        <div class="faq-a">
+          <p>You have a 14-day money-back promise from launch day &mdash; if anything is off, we refund your first month and unwind the launch. After that, you can cancel any month with a single email. There&rsquo;s no contract length, no termination fee, and no penalty for leaving.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Do you handle the AI / SMS / reviews setup, or do I?</button>
+        <div class="faq-a">
+          <p>We handle 100% of the setup. AI training, phone number, SMS verification, email setup, calendar wiring, review request flow, dashboard configuration. Your job is to take the calls when leads book. We do everything else.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Why is it $297? Other agencies charge $5,000 setup.</button>
+        <div class="faq-a">
+          <p>Most agencies sell a custom build and walk away. We sell the system that operates 24/7, and we manage it ongoing. Flat $297/month covers everything: build, AI, follow-up, reviews, hosting, updates. No setup fee because we&rsquo;d rather earn your trust monthly than load all the cost upfront. Cancel any time if it&rsquo;s not working.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">What trades do you work with?</button>
+        <div class="faq-a">
+          <p>Plumbing, HVAC, electrical, roofing, landscaping, and most other home service trades. If you serve residential or light commercial customers in a defined geographic area, the system fits. If you&rsquo;re unsure, just book a call and we&rsquo;ll tell you straight.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="final-cta-inner">
+      <h2>Ready to See Your Free Demo?</h2>
+      <p>30-minute call. We walk through your custom demo together. If you like what you see, we go to work. If not, you owe us nothing.</p>
+      <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" class="btn-cta btn-cta-large">
+        Book My 30-Min Demo Call
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <p class="final-cta-sub">Or call us directly: <a href="tel:+18338591898" style="color:var(--accent);">(833) 859-1898</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- MINIMAL FOOTER -->
+<footer class="lp-footer">
+  <div class="container">
+    <div class="lp-footer-inner">
+      <p>&copy; <span data-year>2026</span> Revvance Group, LLC. All rights reserved.</p>
+      <p style="font-size:0.78rem;opacity:0.85;">2207 Wilkes Ridge Pl, Richmond, VA 23233 &middot; <a href="tel:+18338591898">(833) 859-1898</a> &middot; <a href="mailto:cody@revvancegroup.com">cody@revvancegroup.com</a></p>
+      <div class="lp-footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="mobile-cta">
+  <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    Book My Free Demo
+  </a>
+</div>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(function (item) {
+  var q = item.querySelector('.faq-q');
+  if (!q) return;
+  q.addEventListener('click', function () {
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('open'); });
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// Fade-up on scroll
+if ('IntersectionObserver' in window) {
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(function (el) { obs.observe(el); });
+}
+
+// Year
+document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
+</script>
+
+<!-- Note: Chat widget intentionally NOT loaded on landing page.
+     Single conversion goal = book the call. No competing CTAs. -->
+
+</body>
+</html>
