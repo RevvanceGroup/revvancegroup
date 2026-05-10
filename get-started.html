@@ -19,7 +19,7 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <!-- Schema.org -->
 <script type="application/ld+json">
@@ -104,7 +104,7 @@ input, select, textarea { font-family: inherit; font-size: 16px; }
 .mobile-cta a {
   flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
   background: white; color: var(--accent); font-weight: 700; font-size: 0.95rem;
-  padding: 14px 16px; border-radius: 8px; line-height: 1.2;
+  padding: 14px 16px; min-height: 52px; border-radius: 8px; line-height: 1.2;
 }
 .mobile-cta a svg { width: 18px; height: 18px; flex-shrink: 0; }
 @media (min-width: 768px) {
@@ -113,7 +113,7 @@ input, select, textarea { font-family: inherit; font-size: 16px; }
 }
 
 /* ================================================================
-   TOP HEADER (minimal — just logo + CTA)
+   TOP HEADER (minimal: logo + CTA)
    ================================================================ */
 .lp-header {
   position: sticky; top: 0; z-index: 1000;
@@ -128,12 +128,13 @@ input, select, textarea { font-family: inherit; font-size: 16px; }
 .lp-logo span { color: var(--accent); }
 .lp-header-cta {
   background: var(--accent); color: white; font-weight: 700;
-  padding: 9px 18px; border-radius: 8px; font-size: 0.88rem;
+  padding: 0 18px; min-height: 48px; border-radius: 8px; font-size: 0.88rem;
+  display: inline-flex; align-items: center; justify-content: center;
   white-space: nowrap; transition: background 0.2s;
 }
 .lp-header-cta:hover { background: var(--accent-hover); }
 @media (max-width: 480px) {
-  .lp-header-cta { padding: 9px 14px; font-size: 0.82rem; }
+  .lp-header-cta { padding: 0 14px; font-size: 0.82rem; }
   .lp-logo { font-size: 1rem; }
 }
 
@@ -177,32 +178,30 @@ input, select, textarea { font-family: inherit; font-size: 16px; }
   margin: 0 auto 28px;
 }
 
-/* VSL embed */
-.vsl-wrap {
-  position: relative; max-width: 720px; margin: 0 auto 28px;
-  border-radius: 14px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  border: 1px solid var(--border);
+/* Deal card (hero offer summary, replaces VSL until one is recorded) */
+.deal-card {
+  max-width: 540px; margin: 0 auto 28px;
+  background: var(--bg-card); border: 1px solid rgba(79,110,247,0.35);
+  border-radius: 14px; padding: 26px 28px; text-align: left;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
 }
-.vsl-frame {
-  position: relative; width: 100%; padding-bottom: 56.25%; /* 16:9 */
-  background: linear-gradient(135deg, #1a1a26 0%, #0d0d18 100%);
-  display: flex; align-items: center; justify-content: center;
+.deal-card-title {
+  font-size: 0.78rem; color: var(--accent);
+  font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px;
+  margin-bottom: 16px; text-align: center;
 }
-.vsl-placeholder {
-  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center;
-  justify-content: center; gap: 16px; padding: 24px; text-align: center;
+.deal-list { display: flex; flex-direction: column; gap: 12px; }
+.deal-list li {
+  list-style: none; display: flex; gap: 12px; align-items: flex-start;
+  font-size: 0.98rem; color: var(--text); line-height: 1.5;
 }
-.vsl-play-btn {
-  width: 72px; height: 72px; border-radius: 50%;
-  background: var(--accent); border: none; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 8px 30px rgba(79,110,247,0.5);
-  transition: transform 0.2s;
+.deal-list li svg {
+  width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; fill: var(--green);
 }
-.vsl-play-btn:hover { transform: scale(1.08); }
-.vsl-play-btn svg { width: 26px; height: 26px; fill: white; margin-left: 4px; }
-.vsl-placeholder p { font-size: 0.92rem; color: var(--text-muted); }
-.vsl-placeholder strong { color: var(--text); display: block; margin-bottom: 4px; font-size: 1.05rem; }
+@media (max-width: 480px) {
+  .deal-card { padding: 22px 20px; }
+  .deal-list li { font-size: 0.92rem; gap: 10px; }
+}
 
 /* CTA button */
 .btn-cta {
@@ -219,10 +218,16 @@ input, select, textarea { font-family: inherit; font-size: 16px; }
 
 .hero-trust-line {
   font-size: 0.85rem; color: var(--text-dim); margin-top: 16px;
-  display: flex; align-items: center; justify-content: center; gap: 8px;
+  display: flex; align-items: center; justify-content: center; gap: 6px 16px;
   flex-wrap: wrap;
 }
+.hero-trust-line .trust-item {
+  display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
+}
 .hero-trust-line svg { width: 14px; height: 14px; fill: var(--green); }
+@media (max-width: 480px) {
+  .hero-trust-line { font-size: 0.82rem; gap: 8px 14px; }
+}
 
 /* ================================================================
    STAT STRIP
@@ -473,18 +478,26 @@ input, select, textarea { font-family: inherit; font-size: 16px; }
   .pain-card { padding: 22px 20px; }
   .btn-cta { padding: 16px 28px; font-size: 1rem; }
   .btn-cta-large { padding: 18px 32px; font-size: 1.05rem; }
-  .vsl-play-btn { width: 60px; height: 60px; }
-  .vsl-play-btn svg { width: 22px; height: 22px; }
   .stat-grid { gap: 8px; }
 }
 </style>
 
-<!-- Meta Pixel placeholder - add real pixel ID when Meta ads launch -->
+<!-- META PIXEL: paste Pixel ID into both YOUR_PIXEL_ID slots below, then uncomment the script block. -->
 <!--
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', 'YOUR_PIXEL_ID');
 fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('a[href*="calendly.com"]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (typeof fbq === 'function') fbq('track', 'Lead');
+    });
+  });
+});
 </script>
 -->
 </head>
@@ -507,25 +520,27 @@ fbq('track', 'PageView');
       <h1>Your New Website + the AI That <span class="highlight">Captures Every Lead</span> for You</h1>
       <p class="hero-sub">Custom contractor site, AI that responds in 60 seconds, automated 14-day follow-up, Google reviews on autopilot. We build it. We run it. You take the calls.</p>
 
-      <!-- VSL EMBED PLACEHOLDER -->
-      <div class="vsl-wrap">
-        <div class="vsl-frame">
-          <!-- REPLACE BLOCK BELOW WITH LOOM EMBED WHEN AVAILABLE -->
-          <div class="vsl-placeholder">
-            <button class="vsl-play-btn" onclick="window.open('https://calendly.com/cody-revvancegroup/30min', '_blank')" aria-label="Book a call">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </button>
-            <div>
-              <strong>Watch the 4-min walkthrough</strong>
-              <p>Coming Monday. In the meantime, book a 30-min call to see your custom demo.</p>
-            </div>
-          </div>
-          <!-- END PLACEHOLDER -->
-          <!-- LOOM EMBED FORMAT (uncomment & paste your Loom share URL ID):
-          <iframe src="https://www.loom.com/embed/YOUR_LOOM_ID" frameborder="0" allowfullscreen
-                  style="position:absolute;inset:0;width:100%;height:100%;"></iframe>
-          -->
-        </div>
+      <!-- DEAL CARD (replace with VSL iframe when recorded) -->
+      <div class="deal-card">
+        <div class="deal-card-title">Here&rsquo;s the Deal</div>
+        <ul class="deal-list">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Free 30-min call. We walk through your custom demo together.
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            No setup fee. No credit card needed to book.
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            $297/mo flat if you launch. Cancel any month.
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            14-day money-back guarantee from launch day.
+          </li>
+        </ul>
       </div>
 
       <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" class="btn-cta btn-cta-large">
@@ -534,14 +549,18 @@ fbq('track', 'PageView');
       </a>
 
       <div class="hero-trust-line">
-        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-        Free demo
-        <span>&middot;</span>
-        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-        No credit card
-        <span>&middot;</span>
-        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-        14-day money-back
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Free demo
+        </span>
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          No credit card
+        </span>
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          14-day money-back
+        </span>
       </div>
     </div>
   </div>
@@ -653,7 +672,7 @@ fbq('track', 'PageView');
       <div class="pain-card fade-up">
         <div class="x-icon">!</div>
         <h4>You&rsquo;re Slow to Reply</h4>
-        <p>Studies show contractors who respond in under 5 minutes book 60% more jobs. You&rsquo;re competing with people responding in 90 seconds.</p>
+        <p>The contractor who replies first usually books the job. While you&rsquo;re finishing a service call, your competitors are texting back in 90 seconds.</p>
       </div>
     </div>
 
@@ -738,7 +757,7 @@ fbq('track', 'PageView');
         </li>
         <li>
           <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Hosting, security, updates &mdash; all handled
+          Hosting, security, updates. All handled.
         </li>
         <li>
           <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
@@ -768,7 +787,7 @@ fbq('track', 'PageView');
       <div class="faq-item">
         <button class="faq-q">How long until my site is live?</button>
         <div class="faq-a">
-          <p>Most sites are live within 5-7 business days from the call. We do all the building &mdash; you approve the design and copy before launch. If you have ready content (logo, photos, license info), it can go faster. If you don&rsquo;t, we handle the writing and use professional stock imagery for your trade.</p>
+          <p>Most sites are live within 5-7 business days from the call. We do all the building. You approve the design and copy before launch. If you have ready content (logo, photos, license info), it can go faster. If you don&rsquo;t, we handle the writing and use professional stock imagery for your trade.</p>
         </div>
       </div>
 
@@ -782,14 +801,14 @@ fbq('track', 'PageView');
       <div class="faq-item">
         <button class="faq-q">Do I own the website?</button>
         <div class="faq-a">
-          <p>Yes. The website, content, and copy are yours. If you ever cancel, we hand it over &mdash; you can move it to any host and keep using it. Some agencies hold sites hostage when you cancel. We don&rsquo;t. That&rsquo;s in writing in our terms.</p>
+          <p>Yes. The website, content, and copy are yours. If you ever cancel, we hand it over. You can move it to any host and keep using it. Some agencies hold sites hostage when you cancel. We don&rsquo;t. That&rsquo;s in writing in our terms.</p>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q">What if I cancel after launch?</button>
         <div class="faq-a">
-          <p>You have a 14-day money-back promise from launch day &mdash; if anything is off, we refund your first month and unwind the launch. After that, you can cancel any month with a single email. There&rsquo;s no contract length, no termination fee, and no penalty for leaving.</p>
+          <p>You have a 14-day money-back promise from launch day. If anything is off, we refund your first month and unwind the launch. After that, you can cancel any month with a single email. There&rsquo;s no contract length, no termination fee, and no penalty for leaving.</p>
         </div>
       </div>
 
