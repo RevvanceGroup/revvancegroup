@@ -512,7 +512,12 @@ fbq('track', 'PageView');
 <script>
 function openCalendly(el) {
   if (typeof Calendly !== 'undefined') {
-    Calendly.initPopupWidget({url: el.href});
+    var url = new URL(el.href);
+    var pageParams = new URLSearchParams(window.location.search);
+    pageParams.forEach(function (value, key) {
+      url.searchParams.set(key, value);
+    });
+    Calendly.initPopupWidget({url: url.toString()});
     return false;
   }
   return true;
