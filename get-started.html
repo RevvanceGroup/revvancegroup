@@ -30,8 +30,15 @@
     })(window, document, "clarity", "script", "wpok5go826");
 </script>
 
-<!-- Calendly popup widget assets -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<!-- Calendly popup widget: preconnect + DNS prefetch warm network before click -->
+<link rel="preconnect" href="https://calendly.com" crossorigin>
+<link rel="preconnect" href="https://assets.calendly.com" crossorigin>
+<link rel="dns-prefetch" href="https://calendly.com">
+<link rel="dns-prefetch" href="https://assets.calendly.com">
+
+<!-- Calendly CSS loaded async (non-render-blocking, only needed when popup opens) -->
+<link rel="preload" href="https://assets.calendly.com/assets/external/widget.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css"></noscript>
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
 <!-- Schema.org -->
