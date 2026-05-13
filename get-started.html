@@ -552,6 +552,9 @@ function openCalendly(el) {
     pageParams.forEach(function (value, key) {
       url.searchParams.set(key, value);
     });
+    if (typeof clarity === 'function') {
+      clarity('event', 'calendly_popup_opened');
+    }
     Calendly.initPopupWidget({url: url.toString()});
     return false;
   }
@@ -567,8 +570,15 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 window.addEventListener('message', function (e) {
-  if (e.origin === 'https://calendly.com' && e.data && e.data.event === 'calendly.event_scheduled') {
-    if (typeof fbq === 'function') fbq('track', 'Schedule');
+  if (e.origin !== 'https://calendly.com' || !e.data || typeof e.data.event !== 'string') return;
+  if (e.data.event.indexOf('calendly.') !== 0) return;
+  var eventName = e.data.event;
+  if (typeof clarity === 'function') {
+    clarity('set', 'calendly_milestone', eventName);
+    clarity('event', eventName);
+  }
+  if (eventName === 'calendly.event_scheduled' && typeof fbq === 'function') {
+    fbq('track', 'Schedule');
   }
 });
 </script>
