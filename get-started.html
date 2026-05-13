@@ -223,6 +223,39 @@ input, select, textarea { font-family: inherit; font-size: 16px; }
   .deal-list li { font-size: 0.92rem; gap: 10px; }
 }
 
+/* Real work / demo cards (social proof via real demo sites) */
+.demo-grid {
+  display: grid; grid-template-columns: 1fr; gap: 16px;
+}
+@media (min-width: 768px) {
+  .demo-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.demo-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 26px 24px; transition: all 0.25s;
+  display: flex; flex-direction: column; text-align: left;
+}
+.demo-card:hover {
+  border-color: rgba(79,110,247,0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.demo-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--accent-glow); border: 1px solid rgba(79,110,247,0.25);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+}
+.demo-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 2; }
+.demo-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.2px; }
+.demo-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; flex: 1; margin-bottom: 16px; }
+.demo-cta { color: var(--accent); font-size: 0.92rem; font-weight: 700; }
+
+/* Section variant for the relocated deal card (less vertical chrome since one card) */
+.section-offer { padding: 48px 0; }
+@media (min-width: 768px) {
+  .section-offer { padding: 64px 0; }
+}
+
 /* CTA button */
 .btn-cta {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -559,29 +592,6 @@ window.addEventListener('message', function (e) {
       <h1>Your New Website + the AI That <span class="highlight">Captures Every Lead</span> for You</h1>
       <p class="hero-sub">Custom contractor site, AI that responds in 60 seconds, automated 14-day follow-up, Google reviews on autopilot. We build it. We run it. You take the calls.</p>
 
-      <!-- DEAL CARD (replace with VSL iframe when recorded) -->
-      <div class="deal-card">
-        <div class="deal-card-title">Here&rsquo;s the Deal</div>
-        <ul class="deal-list">
-          <li>
-            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-            Free 30-min call. We walk through your custom demo together.
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-            No setup fee. No credit card needed to book.
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-            $297/mo flat if you launch. Cancel any month.
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-            14-day money-back guarantee from launch day.
-          </li>
-        </ul>
-      </div>
-
       <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="return openCalendly(this)" class="btn-cta btn-cta-large">
         Book My Free Demo Call
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -719,6 +729,33 @@ window.addEventListener('message', function (e) {
   </div>
 </section>
 
+<!-- THE OFFER (deal card lands here after pain establishes need) -->
+<section class="section-offer">
+  <div class="container">
+    <div class="deal-card fade-up">
+      <div class="deal-card-title">Here&rsquo;s the Deal</div>
+      <ul class="deal-list">
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Free 30-min call. We walk through your custom demo together.
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          No setup fee. No credit card needed to book.
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          $297/mo flat if you launch. Cancel any month.
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          14-day money-back guarantee from launch day.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section class="section">
   <div class="container">
@@ -744,6 +781,46 @@ window.addEventListener('message', function (e) {
         <h4>Your Phone Rings</h4>
         <p>Leads get instant responses. Bookings hit your calendar. You only pay if you go live, and you can cancel any month.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- REAL WORK (real demo sites act as proof until testimonials exist) -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="eyebrow">Real Work</span>
+      <h2>Three Contractor Sites We&rsquo;ve Built</h2>
+      <p>Same system you&rsquo;d get. Click any to explore the live demo.</p>
+    </div>
+
+    <div class="demo-grid">
+      <a href="/demos/hvac/" target="_blank" rel="noopener" class="demo-card fade-up">
+        <div class="demo-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        </div>
+        <h3>Meridian Heating &amp; Air</h3>
+        <p>HVAC contractor. 28 pages including emergency service area pages and instant-quote CTAs throughout.</p>
+        <span class="demo-cta">Explore the site &rarr;</span>
+      </a>
+
+      <a href="/demos/electrician/" target="_blank" rel="noopener" class="demo-card fade-up">
+        <div class="demo-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Voltage Electric Co.</h3>
+        <p>Residential and light-commercial electrician. 32 pages with project galleries and licensing details.</p>
+        <span class="demo-cta">Explore the site &rarr;</span>
+      </a>
+
+      <a href="/demos/roofing/" target="_blank" rel="noopener" class="demo-card fade-up">
+        <div class="demo-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 12L12 3l9 9"/><path d="M5 10v10h14V10"/></svg>
+        </div>
+        <h3>Summit Roofing Co.</h3>
+        <p>Storm-restoration roofing. 27 pages including an insurance-claim helper and city-specific landing pages.</p>
+        <span class="demo-cta">Explore the site &rarr;</span>
+      </a>
     </div>
   </div>
 </section>
