@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="theme-color" content="#0a0a0f">
-<title>Free Custom Demo of Your New Contractor Site + Lead System | Revvance Group</title>
-<meta name="description" content="Custom contractor website + AI lead capture + automated follow-up + Google reviews. Built in 48 hours. $297/month, no setup, no contract. Free demo before you pay.">
+<title>Contractor Website + Lead System For $297/mo | Revvance Group</title>
+<meta name="description" content="Custom contractor website + AI lead capture + automated follow-up + Google reviews. Built in 48 hours. $297/month, no setup, no contract. Free 15-min call to see if it fits.">
 <link rel="canonical" href="https://revvancegroup.com/get-started.html">
 <meta name="robots" content="noindex,nofollow">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Get Your Free Contractor Website + Lead System Demo | Revvance Group">
-<meta property="og:description" content="We build the website, AI handles the leads, you take the calls. $297/month. Free demo first.">
+<meta property="og:title" content="Contractor Website + Lead System For $297/mo | Revvance Group">
+<meta property="og:description" content="We build the website, AI handles the leads, you take the calls. $297/month flat. Free 15-min call to start.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://revvancegroup.com/get-started.html">
 <meta property="og:image" content="https://revvancegroup.com/assets/og-image.jpg">
@@ -52,16 +52,7 @@
     "@type": "Organization",
     "name": "Revvance Group, LLC",
     "url": "https://revvancegroup.com",
-    "telephone": "+18338591898",
-    "email": "cody@revvancegroup.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "8141 Marley Dr",
-      "addressLocality": "Mechanicsville",
-      "addressRegion": "VA",
-      "postalCode": "23116",
-      "addressCountry": "US"
-    }
+    "email": "cody@revvancegroup.com"
   },
   "areaServed": {"@type": "Country", "name": "United States"},
   "offers": {
@@ -223,32 +214,91 @@ input, select, textarea { font-family: inherit; font-size: 16px; }
   .deal-list li { font-size: 0.92rem; gap: 10px; }
 }
 
-/* Real work / demo cards (social proof via real demo sites) */
-.demo-grid {
-  display: grid; grid-template-columns: 1fr; gap: 16px;
+/* Inline website preview (replaces external demo links) */
+.site-preview {
+  max-width: 640px; margin: 0 auto;
+  background: #fff; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(79,110,247,0.2);
 }
-@media (min-width: 768px) {
-  .demo-grid { grid-template-columns: repeat(3, 1fr); }
+.browser-bar {
+  background: #e8e8ed; padding: 10px 14px;
+  display: flex; align-items: center; gap: 8px;
 }
-.demo-card {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
-  padding: 26px 24px; transition: all 0.25s;
-  display: flex; flex-direction: column; text-align: left;
+.browser-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+.dot-red { background: #ff5f57; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #28ca42; }
+.browser-url {
+  flex: 1; background: #fff; padding: 5px 12px; margin-left: 6px;
+  border-radius: 7px; font-size: 0.74rem; color: #666;
+  text-align: center; font-family: 'Inter', sans-serif;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.demo-card:hover {
-  border-color: rgba(79,110,247,0.4);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+.site-preview-content { background: #0c1117; color: #f0f0f5; }
+.preview-header {
+  padding: 14px 18px; border-bottom: 1px solid #1f2937;
+  display: flex; justify-content: space-between; align-items: center;
 }
-.demo-icon {
-  width: 44px; height: 44px; border-radius: 10px;
-  background: var(--accent-glow); border: 1px solid rgba(79,110,247,0.25);
-  display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+.preview-logo { font-weight: 800; font-size: 0.92rem; }
+.preview-logo .preview-logo-accent { color: var(--accent); }
+.preview-nav-mock {
+  display: flex; gap: 14px; font-size: 0.7rem; color: #8888a0;
 }
-.demo-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 2; }
-.demo-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.2px; }
-.demo-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; flex: 1; margin-bottom: 16px; }
-.demo-cta { color: var(--accent); font-size: 0.92rem; font-weight: 700; }
+.preview-nav-mock span { display: none; }
+@media (min-width: 480px) { .preview-nav-mock span { display: inline; } }
+.preview-hero-mock {
+  padding: 32px 20px 28px; text-align: center;
+  background: radial-gradient(ellipse at top, rgba(79,110,247,0.12) 0%, transparent 65%);
+}
+.preview-eyebrow {
+  display: inline-block; padding: 4px 11px;
+  background: rgba(239, 68, 68, 0.15); color: #ef4444;
+  border-radius: 50px; font-size: 0.62rem; font-weight: 800;
+  letter-spacing: 1.5px; margin-bottom: 12px; text-transform: uppercase;
+}
+.preview-h1-mock {
+  font-size: clamp(1.05rem, 3.6vw, 1.5rem);
+  font-weight: 900; line-height: 1.15; letter-spacing: -0.6px;
+  margin-bottom: 14px;
+}
+.preview-h1-mock .preview-h1-accent {
+  background: linear-gradient(135deg, var(--accent) 0%, #818cf8 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.preview-sub-mock {
+  font-size: 0.78rem; color: #8888a0; max-width: 360px; margin: 0 auto 18px;
+  line-height: 1.5;
+}
+.preview-hero-cta-mock {
+  display: inline-block; padding: 10px 22px;
+  background: var(--accent); color: white !important;
+  border-radius: 8px; font-weight: 700; font-size: 0.8rem;
+  box-shadow: 0 4px 14px rgba(79,110,247,0.4);
+}
+.preview-services-mock {
+  padding: 18px 18px 24px; display: grid;
+  grid-template-columns: repeat(3, 1fr); gap: 8px;
+}
+.preview-service-mock {
+  background: #14202e; padding: 14px 8px; border-radius: 8px;
+  text-align: center; border: 1px solid #1f2937;
+}
+.preview-svc-icon {
+  width: 22px; height: 22px; margin: 0 auto 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+}
+.preview-svc-icon svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2; }
+.preview-svc-name {
+  font-size: 0.7rem; font-weight: 600; color: #f0f0f5;
+}
+@media (max-width: 480px) {
+  .preview-header { padding: 12px 14px; }
+  .preview-logo { font-size: 0.85rem; }
+  .preview-hero-mock { padding: 24px 16px 22px; }
+  .preview-services-mock { padding: 14px 14px 18px; }
+  .preview-service-mock { padding: 10px 6px; }
+}
 
 /* Section variant for the relocated deal card (less vertical chrome since one card) */
 .section-offer { padding: 48px 0; }
@@ -589,7 +639,7 @@ window.addEventListener('message', function (e) {
 <header class="lp-header">
   <div class="container">
     <a href="https://revvancegroup.com" class="lp-logo">Revvance<span>Group</span></a>
-    <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="return openCalendly(this)" class="lp-header-cta">Book Free Demo</a>
+    <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="return openCalendly(this)" class="lp-header-cta">Book Free Call</a>
   </div>
 </header>
 
@@ -603,14 +653,14 @@ window.addEventListener('message', function (e) {
       <p class="hero-sub">Every homeowner with a problem calls 10 contractors. The first to respond wins the job. While you&rsquo;re on a service call, we&rsquo;ve already replied to your new lead, qualified them, and dropped the booking on your calendar.</p>
 
       <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="return openCalendly(this)" class="btn-cta btn-cta-large">
-        Book My Free Demo Call
+        Book My Free 15-Min Call
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
 
       <div class="hero-trust-line">
         <span class="trust-item">
           <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Free demo
+          Free 15-min call
         </span>
         <span class="trust-item">
           <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
@@ -747,7 +797,7 @@ window.addEventListener('message', function (e) {
       <ul class="deal-list">
         <li>
           <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-          Free 30-min call. We walk through your custom demo together.
+          Free 15-min call. We dig into your business and explain exactly what we&rsquo;ll build.
         </li>
         <li>
           <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
@@ -778,8 +828,8 @@ window.addEventListener('message', function (e) {
     <div class="steps-grid">
       <div class="step-card fade-up">
         <div class="step-num">1</div>
-        <h4>Book a 30-Min Call</h4>
-        <p>We learn about your business, your market, what you do best. Then we walk through your custom demo together on the call.</p>
+        <h4>Book a 15-Min Call</h4>
+        <p>We dig into your business, your market, your customers, and your competitors. We explain exactly what we&rsquo;d build for you. No pitch deck, no demo theater. Just a real conversation.</p>
       </div>
       <div class="step-card fade-up">
         <div class="step-num">2</div>
@@ -795,42 +845,58 @@ window.addEventListener('message', function (e) {
   </div>
 </section>
 
-<!-- REAL WORK (real demo sites act as proof until testimonials exist) -->
+<!-- SITE PREVIEW (inline mockup; no outbound clicks) -->
 <section class="section">
   <div class="container">
     <div class="section-header fade-up">
-      <span class="eyebrow">Real Work</span>
-      <h2>Three Contractor Sites We&rsquo;ve Built</h2>
-      <p>Same system you&rsquo;d get. Click any to explore the live demo.</p>
+      <span class="eyebrow">What We Build</span>
+      <h2>Custom Sites Built To Convert</h2>
+      <p>Mobile-first. Lightning fast. Designed for one thing: turning visitors into booked jobs. Here&rsquo;s a glimpse.</p>
     </div>
 
-    <div class="demo-grid">
-      <a href="/demos/hvac/" target="_blank" rel="noopener" class="demo-card fade-up">
-        <div class="demo-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+    <div class="site-preview fade-up">
+      <div class="browser-bar">
+        <span class="browser-dot dot-red"></span>
+        <span class="browser-dot dot-yellow"></span>
+        <span class="browser-dot dot-green"></span>
+        <span class="browser-url">yourbusiness.com</span>
+      </div>
+      <div class="site-preview-content">
+        <div class="preview-header">
+          <span class="preview-logo">Your<span class="preview-logo-accent">Business</span></span>
+          <div class="preview-nav-mock">
+            <span>Services</span>
+            <span>About</span>
+            <span>Contact</span>
+          </div>
         </div>
-        <h3>Meridian Heating &amp; Air</h3>
-        <p>HVAC contractor. 28 pages including emergency service area pages and instant-quote CTAs throughout.</p>
-        <span class="demo-cta">Explore the site &rarr;</span>
-      </a>
-
-      <a href="/demos/electrician/" target="_blank" rel="noopener" class="demo-card fade-up">
-        <div class="demo-icon">
-          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <div class="preview-hero-mock">
+          <div class="preview-eyebrow">24/7 Emergency Service</div>
+          <div class="preview-h1-mock">Trusted Local Pros.<br><span class="preview-h1-accent">Same-Day Service.</span></div>
+          <p class="preview-sub-mock">Licensed, insured, and rated 5 stars by your neighbors. Fast quotes. Honest work. No surprises.</p>
+          <span class="preview-hero-cta-mock">Get A Free Quote</span>
         </div>
-        <h3>Voltage Electric Co.</h3>
-        <p>Residential and light-commercial electrician. 32 pages with project galleries and licensing details.</p>
-        <span class="demo-cta">Explore the site &rarr;</span>
-      </a>
-
-      <a href="/demos/roofing/" target="_blank" rel="noopener" class="demo-card fade-up">
-        <div class="demo-icon">
-          <svg viewBox="0 0 24 24"><path d="M3 12L12 3l9 9"/><path d="M5 10v10h14V10"/></svg>
+        <div class="preview-services-mock">
+          <div class="preview-service-mock">
+            <div class="preview-svc-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </div>
+            <span class="preview-svc-name">Emergency</span>
+          </div>
+          <div class="preview-service-mock">
+            <div class="preview-svc-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 12l5 5L21 4"/></svg>
+            </div>
+            <span class="preview-svc-name">Repairs</span>
+          </div>
+          <div class="preview-service-mock">
+            <div class="preview-svc-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+            </div>
+            <span class="preview-svc-name">Install</span>
+          </div>
         </div>
-        <h3>Summit Roofing Co.</h3>
-        <p>Storm-restoration roofing. 27 pages including an insurance-claim helper and city-specific landing pages.</p>
-        <span class="demo-cta">Explore the site &rarr;</span>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -892,10 +958,10 @@ window.addEventListener('message', function (e) {
       </ul>
 
       <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="return openCalendly(this)" class="btn-cta btn-cta-block">
-        See My Free Demo
+        Book My Free 15-Min Call
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <p class="pricing-foot">Free demo built before you pay anything.</p>
+      <p class="pricing-foot">15 minutes. No pitch deck. No pressure.</p>
     </div>
   </div>
 </section>
@@ -918,9 +984,9 @@ window.addEventListener('message', function (e) {
       </div>
 
       <div class="faq-item">
-        <button class="faq-q">What if I don&rsquo;t like the demo?</button>
+        <button class="faq-q">What if it&rsquo;s not a fit after the call?</button>
         <div class="faq-a">
-          <p>You owe us nothing. The free demo is built on our time as a way to show you what we&rsquo;d deliver. If you don&rsquo;t want to move forward, we shut it down and that&rsquo;s the end of it. No invoice, no follow-up sales calls.</p>
+          <p>You owe us nothing. The 15-min call is a conversation, not a commitment. We ask about your business, you ask about ours, and we both decide if there&rsquo;s a fit. If not, we shake hands and move on. No invoice, no nagging follow-up sales emails.</p>
         </div>
       </div>
 
@@ -967,10 +1033,10 @@ window.addEventListener('message', function (e) {
 <section class="final-cta">
   <div class="container">
     <div class="final-cta-inner">
-      <h2>Ready to See Your Free Demo?</h2>
-      <p>30-minute call. We walk through your custom demo together. If you like what you see, we go to work. If not, you owe us nothing.</p>
+      <h2>Ready to Talk About Your Business?</h2>
+      <p>15-minute call. We learn what you need, explain what we&rsquo;d build, and answer your questions. If it&rsquo;s a fit, we go to work. If not, you owe us nothing.</p>
       <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="return openCalendly(this)" class="btn-cta btn-cta-large">
-        Book My 30-Min Demo Call
+        Book My Free 15-Min Call
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -982,7 +1048,7 @@ window.addEventListener('message', function (e) {
   <div class="container">
     <div class="lp-footer-inner">
       <p>&copy; <span data-year>2026</span> Revvance Group, LLC. All rights reserved.</p>
-      <p style="font-size:0.78rem;opacity:0.85;">8141 Marley Dr, Mechanicsville, VA 23116 &middot; <a href="tel:+18338591898">(833) 859-1898</a> &middot; <a href="mailto:cody@revvancegroup.com">cody@revvancegroup.com</a></p>
+      <p style="font-size:0.78rem;opacity:0.85;"><a href="mailto:cody@revvancegroup.com">cody@revvancegroup.com</a></p>
       <div class="lp-footer-links">
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms of Service</a>
@@ -995,7 +1061,7 @@ window.addEventListener('message', function (e) {
 <div class="mobile-cta">
   <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="return openCalendly(this)">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-    Book My Free Demo
+    Book My Free Call
   </a>
 </div>
 
