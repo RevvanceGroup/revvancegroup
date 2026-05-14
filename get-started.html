@@ -736,14 +736,6 @@ function openCalendly(el) {
   return true;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('a[href*="calendly.com"]').forEach(function (a) {
-    a.addEventListener('click', function () {
-      if (typeof fbq === 'function') fbq('track', 'Lead');
-    });
-  });
-});
-
 window.addEventListener('message', function (e) {
   if (e.origin !== 'https://calendly.com' || !e.data || typeof e.data.event !== 'string') return;
   if (e.data.event.indexOf('calendly.') !== 0) return;
@@ -773,7 +765,6 @@ function openPricingForm() {
   }
   modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
-  if (typeof fbq === 'function') fbq('track', 'Lead');
   if (typeof clarity === 'function') clarity('event', 'lead_form_opened');
 }
 
@@ -825,7 +816,7 @@ function submitPricingForm(e) {
     mode: 'no-cors',
     body: formData
   });
-  if (typeof fbq === 'function') fbq('track', 'CompleteRegistration');
+  if (typeof fbq === 'function') fbq('track', 'Lead');
   if (typeof clarity === 'function') clarity('event', 'lead_form_submitted');
   form.style.display = 'none';
   document.getElementById('pricing-form-success').classList.remove('hidden');
