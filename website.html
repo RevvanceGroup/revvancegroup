@@ -596,15 +596,25 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2723796834666606&ev=PageView&noscript=1"/></noscript>
 <script>
 function openCalendly(el) {
-  if (typeof Calendly !== 'undefined') {
-    var url = new URL(el.href);
-    var pageParams = new URLSearchParams(window.location.search);
-    pageParams.forEach(function (value, key) {
-      url.searchParams.set(key, value);
-    });
+  var url = new URL(el.href);
+  var pageParams = new URLSearchParams(window.location.search);
+  pageParams.forEach(function (value, key) {
+    url.searchParams.set(key, value);
+  });
+  if (typeof clarity === 'function') {
+    clarity('event', 'calendly_popup_opened');
+  }
+  // Detect Instagram / Facebook in-app browsers (popup iframes break in these)
+  var ua = navigator.userAgent || '';
+  var isInAppBrowser = /FBAN|FBAV|Instagram|FBIOS|FB_IAB/i.test(ua);
+  if (isInAppBrowser) {
     if (typeof clarity === 'function') {
-      clarity('event', 'calendly_popup_opened');
+      clarity('event', 'calendly_inapp_redirect');
     }
+    window.top.location.href = url.toString();
+    return false;
+  }
+  if (typeof Calendly !== 'undefined') {
     Calendly.initPopupWidget({url: url.toString()});
     return false;
   }
