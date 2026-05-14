@@ -778,16 +778,22 @@ function submitPricingForm(e) {
   var form = e.target;
   var submitBtn = form.querySelector('button[type="submit"]');
   submitBtn.disabled = true;
-  submitBtn.textContent = 'Sending...';
+  submitBtn.textContent = 'Submitting...';
   var data = new FormData(form);
-  var payload = {
+  window.leadFormData = {
     name: data.get('name'),
     email: data.get('email'),
     phone: data.get('phone') || '',
-    business: data.get('business'),
+    business: data.get('business')
+  };
+  var payload = {
+    name: window.leadFormData.name,
+    email: window.leadFormData.email,
+    phone: window.leadFormData.phone,
+    business: window.leadFormData.business,
     source_page: window.location.pathname,
-    type: 'pricing-request',
-    tag: 'pricing-request'
+    type: 'lead-pre-call',
+    tag: 'lead-pre-call'
   };
   var pageParams = new URLSearchParams(window.location.search);
   pageParams.forEach(function (value, key) {
@@ -800,9 +806,35 @@ function submitPricingForm(e) {
     body: JSON.stringify(payload)
   });
   if (typeof fbq === 'function') fbq('track', 'CompleteRegistration');
-  if (typeof clarity === 'function') clarity('event', 'pricing_form_submitted');
+  if (typeof clarity === 'function') clarity('event', 'lead_form_submitted');
   form.classList.add('hidden');
   document.getElementById('pricing-form-success').classList.remove('hidden');
+  return false;
+}
+
+function openCalendlyFromForm() {
+  var calendlyUrl = new URL('https://calendly.com/cody-revvancegroup/30min');
+  if (window.leadFormData) {
+    calendlyUrl.searchParams.set('name', window.leadFormData.name);
+    calendlyUrl.searchParams.set('email', window.leadFormData.email);
+  }
+  var pageParams = new URLSearchParams(window.location.search);
+  pageParams.forEach(function (value, key) {
+    if (key.indexOf('utm_') === 0) calendlyUrl.searchParams.set(key, value);
+  });
+  if (typeof clarity === 'function') clarity('event', 'calendly_popup_opened');
+  var ua = navigator.userAgent || '';
+  var isInAppBrowser = /FBAN|FBAV|Instagram|FBIOS|FB_IAB/i.test(ua);
+  if (isInAppBrowser) {
+    if (typeof clarity === 'function') clarity('event', 'calendly_inapp_redirect');
+    window.top.location.href = calendlyUrl.toString();
+    return false;
+  }
+  if (typeof Calendly !== 'undefined') {
+    Calendly.initPopupWidget({ url: calendlyUrl.toString() });
+    return false;
+  }
+  window.open(calendlyUrl.toString(), '_blank');
   return false;
 }
 </script>
@@ -813,7 +845,7 @@ function submitPricingForm(e) {
 <header class="lp-header">
   <div class="container">
     <a href="https://revvancegroup.com" class="lp-logo">Revvance<span>Group</span></a>
-    <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="return openCalendly(this)" class="lp-header-cta">Book Free Call</a>
+    <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="openPricingForm(); return false;" class="lp-header-cta">Book Free Call</a>
   </div>
 </header>
 
@@ -826,14 +858,10 @@ function submitPricingForm(e) {
       <h1>Your New Website + the AI That <span class="highlight">Captures Every Lead</span> for You</h1>
       <p class="hero-sub">Every homeowner with a problem calls 10 contractors. The first to respond wins the job. While you&rsquo;re on a service call, we&rsquo;ve already replied to your new lead, qualified them, and dropped the booking on your calendar.</p>
 
-      <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="return openCalendly(this)" class="btn-cta btn-cta-large">
+      <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="openPricingForm(); return false;" class="btn-cta btn-cta-large">
         Book My Free 15-Min Call
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-
-      <div>
-        <button type="button" class="btn-secondary" onclick="openPricingForm()">Or send me details first &rarr;</button>
-      </div>
 
       <div class="hero-trust-line">
         <span class="trust-item">
@@ -1140,7 +1168,7 @@ function submitPricingForm(e) {
         </li>
       </ul>
 
-      <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="return openCalendly(this)" class="btn-cta btn-cta-block">
+      <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="openPricingForm(); return false;" class="btn-cta btn-cta-block">
         Book My Free 15-Min Call
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -1218,7 +1246,7 @@ function submitPricingForm(e) {
     <div class="final-cta-inner">
       <h2>Ready to Talk About Your Business?</h2>
       <p>15-minute call. We learn what you need, explain what we&rsquo;d build, and answer your questions. If it&rsquo;s a fit, we go to work. If not, you owe us nothing.</p>
-      <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="return openCalendly(this)" class="btn-cta btn-cta-large">
+      <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="openPricingForm(); return false;" class="btn-cta btn-cta-large">
         Book My Free 15-Min Call
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -1242,7 +1270,7 @@ function submitPricingForm(e) {
 
 <!-- STICKY MOBILE CTA -->
 <div class="mobile-cta">
-  <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="return openCalendly(this)">
+  <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="openPricingForm(); return false;">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
     Book My Free Call
   </a>
@@ -1253,8 +1281,8 @@ function submitPricingForm(e) {
   <div class="pricing-modal-content">
     <button class="pricing-modal-close" onclick="closePricingForm()" aria-label="Close">&times;</button>
     <form class="pricing-form" onsubmit="return submitPricingForm(event)">
-      <h3>Get full pricing &amp; details</h3>
-      <p>Drop your info. We&rsquo;ll email you a full breakdown within an hour. No spam. No drip sequences.</p>
+      <h3>Quick step before your call</h3>
+      <p>Drop your info so we know who we&rsquo;re talking to. Next step is a calendar to pick your 15-min call time.</p>
       <input type="text" name="name" placeholder="Your name" required autocomplete="name">
       <input type="email" name="email" placeholder="Your email" required autocomplete="email">
       <input type="tel" name="phone" placeholder="Phone (optional, for faster reply)" autocomplete="tel">
@@ -1278,9 +1306,12 @@ function submitPricingForm(e) {
       <div class="check-icon">
         <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
       </div>
-      <h3>Got it. Check your inbox.</h3>
-      <p>We&rsquo;ll email you pricing within the next hour. If you don&rsquo;t see it, check your spam folder.</p>
-      <button type="button" class="btn-secondary" onclick="closePricingForm()">Close</button>
+      <h3>Got it. Now pick a time.</h3>
+      <p>Choose a 15-min slot that works for you. We&rsquo;ll see you there.</p>
+      <button type="button" class="btn-cta btn-cta-block" onclick="openCalendlyFromForm()" style="margin-top: 4px;">
+        Open My Booking Calendar
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
     </div>
   </div>
 </div>
