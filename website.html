@@ -179,7 +179,7 @@ input, select, textarea { font-family: inherit; font-size: 16px; }
   font-weight: 900; line-height: 1.08;
   letter-spacing: -1.2px; margin-bottom: 18px;
 }
-.hero h1 .highlight {
+.highlight {
   background: linear-gradient(135deg, var(--accent) 0%, #818cf8 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
@@ -856,7 +856,7 @@ function openCalendlyFromForm() {
     <div class="hero-inner">
       <div class="hero-eyebrow"><span class="dot"></span> For Small Businesses</div>
       <h1>A Real Custom Website For Your Business. <span class="highlight">$97/mo Flat.</span></h1>
-      <p class="hero-sub">Templates look like everyone else&rsquo;s. Wix and Squarespace look like 2014. We build you a custom-coded website that loads fast, ranks on Google, and looks like a real business spent money on it. Live in 48 hours. Hosting, SSL, and updates included.</p>
+      <p class="hero-sub">A real custom site that ranks in Google <strong>and</strong> shows up in AI search (ChatGPT, Perplexity, Google AI Overviews). While other businesses stay invisible in AI search, customers find you first. Live in 48 hours. $97/mo flat. No setup.</p>
 
       <a href="https://calendly.com/cody-revvancegroup/30min" target="_blank" rel="noopener" onclick="openPricingForm(); return false;" class="btn-cta btn-cta-large">
         Book My Free 15-Min Call
@@ -881,121 +881,24 @@ function openCalendlyFromForm() {
   </div>
 </section>
 
-<!-- STAT STRIP -->
-<div class="stat-strip">
+<!-- MEET THE FOUNDER (trust signal placed before the offer) -->
+<section class="section founder-section">
   <div class="container">
-    <div class="stat-grid">
-      <div class="stat-item">
-        <span class="stat-num">100%</span>
-        <span class="stat-label">Custom-Built, No Template</span>
+    <div class="founder-card fade-up">
+      <div class="founder-photo">
+        <img src="/assets/founder.jpg" alt="Cody Culbreth, founder of Revvance Group, with his family">
       </div>
-      <div class="stat-item">
-        <span class="stat-num">48 hrs</span>
-        <span class="stat-label">Site Built &amp; Live</span>
+      <div class="founder-text">
+        <span class="eyebrow">Meet The Founder</span>
+        <h2>I&rsquo;m Cody.</h2>
+        <p>I run Revvance Group. I personally build every site we deliver, reply to every email, and handle every call. No outsourced developers. No account managers between you and me.</p>
+        <p>This is my family. They&rsquo;re why this business matters.</p>
       </div>
-      <div class="stat-item">
-        <span class="stat-num">$97</span>
-        <span class="stat-label">Flat Monthly</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- WHAT YOU GET -->
-<section class="section">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="eyebrow">What You Get</span>
-      <h2>A Real Website. Built Right. Yours.</h2>
-      <p>Custom-coded for your business. Not a template. Not a Wix page. A site that looks like a real company spent money on it.</p>
-    </div>
-
-    <div class="feature-grid">
-
-      <div class="feature-card fade-up">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
-        </div>
-        <h3>100% Custom Built</h3>
-        <p>Designed for your trade and your business. Service pages, city pages, photo galleries, contact forms. No two sites we build look the same.</p>
-      </div>
-
-      <div class="feature-card fade-up">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        </div>
-        <h3>Lightning-Fast Hosting</h3>
-        <p>Built on Cloudflare&rsquo;s global network. Loads in under 3 seconds anywhere in the country. Your visitors never wait for the page to show up.</p>
-      </div>
-
-      <div class="feature-card fade-up">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-        </div>
-        <h3>Mobile-First Design</h3>
-        <p>Built for phones first. Looks clean on every screen size. Touch-optimized buttons, fast images, no zooming needed. 80%+ of your visitors are on mobile.</p>
-      </div>
-
-      <div class="feature-card fade-up">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <h3>Local SEO Foundation</h3>
-        <p>Schema markup, Google Business Profile integration, city-specific service pages. Everything Google needs to rank you locally is built in from day one.</p>
-      </div>
-
-      <div class="feature-card fade-up">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>SSL + Security + Updates</h3>
-        <p>HTTPS by default. We handle security patches, backups, framework updates. You never log in to a dashboard. The site just works, month after month.</p>
-      </div>
-
-      <div class="feature-card fade-up">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-        </div>
-        <h3>Cancel Anytime, No Contracts</h3>
-        <p>Month-to-month, no long contracts, no penalties. Your domain and content are always yours. The custom-coded site is part of your monthly service, just like Wix or Squarespace. Cancel any month with one email.</p>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- THE PROBLEM -->
-<section class="section pain-section">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="eyebrow">Be Honest</span>
-      <h2>Your Website Is Hurting You</h2>
-      <p>Most contractor websites cost the business jobs every week. The visitor judges you in three seconds. Here&rsquo;s what they see.</p>
-    </div>
-
-    <div class="pain-grid">
-      <div class="pain-card fade-up">
-        <div class="x-icon">!</div>
-        <h4>It Looks Like 2012</h4>
-        <p>Outdated design tells homeowners &ldquo;this guy doesn&rsquo;t care about quality.&rdquo; If your site looks dated, they assume your work is too.</p>
-      </div>
-      <div class="pain-card fade-up">
-        <div class="x-icon">!</div>
-        <h4>It Loads Too Slow</h4>
-        <p>8-second load time means 80% of mobile visitors leave before seeing your phone number. Google also drops you in search rankings for slow sites.</p>
-      </div>
-      <div class="pain-card fade-up">
-        <div class="x-icon">!</div>
-        <h4>It&rsquo;s A Template</h4>
-        <p>Wix and Squarespace templates mean every plumber within 50 miles uses the same layout. You blend in. You look exactly like the cheap option.</p>
-      </div>
-    </div>
-
-    <p class="pain-transition fade-up">We fix all three. <span class="accent">In 48 hours.</span></p>
-  </div>
-</section>
-
-<!-- THE OFFER (deal card lands here after pain establishes need) -->
+<!-- THE OFFER (risk reversal before pitch) -->
 <section class="section-offer">
   <div class="container">
     <div class="deal-card fade-up">
@@ -1022,42 +925,13 @@ function openCalendlyFromForm() {
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="section">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="eyebrow">How It Works</span>
-      <h2>From Ad Click to Booked Job</h2>
-      <p>Three steps. No tech homework. No long onboarding.</p>
-    </div>
-
-    <div class="steps-grid">
-      <div class="step-card fade-up">
-        <div class="step-num">1</div>
-        <h4>Book a 15-Min Call</h4>
-        <p>We dig into your business, your customers, your competitors. We explain exactly what we&rsquo;d build for you. No pitch deck, no demo theater. Just a real conversation.</p>
-      </div>
-      <div class="step-card fade-up">
-        <div class="step-num">2</div>
-        <h4>We Build Your Site</h4>
-        <p>Custom-coded from scratch for your trade. Site live in 48 hours. Hosting, SSL, mobile design, local SEO foundation. You approve before launch.</p>
-      </div>
-      <div class="step-card fade-up">
-        <div class="step-num">3</div>
-        <h4>Your Phone Rings</h4>
-        <p>Leads get instant responses. Bookings hit your calendar. You only pay if you go live, and you can cancel any month.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SITE PREVIEW (inline mockup; no outbound clicks) -->
+<!-- WHAT WE BUILD (mockup + 3 value props with AI/SEO emphasis) -->
 <section class="section">
   <div class="container">
     <div class="section-header fade-up">
       <span class="eyebrow">What We Build</span>
-      <h2>Custom Sites That Look Like Real Businesses</h2>
-      <p>Mobile-first. Lightning fast. Designed to make customers trust you the second they land on the page. Here&rsquo;s a glimpse.</p>
+      <h2>Built To Be Found In Google <span class="highlight">AND AI Search</span></h2>
+      <p>While other small business sites are invisible to ChatGPT and Google AI Overviews, yours shows up first. Custom-coded for both traditional Google search and the AI search engines customers actually use now.</p>
     </div>
 
     <div class="site-preview fade-up">
@@ -1104,21 +978,30 @@ function openCalendlyFromForm() {
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- MEET THE FOUNDER (humanizes the offer, builds trust without testimonials) -->
-<section class="section founder-section">
-  <div class="container">
-    <div class="founder-card fade-up">
-      <div class="founder-photo">
-        <img src="/assets/founder.jpg" alt="Cody Culbreth, founder of Revvance Group, with his family">
+    <div class="feature-grid" style="margin-top: 40px;">
+      <div class="feature-card fade-up">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>
+        </div>
+        <h3>100% Custom-Built</h3>
+        <p>Not a Wix template. Designed for your business. Service pages, contact forms, mobile-first design. Looks like a real company spent money on it.</p>
       </div>
-      <div class="founder-text">
-        <span class="eyebrow">Meet The Founder</span>
-        <h2>I&rsquo;m Cody.</h2>
-        <p>I run Revvance Group. I personally build every site we deliver, reply to every email, and handle every call. No outsourced developers. No account managers between you and me.</p>
-        <p>This is my family. They&rsquo;re why this business matters.</p>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <h3>Found In Google + AI Search</h3>
+        <p>Schema markup, clean semantic HTML, FAQ structure. Your site ranks in Google AND gets cited by ChatGPT, Perplexity, and Google AI Overviews when customers search.</p>
+      </div>
+
+      <div class="feature-card fade-up">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>We Host And Run It All</h3>
+        <p>Fast Cloudflare hosting. SSL. Security patches. Updates. Backups. You never log in to a dashboard. The site just works, month after month.</p>
       </div>
     </div>
   </div>
