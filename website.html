@@ -760,10 +760,21 @@ window.addEventListener('message', function (e) {
 function openPricingForm() {
   var modal = document.getElementById('pricing-form-modal');
   if (!modal) return;
+  var form = modal.querySelector('.pricing-form');
+  var success = document.getElementById('pricing-form-success');
+  if (form && success) {
+    form.style.display = '';
+    success.classList.add('hidden');
+    var submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Next: Pick A Time';
+    }
+  }
   modal.classList.remove('hidden');
   document.body.style.overflow = 'hidden';
   if (typeof fbq === 'function') fbq('track', 'Lead');
-  if (typeof clarity === 'function') clarity('event', 'pricing_form_opened');
+  if (typeof clarity === 'function') clarity('event', 'lead_form_opened');
 }
 
 function closePricingForm() {
@@ -771,6 +782,17 @@ function closePricingForm() {
   if (!modal) return;
   modal.classList.add('hidden');
   document.body.style.overflow = '';
+}
+
+function formatPhoneInput(input) {
+  var digits = input.value.replace(/\D/g, '').slice(0, 10);
+  var formatted = digits;
+  if (digits.length > 0) {
+    formatted = '(' + digits.slice(0, 3);
+    if (digits.length >= 4) formatted += ') ' + digits.slice(3, 6);
+    if (digits.length >= 7) formatted += '-' + digits.slice(6, 10);
+  }
+  input.value = formatted;
 }
 
 function submitPricingForm(e) {
@@ -781,38 +803,37 @@ function submitPricingForm(e) {
   submitBtn.textContent = 'Submitting...';
   var data = new FormData(form);
   window.leadFormData = {
-    name: data.get('name'),
-    email: data.get('email'),
-    phone: data.get('phone') || '',
-    business: data.get('business')
+    name: (data.get('name') || '').trim(),
+    email: (data.get('email') || '').trim(),
+    phone: (data.get('phone') || '').trim(),
+    business: data.get('business') || ''
   };
-  var payload = {
-    name: window.leadFormData.name,
-    email: window.leadFormData.email,
-    phone: window.leadFormData.phone,
-    business: window.leadFormData.business,
-    source_page: window.location.pathname,
-    type: 'lead-pre-call',
-    tag: 'lead-pre-call'
-  };
+  var formData = new URLSearchParams();
+  formData.append('name', window.leadFormData.name);
+  formData.append('email', window.leadFormData.email);
+  formData.append('phone', window.leadFormData.phone);
+  formData.append('business', window.leadFormData.business);
+  formData.append('source_page', window.location.pathname);
+  formData.append('type', 'lead-pre-call');
+  formData.append('tag', 'lead-pre-call');
   var pageParams = new URLSearchParams(window.location.search);
   pageParams.forEach(function (value, key) {
-    if (key.indexOf('utm_') === 0) payload[key] = value;
+    if (key.indexOf('utm_') === 0) formData.append(key, value);
   });
   fetch('https://services.leadconnectorhq.com/hooks/nD0A4F3TJ6eW9QDB9W1k/webhook-trigger/71e2e248-2f83-4c3f-9c7c-3eb5ea4ac8c2', {
     method: 'POST',
     mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
+    body: formData
   });
   if (typeof fbq === 'function') fbq('track', 'CompleteRegistration');
   if (typeof clarity === 'function') clarity('event', 'lead_form_submitted');
-  form.classList.add('hidden');
+  form.style.display = 'none';
   document.getElementById('pricing-form-success').classList.remove('hidden');
   return false;
 }
 
 function openCalendlyFromForm() {
+  closePricingForm();
   var calendlyUrl = new URL('https://calendly.com/cody-revvancegroup/30min');
   if (window.leadFormData) {
     calendlyUrl.searchParams.set('name', window.leadFormData.name);
@@ -1166,9 +1187,9 @@ function openCalendlyFromForm() {
     <form class="pricing-form" onsubmit="return submitPricingForm(event)">
       <h3>Quick step before your call</h3>
       <p>Drop your info so we know who we&rsquo;re talking to. Next step is a calendar to pick your 15-min call time.</p>
-      <input type="text" name="name" placeholder="Your name" required autocomplete="name">
-      <input type="email" name="email" placeholder="Your email" required autocomplete="email">
-      <input type="tel" name="phone" placeholder="Phone (optional, for faster reply)" autocomplete="tel">
+      <input type="text" name="name" placeholder="Your name" required autocomplete="name" minlength="2" maxlength="80">
+      <input type="email" name="email" placeholder="you@yourbusiness.com" required autocomplete="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Enter a valid email like you@yourbusiness.com">
+      <input type="tel" name="phone" placeholder="(555) 555-5555 (optional)" autocomplete="tel" oninput="formatPhoneInput(this)" maxlength="14" pattern="\(\d{3}\) \d{3}-\d{4}" title="US phone number, 10 digits">
       <select name="business" required>
         <option value="">What kind of business?</option>
         <option value="HVAC">HVAC</option>
@@ -1182,7 +1203,7 @@ function openCalendlyFromForm() {
         <option value="Professional services">Professional services</option>
         <option value="Other">Other</option>
       </select>
-      <button type="submit">Send Me Pricing</button>
+      <button type="submit">Next: Pick A Time</button>
       <p class="pricing-form-foot">We reply within 1 hour. Promise.</p>
     </form>
     <div id="pricing-form-success" class="pricing-form-success hidden">
