@@ -255,23 +255,32 @@ if ($NoPush) {
 }
 
 Push-Location $ScriptRoot
+# PowerShell 5.1 wraps native command stderr in ErrorRecord which crashes
+# the script even on harmless git warnings (like CRLF auto-conversion).
+# We suppress stderr to $null and rely on $LASTEXITCODE for real failures.
+$ErrorActionPreference = 'Continue'
 try {
-  $gitStatus = git status --porcelain demo/ 2>&1
+  $gitStatus = & git status --porcelain demo/ 2>$null
   if ([string]::IsNullOrWhiteSpace($gitStatus)) {
     Write-Host "No changes to commit. Demo content already matches what is in main." -ForegroundColor Yellow
     Write-Host "Live at https://revvancegroup.com/demo/"
     exit 0
   }
 
-  git add demo/ 2>&1 | Out-Null
+  & git add demo/ 2>$null
+  if ($LASTEXITCODE -ne 0) {
+    Write-Host "ERROR: git add failed." -ForegroundColor Red
+    exit 1
+  }
+
   $commitMsg = "demo: regenerate roofing demo for $BusinessName ($City, $StateUpper)"
-  git commit -m $commitMsg 2>&1 | Out-Null
+  & git commit -m $commitMsg 2>$null | Out-Null
   if ($LASTEXITCODE -ne 0) {
     Write-Host "ERROR: git commit failed." -ForegroundColor Red
     exit 1
   }
 
-  git push origin main 2>&1 | Out-Null
+  & git push origin main 2>$null | Out-Null
   if ($LASTEXITCODE -ne 0) {
     Write-Host "ERROR: git push failed. Demo files were committed locally but not pushed." -ForegroundColor Red
     exit 1
