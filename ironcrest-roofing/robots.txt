@@ -1,0 +1,5 @@
+# Ironcrest Roofing Co.
+User-agent: *
+Allow: /
+
+Sitemap: https://ironcrestroofing.com/sitemap.xml

@@ -1,0 +1,12 @@
+{
+  "name": "Ironcrest Roofing Co.",
+  "short_name": "Ironcrest",
+  "description": "Licensed, family-owned roofing contractor in Stockton, CA.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#131820",
+  "theme_color": "#131820",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

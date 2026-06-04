@@ -1,0 +1,5 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ironcrest Roofing">
+  <rect width="64" height="64" rx="15" fill="#131820"/>
+  <path d="M12.5 34 L32 16.5 L51.5 34" fill="none" stroke="#d2542a" stroke-width="6.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M19 43 L32 31 L45 43" fill="none" stroke="#e3a13c" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
