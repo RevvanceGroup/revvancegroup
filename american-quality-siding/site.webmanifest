@@ -1,0 +1,8 @@
+{
+  "name": "American Quality Siding & Construction",
+  "short_name": "AQS",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }],
+  "theme_color": "#16243D",
+  "background_color": "#F7F2E9",
+  "display": "browser"
+}

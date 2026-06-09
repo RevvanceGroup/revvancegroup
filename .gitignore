@@ -26,3 +26,6 @@ desktop.ini
 
 # Claude Code local config
 .claude/settings.local.json
+
+# Local scratch (raw client photos, temp scripts)
+.claude-tmp/
