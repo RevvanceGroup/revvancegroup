@@ -1,0 +1,8 @@
+{
+  "name": "R&G Remodeling and Roofing",
+  "short_name": "R&G",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }],
+  "theme_color": "#181B20",
+  "background_color": "#F5F4F0",
+  "display": "browser"
+}

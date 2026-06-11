@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" role="img" aria-label="R&amp;G Remodeling and Roofing badge">
+  <circle cx="26" cy="26" r="25" fill="#181B20"/>
+  <circle cx="26" cy="26" r="25" fill="none" stroke="#C8362B" stroke-width="2.4"/>
+  <circle cx="26" cy="26" r="17.5" fill="none" stroke="#C8362B" stroke-width="1.2"/>
+  <defs>
+    <path id="arcTop" d="M 8.5 26 A 17.5 17.5 0 0 1 43.5 26"/>
+    <path id="arcBot" d="M 9.5 26 A 16.5 16.5 0 0 0 42.5 26"/>
+  </defs>
+  <text font-family="Arial, sans-serif" font-size="5.2" font-weight="bold" fill="#F5F4F0" letter-spacing="1.4">
+    <textPath href="#arcTop" startOffset="50%" text-anchor="middle">ROOFING</textPath>
+  </text>
+  <text font-family="Arial, sans-serif" font-size="5.2" font-weight="bold" fill="#F5F4F0" letter-spacing="1.1">
+    <textPath href="#arcBot" startOffset="50%" text-anchor="middle">REMODELING</textPath>
+  </text>
+  <text x="26" y="31.5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#F5F4F0" text-anchor="middle">R&amp;G</text>
+</svg>
