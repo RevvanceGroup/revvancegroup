@@ -136,12 +136,19 @@ p { margin-bottom: 1em; } p:last-child { margin-bottom: 0; }
 /* ---------- Hero (type-led, charcoal) ---------- */
 .hero { background: var(--ink); color: var(--mutedl); position: relative; overflow: hidden; }
 .hero::before {
-  content: ""; position: absolute; inset: 0;
+  content: ""; position: absolute; inset: 0; z-index: 1;
   background:
     radial-gradient(900px 420px at 88% -10%, rgba(200, 54, 43, .28), transparent 65%),
-    radial-gradient(700px 380px at -10% 110%, rgba(232, 163, 61, .12), transparent 60%);
+    radial-gradient(700px 380px at -10% 110%, rgba(232, 163, 61, .12), transparent 60%),
+    linear-gradient(100deg, rgba(24, 27, 32, .92) 0%, rgba(24, 27, 32, .80) 30%, rgba(24, 27, 32, .50) 58%, rgba(24, 27, 32, .38) 100%);
 }
-.hero .container { position: relative; display: grid; grid-template-columns: 1.12fr .88fr; gap: clamp(30px, 5vw, 64px); align-items: center; padding-block: clamp(56px, 8vw, 100px); }
+.hero__video {
+  position: absolute; inset: 0; z-index: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) { .hero__video { display: none; } }
+.hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1.12fr .88fr; gap: clamp(30px, 5vw, 64px); align-items: center; padding-block: clamp(56px, 8vw, 100px); }
 .hero__badge {
   display: inline-flex; align-items: center; gap: 9px;
   background: rgba(245, 244, 240, .07); border: 1px solid var(--linedark);
