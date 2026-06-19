@@ -146,7 +146,7 @@ p { margin-bottom: 1em; } p:last-child { margin-bottom: 0; }
 
 @media (min-width: 1021px) {
   .nav-drop-menu {
-    position: absolute; top: calc(100% + 10px); left: 0; min-width: 244px;
+    position: absolute; top: 100%; left: 0; min-width: 244px; padding-top: 10px;
     background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
     box-shadow: 0 14px 34px rgba(24, 27, 32, .14); padding: 8px; z-index: 100;
     opacity: 0; visibility: hidden; transform: translateY(-6px);
