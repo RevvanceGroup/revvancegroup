@@ -133,6 +133,43 @@ p { margin-bottom: 1em; } p:last-child { margin-bottom: 0; }
   .header-phone svg { width: 30px; height: 30px; }
 }
 
+/* ---------- Nav dropdowns ---------- */
+.nav-drop { position: relative; }
+.nav-drop-toggle {
+  font: inherit; font-weight: 500; font-size: .97rem; color: var(--ink);
+  background: none; border: 0; cursor: pointer; padding: 6px 2px;
+  border-bottom: 2px solid transparent; display: inline-flex; align-items: center; gap: 4px;
+}
+.nav-drop-toggle:hover, .nav-drop.open > .nav-drop-toggle { border-bottom-color: var(--red); }
+.nav-drop .caret { width: 16px; height: 16px; fill: currentColor; transition: transform .15s ease; flex: none; }
+.nav-drop.open .caret { transform: rotate(180deg); }
+
+@media (min-width: 1021px) {
+  .nav-drop-menu {
+    position: absolute; top: calc(100% + 10px); left: 0; min-width: 244px;
+    background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
+    box-shadow: 0 14px 34px rgba(24, 27, 32, .14); padding: 8px; z-index: 100;
+    opacity: 0; visibility: hidden; transform: translateY(-6px);
+    transition: opacity .14s ease, transform .14s ease;
+  }
+  .nav-drop:hover .nav-drop-menu, .nav-drop:focus-within .nav-drop-menu, .nav-drop.open .nav-drop-menu {
+    opacity: 1; visibility: visible; transform: translateY(0);
+  }
+  .nav-drop-menu a {
+    display: block; padding: 9px 12px; border-radius: 8px; border-bottom: 0;
+    font-size: .92rem; font-weight: 500; color: var(--ink); white-space: nowrap;
+  }
+  .nav-drop-menu a:hover { background: #f4f5f6; border-bottom: 0; }
+}
+
+@media (max-width: 1020px) {
+  .nav-drop { width: 100%; }
+  .nav-drop-toggle { width: 100%; justify-content: space-between; font-size: 1.15rem; padding: 10px 2px; }
+  .nav-drop-menu { display: none; padding: 2px 0 8px 16px; }
+  .nav-drop.open .nav-drop-menu { display: block; }
+  .nav-drop-menu a { display: block; font-size: 1.04rem; padding: 8px 2px; width: 100%; color: var(--muted); border-bottom: 0; }
+}
+
 /* ---------- Hero (type-led, charcoal) ---------- */
 .hero { background: var(--ink); color: var(--mutedl); position: relative; overflow: hidden; }
 .hero::before {

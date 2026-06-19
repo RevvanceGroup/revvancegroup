@@ -36,11 +36,19 @@
     var hamburger = document.getElementById("hamburger");
     var nav = document.getElementById("nav");
     var backdrop = document.getElementById("navBackdrop");
+    function closeDrops() {
+      document.querySelectorAll(".nav-drop.open").forEach(function (d) {
+        d.classList.remove("open");
+        var t = d.querySelector(".nav-drop-toggle");
+        if (t) t.setAttribute("aria-expanded", "false");
+      });
+    }
     function closeNav() {
       if (!nav) return;
       nav.classList.remove("open");
       if (backdrop) backdrop.classList.remove("show");
       if (hamburger) hamburger.setAttribute("aria-expanded", "false");
+      closeDrops();
     }
     if (hamburger && nav) {
       hamburger.addEventListener("click", function () {
@@ -51,6 +59,20 @@
       nav.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", closeNav); });
     }
     if (backdrop) backdrop.addEventListener("click", closeNav);
+
+    /* ---------- Nav dropdowns (hover on desktop via CSS; click toggle for mobile + a11y) ---------- */
+    document.querySelectorAll(".nav-drop-toggle").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        var drop = btn.closest(".nav-drop");
+        if (!drop) return;
+        var open = drop.classList.toggle("open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    });
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".nav-drop")) closeDrops();
+    });
 
     /* ---------- Header shadow ---------- */
     var header = document.getElementById("header");

@@ -109,18 +109,37 @@
 <!-- ===== Header ===== -->
 <header class="header" id="header">
   <div class="container">
-    <a href="./" class="logo" aria-label="R&amp;G Remodeling and Roofing home">
-      <img src="assets/logo-mark.svg" width="50" height="50" alt="">
+    <a href="/" class="logo" aria-label="R&amp;G Remodeling and Roofing home">
+      <img src="/assets/logo-mark.svg" width="50" height="50" alt="">
       <span class="wm"><b>R&amp;G</b><span>Remodeling &amp; Roofing</span></span>
     </a>
     <nav class="nav" id="nav" aria-label="Primary">
-      <a href="./" class="active" aria-current="page">Home</a>
-      <a href="roofing">Roofing</a>
-      <a href="remodeling">Remodeling</a>
-      <a href="exteriors">Siding &amp; Exteriors</a>
-      <a href="service-area">Service Area</a>
-      <a href="about">About</a>
-      <a href="contact" class="btn btn--red">Free Estimate</a>
+      <a href="/">Home</a>
+      <div class="nav-drop">
+        <button type="button" class="nav-drop-toggle" aria-expanded="false">Services<svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="/roofing">Roofing</a>
+          <a href="/roofing#storm">Roof Repair &amp; Storm Damage</a>
+          <a href="/remodeling">Kitchen &amp; Bath Remodeling</a>
+          <a href="/exteriors">Siding</a>
+          <a href="/exteriors#gutters">Gutters</a>
+          <a href="/exteriors#decks">Decks</a>
+        </div>
+      </div>
+      <div class="nav-drop">
+        <button type="button" class="nav-drop-toggle" aria-expanded="false">Service Area<svg class="caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="/service-area">All of the South Hills</a>
+          <a href="/service-area/castle-shannon">Castle Shannon</a>
+          <a href="/service-area/bethel-park">Bethel Park</a>
+          <a href="/service-area/mt-lebanon">Mt. Lebanon</a>
+          <a href="/service-area/upper-st-clair">Upper St. Clair</a>
+          <a href="/service-area/whitehall-baldwin">Whitehall &amp; Baldwin</a>
+        </div>
+      </div>
+      <a href="/about">About</a>
+      <a href="/blog">Blog</a>
+      <a href="/contact" class="btn btn--red">Free Estimate</a>
     </nav>
     <div class="header-actions">
       <a href="tel:+14127584218" class="header-phone">
