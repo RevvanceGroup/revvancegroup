@@ -7,17 +7,18 @@
   "use strict";
 
   /* -------------------------------------------------------------------
-     GoHighLevel hook.
-     Set window.GHL_WEBHOOK_URLS (an array, one line, before this script loads)
-     to one or more GHL Inbound Webhook URLs and every lead form POSTs to all of
-     them. A single window.GHL_WEBHOOK_URL string still works too (back-compat).
-     Until then leads log to the console (demo mode).
-     Example:
-       <script>window.GHL_WEBHOOK_URLS = ["https://services.leadconnectorhq.com/hooks/AAAA","https://services.leadconnectorhq.com/hooks/BBBB"];</script>
+     GoHighLevel hook. Every lead form on the site POSTs to all of the
+     webhooks below. This file loads on every page, so any form is covered
+     automatically. A page can override by setting window.GHL_WEBHOOK_URLS
+     before this script loads.
   ------------------------------------------------------------------- */
+  var GHL_DEFAULT_WEBHOOKS = [
+    "https://services.leadconnectorhq.com/hooks/yZzIBGpHRHpgutcuytCD/webhook-trigger/c0f45c15-e740-4140-bfda-a9449bb5e25e",
+    "https://services.leadconnectorhq.com/hooks/ZnLepRjiAKl5kgYEanzj/webhook-trigger/7efd8594-c4d2-4beb-b02e-6f5978542a2c"
+  ];
   var GHL_WEBHOOK_URLS = (window.GHL_WEBHOOK_URLS && window.GHL_WEBHOOK_URLS.length)
     ? window.GHL_WEBHOOK_URLS
-    : (window.GHL_WEBHOOK_URL ? [window.GHL_WEBHOOK_URL] : []);
+    : (window.GHL_WEBHOOK_URL ? [window.GHL_WEBHOOK_URL] : GHL_DEFAULT_WEBHOOKS);
 
   function sendToGHL(payload) {
     payload.source = "rg-remodeling-website";
