@@ -8,26 +8,31 @@
 
   /* -------------------------------------------------------------------
      GoHighLevel hook.
-     Set window.GHL_WEBHOOK_URL (one line, before this script loads) to a
-     GHL Inbound Webhook URL and every lead form on the site POSTs there.
+     Set window.GHL_WEBHOOK_URLS (an array, one line, before this script loads)
+     to one or more GHL Inbound Webhook URLs and every lead form POSTs to all of
+     them. A single window.GHL_WEBHOOK_URL string still works too (back-compat).
      Until then leads log to the console (demo mode).
      Example:
-       <script>window.GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/XXXX";</script>
+       <script>window.GHL_WEBHOOK_URLS = ["https://services.leadconnectorhq.com/hooks/AAAA","https://services.leadconnectorhq.com/hooks/BBBB"];</script>
   ------------------------------------------------------------------- */
-  var GHL_WEBHOOK_URL = window.GHL_WEBHOOK_URL || "";
+  var GHL_WEBHOOK_URLS = (window.GHL_WEBHOOK_URLS && window.GHL_WEBHOOK_URLS.length)
+    ? window.GHL_WEBHOOK_URLS
+    : (window.GHL_WEBHOOK_URL ? [window.GHL_WEBHOOK_URL] : []);
 
   function sendToGHL(payload) {
     payload.source = "rg-remodeling-website";
     payload.page = location.pathname;
     payload.submitted_at = new Date().toISOString();
-    if (!GHL_WEBHOOK_URL) { console.log("[demo mode] lead captured:", payload); return; }
-    try {
-      fetch(GHL_WEBHOOK_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      }).catch(function () {});
-    } catch (e) { /* never block the success state on a network error */ }
+    if (!GHL_WEBHOOK_URLS.length) { console.log("[demo mode] lead captured:", payload); return; }
+    GHL_WEBHOOK_URLS.forEach(function (url) {
+      try {
+        fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        }).catch(function () {});
+      } catch (e) { /* never block the success state on a network error */ }
+    });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
