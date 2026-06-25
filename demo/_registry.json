@@ -1,0 +1,13 @@
+{
+  "_comment": "Tracks every prospect demo under /demo/<slug>/. Each demo also has a client-side auto-expiry baked into its index.html (the page replaces itself with an 'expired' card after 'expires'). prune-demos.ps1 reads this file to physically delete folders whose 'expires' date has passed. Dates are YYYY-MM-DD (last day live).",
+  "demos": [
+    {
+      "slug": "flat-roofs-by-pegram",
+      "business": "Flat Roofs by Pegram",
+      "city": "Chesapeake, VA",
+      "created": "2026-06-24",
+      "expires": "2026-07-01",
+      "url": "https://revvancegroup.com/demo/flat-roofs-by-pegram/"
+    }
+  ]
+}
