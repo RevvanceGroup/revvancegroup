@@ -15,11 +15,11 @@
 <meta property="og:title" content="Flat Roofing Contractor in Hampton Roads, VA | Flat Roofs by Pegram">
 <meta property="og:description" content="Family-owned flat roofing experts serving Hampton Roads for 50+ years. Commercial, industrial & residential. Free estimate in 60 seconds.">
 <meta property="og:url" content="https://revvancegroup.com/demo/flat-roofs-by-pegram/">
-<meta property="og:image" content="https://revvancegroup.com/demo/flat-roofs-by-pegram/assets/img/job-1.jpeg">
+<meta property="og:image" content="https://revvancegroup.com/demo/flat-roofs-by-pegram/assets/img/job-1.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Flat Roofing Contractor in Hampton Roads, VA | Flat Roofs by Pegram">
 <meta name="twitter:description" content="Family-owned flat roofing experts serving Hampton Roads for 50+ years.">
-<meta name="twitter:image" content="https://revvancegroup.com/demo/flat-roofs-by-pegram/assets/img/job-1.jpeg">
+<meta name="twitter:image" content="https://revvancegroup.com/demo/flat-roofs-by-pegram/assets/img/job-1.webp">
 
 <!-- Icons -->
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -31,7 +31,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- Priority hints -->
-<link rel="preload" as="image" href="assets/img/job-1.jpeg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/job-1.webp" fetchpriority="high">
 <link rel="stylesheet" href="assets/css/styles.css">
 <script src="assets/js/main.js" defer></script>
 
@@ -42,8 +42,8 @@
   "@type": "RoofingContractor",
   "@id": "https://revvancegroup.com/demo/flat-roofs-by-pegram/#business",
   "name": "Flat Roofs by Pegram",
-  "image": "https://revvancegroup.com/demo/flat-roofs-by-pegram/assets/img/job-1.jpeg",
-  "logo": "https://revvancegroup.com/demo/flat-roofs-by-pegram/assets/logo-mark.svg",
+  "image": "https://revvancegroup.com/demo/flat-roofs-by-pegram/assets/img/job-1.webp",
+  "logo": "https://revvancegroup.com/demo/flat-roofs-by-pegram/assets/logo-pegram.png",
   "url": "https://flatroofsbypegram.com/",
   "telephone": "+17575371945",
   "email": "willie.pegram@cox.net",
@@ -135,6 +135,11 @@
   .materials .mtag{ color:#cdd6de; font-size:.95rem; }
   .materials .mtag b{ color:var(--gold); font-weight:700; }
   .review-note{ margin-top:12px; color:var(--muted-dark); font-size:.92rem; font-style:italic; }
+  .logo img.brandlogo{ height:50px; width:auto; display:block; }
+  @media (max-width:480px){ .logo img.brandlogo{ height:42px; } }
+  /* CTA band badge (brick variant) — constrains the alert icon so the band stays compact */
+  .cta-band .ebadge{ display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.16); color:#fff; border:1px solid rgba(255,255,255,.34); padding:5px 13px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:14px; }
+  .cta-band .ebadge svg{ width:15px; height:15px; fill:#fff; flex:none; }
 </style>
 </head>
 <body>
@@ -160,8 +165,7 @@
 <header class="header" id="header">
   <div class="container">
     <a href="#top" class="logo" aria-label="Flat Roofs by Pegram home">
-      <img src="assets/logo-mark.svg" width="42" height="42" alt="">
-      <span class="wm"><b>Flat Roofs</b><span>by Pegram</span></span>
+      <img src="assets/logo-pegram.png" width="309" height="140" alt="Flat Roofs by Pegram" class="brandlogo">
     </a>
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="#top" class="active">Home</a>
@@ -188,7 +192,7 @@
 <!-- ===== Hero with instant lead form ===== -->
 <section class="hero" id="top">
   <div class="hero__media">
-    <img src="assets/img/job-1.jpeg" width="1000" height="563" alt="Flat Roofs by Pegram crew installing a flat commercial roof in Hampton Roads" fetchpriority="high" decoding="async">
+    <img src="assets/img/job-1.webp" width="1000" height="563" alt="Flat Roofs by Pegram crew installing a flat commercial roof in Hampton Roads" fetchpriority="high" decoding="async">
   </div>
   <div class="container">
     <div class="hero__copy">
@@ -267,26 +271,23 @@
   </div>
 </div>
 
-<!-- ===== Markets / recent work ===== -->
-<section class="section" id="work">
+<!-- ===== Who we serve ===== -->
+<section class="section" id="markets">
   <div class="container">
     <div class="section-head center reveal">
       <span class="eyebrow">Who we serve</span>
       <h2>Flat roofing for every building in Hampton Roads</h2>
-      <p class="lead">From storefronts and warehouses to homes with low-slope additions, recent flat roof projects across the region.</p>
+      <p class="lead">From storefronts and warehouses to homes with low-slope additions, one specialist crew for every kind of flat roof.</p>
     </div>
     <div class="grid svc-grid">
-      <article class="svc reveal">
-        <div class="svc__img"><span class="svc__tag">Commercial</span><img src="assets/img/job-3.jpeg" width="1000" height="563" alt="Finished white commercial flat roof on a Hampton Roads building" loading="lazy" decoding="async"></div>
-        <div class="svc__body"><h3>Commercial Flat Roofing</h3><p>Single-ply TPO and EPDM, modified bitumen, and roof coatings for storefronts, offices, and retail, scheduled around your business hours.</p><a class="linkarrow" href="#estimate">Get an estimate <svg viewBox="0 0 24 24"><path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/></svg></a></div>
+      <article class="svc svc--icon reveal">
+        <div class="svc__body"><div class="feat__ico"><svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg></div><h3>Commercial Flat Roofing</h3><p>Single-ply TPO and EPDM, modified bitumen, and roof coatings for storefronts, offices, and retail, scheduled around your business hours.</p><a class="linkarrow" href="#estimate">Get an estimate <svg viewBox="0 0 24 24"><path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/></svg></a></div>
       </article>
-      <article class="svc reveal">
-        <div class="svc__img"><span class="svc__tag">Residential</span><img src="assets/img/job-2.jpeg" width="1000" height="750" alt="Residential flat roof replacement in Hampton Roads" loading="lazy" decoding="async"></div>
-        <div class="svc__body"><h3>Residential Flat Roofing</h3><p>Flat and low-slope roofs on homes, additions, and porches, installed and sealed to handle Hampton Roads weather and standing water.</p><a class="linkarrow" href="#estimate">Get an estimate <svg viewBox="0 0 24 24"><path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/></svg></a></div>
+      <article class="svc svc--icon reveal">
+        <div class="svc__body"><div class="feat__ico"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></div><h3>Residential Flat Roofing</h3><p>Flat and low-slope roofs on homes, additions, and porches, installed and sealed to handle Hampton Roads weather and standing water.</p><a class="linkarrow" href="#estimate">Get an estimate <svg viewBox="0 0 24 24"><path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/></svg></a></div>
       </article>
-      <article class="svc reveal">
-        <div class="svc__img"><span class="svc__tag">Industrial</span><img src="assets/img/commercial-roof.webp" width="1200" height="800" alt="Industrial flat roof system on a large commercial building" loading="lazy" decoding="async"></div>
-        <div class="svc__body"><h3>Industrial Flat Roofing</h3><p>Large-scale flat roof systems for warehouses and industrial facilities, built for durability, drainage, and long service life.</p><a class="linkarrow" href="#estimate">Get an estimate <svg viewBox="0 0 24 24"><path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/></svg></a></div>
+      <article class="svc svc--icon reveal">
+        <div class="svc__body"><div class="feat__ico"><svg viewBox="0 0 24 24"><path d="M22 22H2v-2h1V6l7-4 7 4v2h4v12h1v2zM7 17H5v-4h2v4zm4 0H9v-4h2v4z"/></svg></div><h3>Industrial Flat Roofing</h3><p>Large-scale flat roof systems for warehouses and industrial facilities, built for durability, drainage, and long service life.</p><a class="linkarrow" href="#estimate">Get an estimate <svg viewBox="0 0 24 24"><path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/></svg></a></div>
       </article>
     </div>
   </div>
@@ -356,7 +357,7 @@
         </div>
         <a href="#estimate" class="btn btn--dark mt-cta">Get my free estimate</a>
       </div>
-      <div class="feat-media tall reveal"><img src="assets/img/job-4.jpeg" width="1000" height="750" alt="Freshly coated white flat roof completed by Flat Roofs by Pegram in Hampton Roads" loading="lazy" decoding="async"></div>
+      <div class="feat-media tall reveal"><img src="assets/img/job-1.webp" width="1600" height="901" alt="Flat Roofs by Pegram crew installing a flat roof in Hampton Roads" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -385,6 +386,22 @@
       <div class="step reveal"><div class="step__n">02</div><h3>Written estimate</h3><p>A clear, itemized quote with the right system for your building and budget, up front.</p></div>
       <div class="step reveal"><div class="step__n">03</div><h3>Professional install</h3><p>Our own certified crew protects your property, installs to spec, and keeps the job site clean.</p></div>
       <div class="step reveal"><div class="step__n">04</div><h3>Walkthrough &amp; warranty</h3><p>We inspect the finished roof together and hand over your warranty paperwork.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Our recent work (real project photos) ===== -->
+<section class="section bg-cream-2" id="work">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Our recent work</span>
+      <h2>Real flat roofs, right here in Hampton Roads</h2>
+      <p class="lead">A few recent commercial and residential flat roof projects from our own crews.</p>
+    </div>
+    <div class="grid gallery">
+      <a class="gcard reveal" href="#estimate"><img src="assets/img/job-3.webp" width="1200" height="676" alt="Finished white single-ply commercial flat roof with skylight in Hampton Roads" loading="lazy" decoding="async"><div class="gcard__o"><span class="t">Commercial</span><h3>Single-Ply Membrane</h3><p>Watertight white roof on a commercial building</p></div></a>
+      <a class="gcard reveal" href="#estimate"><img src="assets/img/job-4.webp" width="1200" height="900" alt="Freshly coated reflective white flat roof completed in Hampton Roads" loading="lazy" decoding="async"><div class="gcard__o"><span class="t">Coating</span><h3>Roof Coating &amp; Restoration</h3><p>Reflective recoat over an existing roof</p></div></a>
+      <a class="gcard reveal" href="#estimate"><img src="assets/img/job-2.webp" width="410" height="308" alt="Completed flat roof on a Hampton Roads building" loading="lazy" decoding="async"><div class="gcard__o"><span class="t">Replacement</span><h3>Flat Roof Replacement</h3><p>New low-slope system, sealed and finished</p></div></a>
     </div>
   </div>
 </section>
@@ -435,7 +452,7 @@
           <a class="chip" href="#estimate"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>Newport News</a>
         </div>
       </div>
-      <div class="area-media reveal"><img src="assets/img/job-2.jpeg" width="1000" height="750" alt="Completed flat roof on a Hampton Roads commercial building" loading="lazy" decoding="async"></div>
+      <div class="area-media reveal"><img src="assets/img/job-3.webp" width="1200" height="676" alt="Completed white commercial flat roof on a Hampton Roads building" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
