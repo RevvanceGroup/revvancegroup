@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Better View Roofing and Siding">
+  <rect width="48" height="48" rx="11" fill="#16203a"/>
+  <path d="M24 13 L34 21.5 L24 21.5 Z" fill="#ffffff"/>
+  <path d="M8.5 23.5 L24 11.5 L39.5 23.5" fill="none" stroke="#5e74f0" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="13.5" y="25.5" width="21" height="9.5" rx="1.6" fill="#eef2fb"/>
+</svg>
