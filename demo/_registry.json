@@ -24,6 +24,22 @@
       "created": "2026-06-28",
       "expires": "2026-07-05",
       "url": "https://revvancegroup.com/demo/hanover-restoration/"
+    },
+    {
+      "slug": "sgb-contractors",
+      "business": "SGB Contractors LLC",
+      "city": "Virginia Beach, VA",
+      "created": "2026-06-30",
+      "expires": "2026-07-07",
+      "url": "https://revvancegroup.com/demo/sgb-contractors/"
+    },
+    {
+      "slug": "bultman-construction",
+      "business": "Bultman Construction Services",
+      "city": "Mechanicsville, VA",
+      "created": "2026-06-30",
+      "expires": "2026-07-07",
+      "url": "https://revvancegroup.com/demo/bultman-construction/"
     }
   ]
 }

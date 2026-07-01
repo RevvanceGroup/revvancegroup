@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Bultman Construction Services">
+  <rect width="48" height="48" rx="11" fill="#123c40"/>
+  <path d="M9 24.5 L24 11.5 L39 24.5" fill="none" stroke="#57bdb2" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M13.5 23.5 V37 H34.5 V23.5" fill="none" stroke="#57bdb2" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="21" y="29" width="6" height="8" rx="0.6" fill="#57bdb2"/>
+</svg>

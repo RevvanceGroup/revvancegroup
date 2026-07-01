@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="SGB Contractors">
+  <rect width="48" height="48" rx="11" fill="#1b1d22"/>
+  <path d="M9 24.5 L24 11.5 L39 24.5" fill="none" stroke="#cda24a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M13.5 23.5 V37 H34.5 V23.5" fill="none" stroke="#cda24a" stroke-width="2.4" stroke-linejoin="round"/>
+  <rect x="21" y="29" width="6" height="8" rx="0.6" fill="#cda24a"/>
+</svg>
